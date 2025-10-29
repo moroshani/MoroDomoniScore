@@ -1,0 +1,95 @@
+import React, { useState } from 'react';
+import { SparklesIcon, ClipboardIcon } from './icons';
+import { useFocusTrap } from '../hooks/useFocusTrap';
+import type { NightRecord, Team } from '../types';
+
+interface RecapModalProps {
+  isOpen: boolean;
+  isLoading: boolean;
+  content: string; // This is the AI content
+  onNewNight: () => void;
+  nightRecord: NightRecord | null;
+  teams: Team[];
+}
+
+export const RecapModal: React.FC<RecapModalProps> = ({ isOpen, isLoading, content, onNewNight, nightRecord, teams }) => {
+  const [copied, setCopied] = useState(false);
+  const focusTrapRef = useFocusTrap<HTMLDivElement>(isOpen);
+
+  if (!isOpen) return null;
+
+  const nightWinner = teams.find(t => t.id === nightRecord?.nightWinnerTeamId);
+
+  const generateTextSummary = () => {
+    if (!nightRecord || !nightWinner) return "خلاصه‌ای برای اشتراک‌گذاری موجود نیست.";
+    
+    let summary = `خلاصه شب بازی دومینو - ${new Date(nightRecord.date).toLocaleDateString('fa-IR')}\n`;
+    summary += `-----------------------------------\n`;
+    summary += `🏆 برنده بزرگ امشب: ${nightWinner.name} 🏆\n\n`;
+    summary += `امتیاز نهایی ست‌ها:\n`;
+    teams.forEach(t => {
+      summary += `- ${t.name}: ${t.setsWon} ست\n`;
+    });
+    summary += `\nتحلیل دومینو دان:\n"${content}"`;
+    return summary;
+  };
+
+  const handleCopy = () => {
+    const summaryText = generateTextSummary();
+    navigator.clipboard.writeText(summaryText);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+  
+  const formattedContent = content.split('\n').map((line, index) => (
+    <React.Fragment key={index}>
+      {line}
+      <br />
+    </React.Fragment>
+  ));
+
+  return (
+    <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center z-50 p-4" role="dialog" aria-modal="true">
+      <div ref={focusTrapRef} className="glass-card rounded-3xl p-8 max-w-lg w-full text-center transform transition-all scale-100 opacity-100">
+        <div className="flex items-center justify-center mb-6">
+            <SparklesIcon className="w-12 h-12 text-teal-500 dark:text-teal-400 ms-3" />
+            <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100">خلاصه شبانه</h2>
+        </div>
+        
+        <div className="min-h-[200px] bg-gray-500/10 dark:bg-gray-900/20 rounded-2xl p-6 my-6 text-start">
+            {nightWinner && (
+                <div className="text-center mb-4 border-b-2 border-[var(--border-light)] dark:border-[var(--border-dark)] pb-4">
+                    <p className="text-md text-gray-600 dark:text-gray-400">برنده امشب</p>
+                    <p className="text-3xl font-black text-amber-600 dark:text-amber-400">{nightWinner.name}</p>
+                </div>
+            )}
+            <h3 className="font-bold text-gray-800 dark:text-gray-200 mb-2">تحلیل هوش مصنوعی:</h3>
+            {isLoading ? (
+                <div className="flex justify-center items-center h-24">
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>
+                </div>
+            ) : (
+                <blockquote className="text-base text-gray-700 dark:text-gray-200 italic border-r-4 border-teal-500 pr-4">"{formattedContent}"</blockquote>
+            )}
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <button
+            onClick={onNewNight}
+            className="col-span-1 sm:col-span-2 btn-primary"
+          >
+            شروع یک شب جدید
+          </button>
+          <button
+            onClick={handleCopy}
+            disabled={!content || isLoading}
+            className="w-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 font-bold py-3 px-4 rounded-xl hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none focus:ring-4 focus:ring-gray-400/50 flex items-center justify-center disabled:opacity-50 transition"
+          >
+            <ClipboardIcon className="w-5 h-5 ms-2" />
+            {copied ? 'کپی شد!' : 'کپی'}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
