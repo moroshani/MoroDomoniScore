@@ -1,12 +1,12 @@
 import type { NightRecord } from '../types';
-// FIX: Import savePlayers to clear player data, resolving a dependency for deleteProfileData.
-import { savePlayers } from './players';
+import { clearPlayers } from './players';
 
-const HISTORY_KEY = 'dominoScorekeeperHistory';
+const getHistoryKey = (userId: string) => `dominoScorekeeperHistory_${userId}`;
 
-export const getHistory = (): NightRecord[] => {
+export const getHistory = (userId: string): NightRecord[] => {
+  if (!userId) return [];
   try {
-    const historyJson = localStorage.getItem(HISTORY_KEY);
+    const historyJson = localStorage.getItem(getHistoryKey(userId));
     return historyJson ? JSON.parse(historyJson) : [];
   } catch (error) {
     console.error("Failed to parse history from localStorage", error);
@@ -14,31 +14,28 @@ export const getHistory = (): NightRecord[] => {
   }
 };
 
-export const saveHistory = (history: NightRecord[]): void => {
+export const saveHistory = (userId: string, history: NightRecord[]): void => {
+  if (!userId) return;
   try {
     const historyJson = JSON.stringify(history);
-    localStorage.setItem(HISTORY_KEY, historyJson);
-  } catch (error) {
+    localStorage.setItem(getHistoryKey(userId), historyJson);
+  } catch (error)
+ {
     console.error("Failed to save history to localStorage", error);
   }
 };
 
-export const clearHistory = (): void => {
+export const clearHistory = (userId: string): void => {
+    if (!userId) return;
     try {
-        localStorage.removeItem(HISTORY_KEY);
+        localStorage.removeItem(getHistoryKey(userId));
     } catch (error) {
         console.error("Failed to clear history from localStorage", error);
     }
 };
 
-// FIX: Added missing deleteProfileData function to resolve import error in AuthContext.
-/**
- * Deletes all game and player data from localStorage.
- * NOTE: The current storage implementation is global, not per-profile.
- * This function clears all data regardless of the profileId provided.
- * @param _profileId - Included for future compatibility but currently unused.
- */
-export const deleteProfileData = (_profileId: string): void => {
-    clearHistory();
-    savePlayers([]); // Clears all players by saving an empty array.
+export const deleteUserData = (userId: string): void => {
+    if (!userId) return;
+    clearHistory(userId);
+    clearPlayers(userId);
 };

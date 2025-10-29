@@ -83,9 +83,8 @@ export interface WinState {
     finalScore?: number;
 }
 
-// FIX: Added missing Profile interface.
-export interface Profile {
+export interface User {
   id: string;
   name: string;
-  passwordHash?: string;
+  email: string;
 }

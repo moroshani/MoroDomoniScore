@@ -3,6 +3,7 @@ import type { GameModeDetails, Player } from '../types';
 import { getPlayers } from '../lib/players';
 import { PlayerManagementModal } from './PlayerManagementModal';
 import { SparklesIcon } from './icons';
+import { useAuth } from '../context/AuthContext';
 
 interface TeamNameSetupProps {
   mode: GameModeDetails;
@@ -19,6 +20,7 @@ const PlayerAvatar: React.FC<{ avatar?: string; className?: string }> = ({ avata
 };
 
 export const TeamNameSetup: React.FC<TeamNameSetupProps> = ({ mode, onSubmit, onBack }) => {
+  const { user } = useAuth();
   const [allPlayers, setAllPlayers] = useState<Player[]>([]);
   const [selectedPlayers, setSelectedPlayers] = useState<Player[][]>(
     Array(mode.teams).fill(null).map(() => Array(mode.playersPerTeam).fill({ id: '', name: '' }))
@@ -30,9 +32,15 @@ export const TeamNameSetup: React.FC<TeamNameSetupProps> = ({ mode, onSubmit, on
   const [isPlayerModalOpen, setIsPlayerModalOpen] = useState(false);
   const [step, setStep] = useState<'players' | 'rules'>('players');
 
+  const fetchPlayers = () => {
+      if (user) {
+          setAllPlayers(getPlayers(user.id));
+      }
+  };
+
   useEffect(() => {
-    setAllPlayers(getPlayers());
-  }, []);
+    fetchPlayers();
+  }, [user]);
 
   const handlePlayerSelect = (teamIndex: number, playerIndex: number, playerId: string) => {
     const newSelectedPlayers = selectedPlayers.map(team => [...team]);
@@ -192,7 +200,7 @@ export const TeamNameSetup: React.FC<TeamNameSetupProps> = ({ mode, onSubmit, on
           isOpen={isPlayerModalOpen}
           onClose={() => {
               setIsPlayerModalOpen(false);
-              setAllPlayers(getPlayers());
+              fetchPlayers();
           }}
           onPlayersUpdate={setAllPlayers}
         />

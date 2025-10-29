@@ -4,6 +4,7 @@ import type { GameModeDetails, Team, Player, NightRecord, GameRecord, SetRecord,
 import { DEFAULT_GAMES_PER_SET, DEFAULT_SETS_PER_NIGHT } from '../constants';
 import { saveHistory, getHistory } from '../lib/storage';
 import { GoogleGenAI } from '@google/genai';
+import { useAuth } from './AuthContext';
 
 interface IGameContext {
     gameScreen: GameScreen;
@@ -38,6 +39,7 @@ interface IGameContext {
 const GameContext = createContext<IGameContext | undefined>(undefined);
 
 export const GameProvider: React.FC<{children: React.ReactNode}> = ({ children }) => {
+    const { user } = useAuth();
     const [gameScreen, setGameScreen] = useState<GameScreen>(GameScreen.ModeSelection);
     const [gameMode, setGameMode] = useState<GameModeDetails | null>(null);
     const [teams, setTeams] = useState<Team[]>([]);
@@ -67,6 +69,11 @@ export const GameProvider: React.FC<{children: React.ReactNode}> = ({ children }
     const [isNightRecapVisible, setIsNightRecapVisible] = useState(false);
     const [nightRecapAIContent, setNightRecapAIContent] = useState('');
     const [isNightRecapLoading, setIsNightRecapLoading] = useState(false);
+
+    // Reset game state when user changes (login/logout)
+    useEffect(() => {
+        resetToModeSelection();
+    }, [user]);
 
     useEffect(() => {
         if (theme === 'dark') {
@@ -150,7 +157,6 @@ export const GameProvider: React.FC<{children: React.ReactNode}> = ({ children }
             ...currentNight,
             sets: currentNight.sets.map(s => {
                 if (s.setNumber === currentSetNumber) {
-                    // Create a new games array to ensure immutability
                     const newGames = [...s.games, gameRecord];
                     return { ...s, games: newGames };
                 }
@@ -220,12 +226,12 @@ export const GameProvider: React.FC<{children: React.ReactNode}> = ({ children }
     };
 
     const handleNightEnd = async (nightRecord: NightRecord, nightWinner: Team) => {
+        if (!user) return;
         const finalNightRecord = { ...nightRecord, nightWinnerTeamId: nightWinner.id };
-        const history = getHistory();
-        saveHistory([...history, finalNightRecord]);
+        const history = getHistory(user.id);
+        saveHistory(user.id, [...history, finalNightRecord]);
         setCurrentNight(finalNightRecord);
 
-        // Show recap modal and fetch AI summary
         setIsNightRecapVisible(true);
         setIsNightRecapLoading(true);
         const prompt = `

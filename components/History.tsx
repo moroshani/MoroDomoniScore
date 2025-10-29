@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { getHistory, clearHistory as clearHistoryFromStorage } from '../lib/storage';
 import type { NightRecord, SetRecord, Player } from '../types';
 import { CrownIcon, TrashIcon } from './icons';
+import { useAuth } from '../context/AuthContext';
 
 interface HistoryProps {
   onBack: () => void;
@@ -26,16 +27,19 @@ const TeamNameWithAvatars: React.FC<{ name: string; players: Player[] }> = ({ na
 };
 
 export const History: React.FC<HistoryProps> = ({ onBack }) => {
+  const { user } = useAuth();
   const [history, setHistory] = useState<NightRecord[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    setHistory(getHistory().sort((a, b) => parseInt(b.id) - parseInt(a.id)));
-  }, []);
+    if (user) {
+      setHistory(getHistory(user.id).sort((a, b) => parseInt(b.id) - parseInt(a.id)));
+    }
+  }, [user]);
 
   const handleClearHistory = () => {
-    if (window.confirm("آیا مطمئن هستید که می‌خواهید تمام تاریخچه بازی‌ها را برای همیشه حذف کنید؟")) {
-      clearHistoryFromStorage();
+    if (user && window.confirm("آیا مطمئن هستید که می‌خواهید تمام تاریخچه بازی‌ها را برای همیشه حذف کنید؟")) {
+      clearHistoryFromStorage(user.id);
       setHistory([]);
     }
   };

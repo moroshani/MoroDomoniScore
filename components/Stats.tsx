@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { getHistory } from '../lib/storage';
 import { calculatePlayerStats, calculateHeadToHeadStats } from '../lib/stats';
 import type { PlayerStats, HeadToHeadStats } from '../types';
-import { CrownIcon, SparklesIcon, TrophyIcon } from './icons';
+import { CrownIcon, SparklesIcon } from './icons';
 import { AIAnalysisModal } from './AIAnalysisModal';
 import { BarChart } from './charts/BarChart';
 import { GoogleGenAI } from '@google/genai';
+import { useAuth } from '../context/AuthContext';
 
 interface StatsProps {
   onBack: () => void;
@@ -21,6 +22,7 @@ const PlayerAvatar: React.FC<{ avatar?: string; className?: string }> = ({ avata
 
 
 export const Stats: React.FC<StatsProps> = ({ onBack }) => {
+  const { user } = useAuth();
   const [stats, setStats] = useState<PlayerStats[]>([]);
   const [selectedPlayer, setSelectedPlayer] = useState<PlayerStats | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -32,23 +34,30 @@ export const Stats: React.FC<StatsProps> = ({ onBack }) => {
   const [h2hStats, setH2hStats] = useState<HeadToHeadStats | null>(null);
 
   useEffect(() => {
-    const history = getHistory();
+    if (!user) return;
+    const history = getHistory(user.id);
     const calculatedStats = calculatePlayerStats(history);
     setStats(calculatedStats);
     if (calculatedStats.length >= 2) {
         setH2hPlayer1(calculatedStats[0].name);
         setH2hPlayer2(calculatedStats[1].name);
+    } else if (calculatedStats.length > 0) {
+        setH2hPlayer1(calculatedStats[0].name);
+        setH2hPlayer2('');
+    } else {
+        setH2hPlayer1('');
+        setH2hPlayer2('');
     }
-  }, []);
+  }, [user]);
 
   useEffect(() => {
-    if (h2hPlayer1 && h2hPlayer2 && h2hPlayer1 !== h2hPlayer2) {
-      const history = getHistory();
+    if (user && h2hPlayer1 && h2hPlayer2 && h2hPlayer1 !== h2hPlayer2) {
+      const history = getHistory(user.id);
       setH2hStats(calculateHeadToHeadStats(h2hPlayer1, h2hPlayer2, history));
     } else {
       setH2hStats(null);
     }
-  }, [h2hPlayer1, h2hPlayer2]);
+  }, [h2hPlayer1, h2hPlayer2, user]);
 
   const handleAnalyze = async (player: PlayerStats) => {
     setSelectedPlayer(player);

@@ -1,111 +1,140 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
-import type { Profile } from '../types';
-import { deleteProfileData } from '../lib/storage';
+import type { User } from '../types';
+
+// This enum defines the two possible screens for an unauthenticated user.
+export type AuthScreen = 'login' | 'register';
 
 interface IAuthContext {
-    profiles: Profile[];
-    currentProfile: Profile | null;
-    login: (profileId: string, password?: string) => void;
+    user: User | null;
+    isAuthenticated: boolean;
+    isLoading: boolean;
+    authScreen: AuthScreen;
+    setAuthScreen: (screen: AuthScreen) => void;
+    login: (email: string, password?: string) => Promise<void>;
+    register: (name: string, email: string, password?: string) => Promise<void>;
+    loginWithGoogle: () => void;
     logout: () => void;
-    createProfile: (name: string, password?: string) => void;
-    deleteProfile: (profileId: string) => void;
 }
 
 const AuthContext = createContext<IAuthContext | undefined>(undefined);
 
-const PROFILES_KEY = 'dominoScorekeeperProfiles';
-const CURRENT_PROFILE_ID_KEY = 'dominoScorekeeperCurrentProfileId';
+// --- MOCK API FUNCTIONS ---
+// In a real application, you would replace these with `fetch` calls to your backend API.
 
-// Simple hashing function (for obfuscation, not security)
-const simpleHash = async (text: string) => {
-    const buffer = new TextEncoder().encode(text);
-    const hashBuffer = await crypto.subtle.digest('SHA-256', buffer);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-}
+const fakeApiCall = (delay = 1000) => new Promise(resolve => setTimeout(resolve, delay));
 
+const mockLogin = async (email: string, password?: string): Promise<User> => {
+    await fakeApiCall();
+    console.log(`Attempting login with email: ${email}`);
+    // Basic validation for demonstration. A real backend would handle this.
+    if (!email || !password) {
+        throw new Error("ایمیل و رمز عبور لازم است.");
+    }
+    if (password === 'password123') {
+        return { id: 'user-123', name: 'کاربر تستی', email: email };
+    }
+    throw new Error("نام کاربری یا رمز عبور نامعتبر است.");
+};
+
+const mockRegister = async (name: string, email: string, password?: string): Promise<User> => {
+    await fakeApiCall();
+    console.log(`Attempting registration for: ${name} <${email}>`);
+    if (!name || !email || !password) {
+        throw new Error("نام، ایمیل و رمز عبور لازم است.");
+    }
+    // Simulate successful registration
+    return { id: `user-${Date.now()}`, name, email };
+};
+
+// --- AUTH PROVIDER ---
 
 export const AuthProvider: React.FC<{children: React.ReactNode}> = ({ children }) => {
-    const [profiles, setProfiles] = useState<Profile[]>([]);
-    const [currentProfile, setCurrentProfile] = useState<Profile | null>(null);
+    const [user, setUser] = useState<User | null>(null);
+    const [isLoading, setIsLoading] = useState(true);
+    const [authScreen, setAuthScreen] = useState<AuthScreen>('login');
 
     useEffect(() => {
-        // Load profiles from localStorage
-        try {
-            const profilesJson = localStorage.getItem(PROFILES_KEY);
-            const loadedProfiles = profilesJson ? JSON.parse(profilesJson) : [];
-            setProfiles(loadedProfiles);
-            
-            // Check for a session-persisted profile ID
-            const currentProfileId = sessionStorage.getItem(CURRENT_PROFILE_ID_KEY);
-            if (currentProfileId) {
-                const profileToLoad = loadedProfiles.find((p: Profile) => p.id === currentProfileId);
-                if (profileToLoad && !profileToLoad.passwordHash) { // Auto-login if no password
-                    setCurrentProfile(profileToLoad);
+        // This effect simulates checking for an existing session on app load.
+        // In a real app, you might validate a token with a `GET /api/auth/me` endpoint.
+        const checkSession = async () => {
+            setIsLoading(true);
+            try {
+                // Simulate checking a stored token
+                const token = sessionStorage.getItem('authToken');
+                if (token) {
+                    await fakeApiCall(500); // Simulate network latency
+                    // In a real app, you would decode the token or send it to the backend for validation
+                    setUser({ id: 'user-123', name: 'کاربر تستی', email: 'test@example.com' });
                 }
+            } catch (error) {
+                setUser(null);
+            } finally {
+                setIsLoading(false);
             }
-
-        } catch (error) {
-            console.error("Failed to load profiles from localStorage", error);
-        }
+        };
+        checkSession();
     }, []);
 
-    const saveProfiles = (updatedProfiles: Profile[]) => {
-        setProfiles(updatedProfiles);
-        localStorage.setItem(PROFILES_KEY, JSON.stringify(updatedProfiles));
-    };
-
-    const login = async (profileId: string, password?: string) => {
-        const profile = profiles.find(p => p.id === profileId);
-        if (!profile) {
-            alert("پروفایل یافت نشد.");
-            return;
+    const login = async (email: string, password?: string) => {
+        setIsLoading(true);
+        try {
+            const loggedInUser = await mockLogin(email, password);
+            setUser(loggedInUser);
+            sessionStorage.setItem('authToken', 'fake-jwt-token'); // Simulate session persistence
+        } catch (error) {
+            alert((error as Error).message);
+            throw error;
+        } finally {
+            setIsLoading(false);
         }
-
-        if (profile.passwordHash) {
-            if (!password) {
-                alert("رمز عبور لازم است.");
-                return;
-            }
-            const hashedInput = await simpleHash(password);
-            if (hashedInput !== profile.passwordHash) {
-                alert("رمز عبور اشتباه است.");
-                return;
-            }
-        }
-        
-        setCurrentProfile(profile);
-        sessionStorage.setItem(CURRENT_PROFILE_ID_KEY, profile.id);
     };
 
-    const logout = () => {
-        setCurrentProfile(null);
-        sessionStorage.removeItem(CURRENT_PROFILE_ID_KEY);
-    };
-
-    const createProfile = async (name: string, password?: string) => {
-        const newProfile: Profile = {
-            id: Date.now().toString(),
-            name,
-        };
-        if (password) {
-            newProfile.passwordHash = await simpleHash(password);
-        }
-        const updatedProfiles = [...profiles, newProfile];
-        saveProfiles(updatedProfiles);
-    };
-
-    const deleteProfile = (profileId: string) => {
-        const updatedProfiles = profiles.filter(p => p.id !== profileId);
-        saveProfiles(updatedProfiles);
-        deleteProfileData(profileId); // Clear associated game/player data
-        if (currentProfile?.id === profileId) {
-            logout();
+    const register = async (name: string, email: string, password?: string) => {
+        setIsLoading(true);
+        try {
+            const registeredUser = await mockRegister(name, email, password);
+            setUser(registeredUser);
+            sessionStorage.setItem('authToken', 'fake-jwt-token'); // Simulate session persistence
+        } catch (error) {
+            alert((error as Error).message);
+            throw error;
+        } finally {
+            setIsLoading(false);
         }
     };
     
+    const loginWithGoogle = () => {
+        // In a real application, this would redirect to your backend's Google auth route.
+        // e.g., window.location.href = '/api/auth/google';
+        alert("منطق ورود با گوگل در اینجا پیاده‌سازی می‌شود. این کار باعث هدایت به بک‌اند شما می‌شود.");
+        // For demonstration, we'll just log in a mock user after a delay.
+        setIsLoading(true);
+        setTimeout(() => {
+            const googleUser = { id: 'google-user-456', name: 'کاربر گوگل', email: 'google.user@example.com' };
+            setUser(googleUser);
+            sessionStorage.setItem('authToken', 'fake-google-jwt-token');
+            setIsLoading(false);
+        }, 1500);
+    };
+
+    const logout = () => {
+        setUser(null);
+        sessionStorage.removeItem('authToken');
+        setAuthScreen('login'); // Reset to login screen after logout
+    };
+    
     return (
-        <AuthContext.Provider value={{ profiles, currentProfile, login, logout, createProfile, deleteProfile }}>
+        <AuthContext.Provider value={{ 
+            user, 
+            isAuthenticated: !!user,
+            isLoading,
+            authScreen,
+            setAuthScreen,
+            login,
+            register,
+            loginWithGoogle,
+            logout 
+        }}>
             {children}
         </AuthContext.Provider>
     );

@@ -4,6 +4,7 @@ import { getPlayers, savePlayers, updatePlayer, deletePlayer } from '../lib/play
 import { useFocusTrap } from '../hooks/useFocusTrap';
 import { AIAvatarGeneratorModal } from './AIAvatarGeneratorModal';
 import { SparklesIcon } from './icons';
+import { useAuth } from '../context/AuthContext';
 
 const PlayerAvatar: React.FC<{ avatar?: string; className?: string }> = ({ avatar, className = "w-10 h-10" }) => {
     if (!avatar) return <span className={`${className} flex items-center justify-center bg-gray-200 dark:bg-gray-700 rounded-full text-lg`}>👤</span>;
@@ -20,6 +21,7 @@ interface PlayerManagementModalProps {
 }
 
 export const PlayerManagementModal: React.FC<PlayerManagementModalProps> = ({ isOpen, onClose, onPlayersUpdate }) => {
+  const { user } = useAuth();
   const [players, setPlayers] = useState<Player[]>([]);
   const [newPlayerName, setNewPlayerName] = useState('');
   const [newPlayerAvatar, setNewPlayerAvatar] = useState('');
@@ -29,24 +31,26 @@ export const PlayerManagementModal: React.FC<PlayerManagementModalProps> = ({ is
   const focusTrapRef = useFocusTrap<HTMLDivElement>(isOpen);
   
   useEffect(() => {
-    if(isOpen) {
-        setPlayers(getPlayers());
+    if(isOpen && user) {
+        setPlayers(getPlayers(user.id));
     }
-  }, [isOpen]);
+  }, [isOpen, user]);
 
   if (!isOpen) return null;
 
   const handleUpdate = () => {
-    const updatedPlayers = getPlayers();
+    if (!user) return;
+    const updatedPlayers = getPlayers(user.id);
     setPlayers(updatedPlayers);
     onPlayersUpdate(updatedPlayers);
   };
 
   const handleAddNewPlayer = () => {
+    if (!user) return;
     if (newPlayerName.trim() && !players.some(p => p.name === newPlayerName.trim())) {
       const newPlayer: Player = { id: Date.now().toString(), name: newPlayerName.trim(), avatar: newPlayerAvatar || '👤' };
       const updatedPlayers = [...players, newPlayer];
-      savePlayers(updatedPlayers);
+      savePlayers(user.id, updatedPlayers);
       setNewPlayerName('');
       setNewPlayerAvatar('');
       handleUpdate();
@@ -54,18 +58,20 @@ export const PlayerManagementModal: React.FC<PlayerManagementModalProps> = ({ is
   };
 
   const handleEdit = (player: Player) => {
+    if (!user) return;
     const newName = prompt("نام جدید را وارد کنید:", player.name);
     if (newName && newName.trim()) {
       const newAvatar = prompt("ایموجی آواتار جدید را وارد کنید (برای آواتار AI از دکمه ✨ استفاده کنید):", player.avatar);
       const updated: Player = { ...player, name: newName.trim(), avatar: newAvatar || player.avatar };
-      updatePlayer(updated);
+      updatePlayer(user.id, updated);
       handleUpdate();
     }
   };
   
   const handleDelete = (player: Player) => {
+    if (!user) return;
     if (window.confirm(`آیا از حذف ${player.name} مطمئن هستید؟`)) {
-      deletePlayer(player.id);
+      deletePlayer(user.id, player.id);
       handleUpdate();
     }
   };
@@ -76,9 +82,9 @@ export const PlayerManagementModal: React.FC<PlayerManagementModalProps> = ({ is
   };
 
   const handleAvatarGenerated = (base64Image: string) => {
-    if (playerForAIGen) {
+    if (playerForAIGen && user) {
         const updated: Player = { ...playerForAIGen, avatar: base64Image };
-        updatePlayer(updated);
+        updatePlayer(user.id, updated);
         handleUpdate();
     }
   };
