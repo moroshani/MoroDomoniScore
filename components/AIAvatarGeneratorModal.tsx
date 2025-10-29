@@ -62,9 +62,9 @@ export const AIAvatarGeneratorModal: React.FC<AIAvatarGeneratorModalProps> = ({ 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center z-[60] p-4" role="dialog" aria-modal="true">
       <div ref={focusTrapRef} className="glass-card rounded-3xl p-8 max-w-md w-full">
-        <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-6 text-center">ساخت آواتار با هوش مصنوعی</h2>
+        <h2 className="text-3xl font-bold text-[var(--color-text-primary)] mb-6 text-center">ساخت آواتار با هوش مصنوعی</h2>
         
-        <div className="w-full aspect-square bg-gray-500/10 dark:bg-gray-900/20 rounded-2xl mb-6 flex items-center justify-center">
+        <div className="w-full aspect-square bg-gray-500/10 dark:bg-black/20 rounded-2xl mb-6 flex items-center justify-center">
           {isLoading && <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600"></div>}
           {error && <p className="text-red-500 text-center p-4">{error}</p>}
           {generatedImage && <img src={generatedImage} alt="Generated Avatar" className="w-full h-full object-cover rounded-2xl" />}
@@ -73,13 +73,13 @@ export const AIAvatarGeneratorModal: React.FC<AIAvatarGeneratorModalProps> = ({ 
 
         {!generatedImage && (
           <div className="space-y-4">
-            <p className="text-center text-gray-600 dark:text-gray-300">توصیف کوتاهی از آواتار مورد نظر خود ارائه دهید.</p>
+            <p className="text-center text-[var(--color-text-secondary)]">توصیف کوتاهی از آواتار مورد نظر خود ارائه دهید.</p>
             <input 
               type="text" 
               value={prompt}
               onChange={e => setPrompt(e.target.value)}
               placeholder="مثال: یک شیر با تاج طلایی"
-              className="w-full px-4 py-3 bg-white/50 dark:bg-gray-800/50 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition"
+              className="form-input"
             />
             <button onClick={handleGenerate} disabled={isLoading} className="btn-primary">
               <SparklesIcon className="w-5 h-5 ms-2" />

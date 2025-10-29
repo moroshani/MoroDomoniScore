@@ -73,9 +73,12 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center font-sans antialiased p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen w-full font-sans antialiased relative">
       <ThemeSwitcher theme={theme} toggleTheme={toggleTheme} />
-      {renderContent()}
+      
+      <main className="min-h-screen flex flex-col items-center justify-center p-4 lg:p-8">
+         {renderContent()}
+      </main>
       
       <WinnerModal
         isOpen={!!winState && !isNightRecapVisible}

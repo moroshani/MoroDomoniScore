@@ -76,7 +76,7 @@ export const GameProvider: React.FC<{children: React.ReactNode}> = ({ children }
         }
         localStorage.setItem('theme', theme);
     }, [theme]);
-
+    
     const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
 
     const handleModeSelect = (mode: GameModeDetails) => {
@@ -282,8 +282,6 @@ export const GameProvider: React.FC<{children: React.ReactNode}> = ({ children }
         setLastRoundState(null);
         setTieBreakerMessage('');
         setRoundHistory([]);
-        setIsNightRecapVisible(false);
-        setNightRecapAIContent('');
     };
 
     const closeRecapAndReset = () => {

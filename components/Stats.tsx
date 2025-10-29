@@ -89,16 +89,16 @@ export const Stats: React.FC<StatsProps> = ({ onBack }) => {
   };
 
   return (
-    <div className="w-full max-w-7xl mx-auto p-4 md:p-8">
+    <div className="w-full max-w-7xl mx-auto p-4 md:p-8 animate-fade-in-slow">
       <header className="flex justify-between items-center mb-10">
-        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800 dark:text-gray-100">آمار بازیکنان</h1>
+        <h1 className="text-4xl md:text-5xl font-extrabold text-[var(--color-text-primary)]">آمار بازیکنان</h1>
         <button onClick={onBack} className="btn-secondary !w-auto !py-2 !px-4 !text-sm">بازگشت به منو</button>
       </header>
 
       {stats.length === 0 ? (
         <div className="text-center glass-card p-12 rounded-3xl">
-          <h2 className="text-2xl font-bold text-gray-700 dark:text-gray-200">آماری برای نمایش وجود ندارد</h2>
-          <p className="mt-2 text-gray-500 dark:text-gray-400">چند بازی انجام دهید تا آمار بازیکنان را اینجا ببینید!</p>
+          <h2 className="text-2xl font-bold text-[var(--color-text-secondary)]">آماری برای نمایش وجود ندارد</h2>
+          <p className="mt-2 text-[var(--color-text-secondary)]">چند بازی انجام دهید تا آمار بازیکنان را اینجا ببینید!</p>
         </div>
       ) : (
         <div className="space-y-10">
@@ -110,23 +110,23 @@ export const Stats: React.FC<StatsProps> = ({ onBack }) => {
                 />
             </div>
             <div className="glass-card rounded-3xl p-6 flex flex-col">
-                <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100 text-center">آمار رو در رو</h2>
+                <h2 className="text-2xl font-bold mb-4 text-[var(--color-text-primary)] text-center">آمار رو در رو</h2>
                 <div className="grid grid-cols-2 gap-4 mb-4">
-                    <select value={h2hPlayer1} onChange={e => setH2hPlayer1(e.target.value)} className="w-full px-4 py-3 bg-white/50 dark:bg-gray-800/50 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition">
+                    <select value={h2hPlayer1} onChange={e => setH2hPlayer1(e.target.value)} className="form-input">
                         <option value="" disabled>بازیکن ۱</option>
                         {stats.map(s => <option key={s.name} value={s.name}>{s.name}</option>)}
                     </select>
-                    <select value={h2hPlayer2} onChange={e => setH2hPlayer2(e.target.value)} className="w-full px-4 py-3 bg-white/50 dark:bg-gray-800/50 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition">
+                    <select value={h2hPlayer2} onChange={e => setH2hPlayer2(e.target.value)} className="form-input">
                         <option value="" disabled>بازیکن ۲</option>
                         {stats.filter(s => s.name !== h2hPlayer1).map(s => <option key={s.name} value={s.name}>{s.name}</option>)}
                     </select>
                 </div>
                 {h2hStats && (
                     <div className="text-center my-auto space-y-2">
-                        <p className="text-lg font-bold">{h2hStats.player1Name} <span className="text-teal-500 dark:text-teal-400 font-black text-2xl font-numeric">{h2hStats.player1Wins}</span></p>
-                        <p className="text-gray-500 dark:text-gray-400">در مقابل</p>
-                         <p className="text-lg font-bold">{h2hStats.player2Name} <span className="text-teal-500 dark:text-teal-400 font-black text-2xl font-numeric">{h2hStats.player2Wins}</span></p>
-                        <p className="text-sm text-gray-500 dark:text-gray-400 pt-4">در {h2hStats.gamesPlayedTogether} بازی مشترک. ({h2hStats.ties} تساوی/هم‌تیمی)</p>
+                        <p className="text-lg font-bold text-[var(--color-text-primary)]">{h2hStats.player1Name} <span className="text-[var(--color-accent-primary)] font-black text-2xl font-numeric">{h2hStats.player1Wins}</span></p>
+                        <p className="text-[var(--color-text-secondary)]">در مقابل</p>
+                         <p className="text-lg font-bold text-[var(--color-text-primary)]">{h2hStats.player2Name} <span className="text-[var(--color-accent-primary)] font-black text-2xl font-numeric">{h2hStats.player2Wins}</span></p>
+                        <p className="text-sm text-[var(--color-text-secondary)] pt-4">در {h2hStats.gamesPlayedTogether} بازی مشترک. ({h2hStats.ties} تساوی/هم‌تیمی)</p>
                     </div>
                 )}
             </div>
@@ -136,14 +136,14 @@ export const Stats: React.FC<StatsProps> = ({ onBack }) => {
             {stats.map(player => (
               <div key={player.name} className="glass-card rounded-3xl p-6 flex flex-col text-center">
                 <PlayerAvatar avatar={player.avatar} />
-                <h2 className="text-3xl font-bold text-teal-700 dark:text-teal-400 mt-4 mb-4">{player.name}</h2>
-                <div className="space-y-3 text-gray-700 dark:text-gray-200 flex-grow text-lg text-right">
-                  <div className="flex justify-between"><span className="font-semibold">بازی‌ها:</span><span className="font-numeric font-bold">{player.gamesPlayed}</span></div>
-                  <div className="flex justify-between"><span className="font-semibold">بردهای بازی:</span><span className="font-numeric font-bold">{player.gamesWon}</span></div>
-                   <div className="flex justify-between"><span className="font-semibold">بردهای ست:</span><span className="font-numeric font-bold">{player.setWins}</span></div>
-                  <div className="flex justify-between"><span className="font-semibold">نرخ برد:</span><span className="font-bold text-green-600 dark:text-green-400 font-numeric">{player.winRate}</span></div>
-                  <div className="flex justify-between"><span className="font-semibold">میانگین امتیاز:</span><span className="font-numeric font-bold">{player.avgPointsPerGame}</span></div>
-                  <div className="flex justify-between items-center"><span className="font-semibold">شب‌های برده:</span><span className="flex items-center gap-1 font-bold text-amber-600 dark:text-amber-400 font-numeric">{player.nightWins} <CrownIcon className="w-5 h-5"/></span></div>
+                <h2 className="text-3xl font-bold text-[var(--color-accent-primary)] mt-4 mb-4">{player.name}</h2>
+                <div className="space-y-3 text-[var(--color-text-primary)] flex-grow text-lg text-right">
+                  <div className="flex justify-between"><span className="font-semibold text-[var(--color-text-secondary)]">بازی‌ها:</span><span className="font-numeric font-bold">{player.gamesPlayed}</span></div>
+                  <div className="flex justify-between"><span className="font-semibold text-[var(--color-text-secondary)]">بردهای بازی:</span><span className="font-numeric font-bold">{player.gamesWon}</span></div>
+                   <div className="flex justify-between"><span className="font-semibold text-[var(--color-text-secondary)]">بردهای ست:</span><span className="font-numeric font-bold">{player.setWins}</span></div>
+                  <div className="flex justify-between"><span className="font-semibold text-[var(--color-text-secondary)]">نرخ برد:</span><span className="font-bold text-[var(--color-accent-success)] font-numeric">{player.winRate}</span></div>
+                  <div className="flex justify-between"><span className="font-semibold text-[var(--color-text-secondary)]">میانگین امتیاز:</span><span className="font-numeric font-bold">{player.avgPointsPerGame}</span></div>
+                  <div className="flex justify-between items-center"><span className="font-semibold text-[var(--color-text-secondary)]">شب‌های برده:</span><span className="flex items-center gap-1 font-bold text-[var(--color-accent-warning)] font-numeric">{player.nightWins} <CrownIcon className="w-5 h-5"/></span></div>
                 </div>
                 <button onClick={() => handleAnalyze(player)} className="mt-6 w-full inline-flex items-center justify-center bg-teal-600/20 text-teal-800 dark:bg-teal-500/20 dark:text-teal-300 font-bold py-3 px-4 rounded-lg hover:bg-teal-600/30 dark:hover:bg-teal-500/30 transition">
                     <SparklesIcon className="w-5 h-5 ms-2" />

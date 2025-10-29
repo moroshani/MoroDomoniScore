@@ -5,157 +5,146 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>امتیاز شمار دومینو</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#1C1C21">
-    <style>
-      :root {
-        /* Light Mode: "Digital Domino Table" Theme */
-        --color-bg-light: #F5F3F0; /* Parchment */
-        --color-surface-light: rgba(255, 255, 255, 0.40); /* Frosted Glass */
-        --color-text-primary-light: #3E352E; /* Dark Slate */
-        --color-text-secondary-light: #796A5F; /* Muted Slate */
-        --color-border-light: rgba(255, 255, 255, 0.60); /* Ivory Edge */
-        --color-accent-primary-light: #00695C; /* Deep Teal */
-        --color-accent-success-light: #388E3C; /* Forest Green */
-        --color-accent-warning-light: #FFA000; /* Warm Amber */
+    <meta name="theme-color" content="#111827">
 
-        /* Dark Mode: "Digital Domino Table" Theme */
-        --color-bg-dark: #1C1C21; /* Deep Charcoal */
-        --color-surface-dark: rgba(45, 45, 52, 0.30); /* Smoked Glass */
-        --color-text-primary-dark: #EAE6E1; /* Soft Ivory */
-        --color-text-secondary-dark: #9E9E9E; /* Medium Gray */
-        --color-border-dark: rgba(255, 255, 255, 0.15); /* Silver Edge */
-        --color-accent-primary-dark: #00BFA5; /* Vibrant Teal */
-        --color-accent-success-dark: #69F0AE; /* Bright Mint */
-        --color-accent-warning-dark: #FFD740; /* Vivid Amber */
-
-        /* Default to Light Mode variables */
-        --color-bg: var(--color-bg-light);
-        --color-surface: var(--color-surface-light);
-        --color-text-primary: var(--color-text-primary-light);
-        --color-text-secondary: var(--color-text-secondary-light);
-        --color-border: var(--color-border-light);
-        --color-accent-primary: var(--color-accent-primary-light);
-        --color-accent-success: var(--color-accent-success-light);
-        --color-accent-warning: var(--color-accent-warning-light);
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Vazirmatn', 'sans-serif'],
+              numeric: ['Vazirmatn', 'monospace'],
+            },
+            colors: {
+              'primary': {
+                'light': '#0891b2', // cyan-600
+                'DEFAULT': '#0891b2',
+                'dark': '#22d3ee' // cyan-400
+              },
+              'secondary': {
+                'light': '#475569', // slate-600
+                'DEFAULT': '#475569',
+                'dark': '#94a3b8' // slate-400
+              },
+              'accent': {
+                'light': '#f59e0b', // amber-500
+                'DEFAULT': '#f59e0b',
+                'dark': '#fcd34d' // amber-300
+              },
+              'success': {
+                'light': '#16a34a', // green-600
+                'DEFAULT': '#16a34a',
+                'dark': '#4ade80' // green-400
+              },
+              'danger': {
+                'light': '#dc2626', // red-600
+                'DEFAULT': '#dc2626',
+                'dark': '#f87171' // red-400
+              },
+              'bkg': {
+                'light': '#f1f5f9', // slate-100
+                'DEFAULT': '#f1f5f9',
+                'dark': '#1e293b' // slate-800
+              },
+              'surface': {
+                'light': 'rgba(255, 255, 255, 0.6)',
+                'DEFAULT': 'rgba(255, 255, 255, 0.6)',
+                'dark': 'rgba(30, 41, 59, 0.6)' // slate-800 with opacity
+              },
+              'text-primary': {
+                'light': '#1e293b', // slate-800
+                'DEFAULT': '#1e293b',
+                'dark': '#e2e8f0' // slate-200
+              },
+              'text-secondary': {
+                'light': '#64748b', // slate-500
+                'DEFAULT': '#64748b',
+                'dark': '#94a3b8' // slate-400
+              }
+            }
+          }
+        }
       }
-      .dark {
-        --color-bg: var(--color-bg-dark);
-        --color-surface: var(--color-surface-dark);
-        --color-text-primary: var(--color-text-primary-dark);
-        --color-text-secondary: var(--color-text-secondary-dark);
-        --color-border: var(--color-border-dark);
-        --color-accent-primary: var(--color-accent-primary-dark);
-        --color-accent-success: var(--color-accent-success-dark);
-        --color-accent-warning: var(--color-accent-warning-dark);
+    </script>
+    <style type="text/tailwindcss">
+      @layer base {
+        body {
+          @apply bg-bkg-light dark:bg-bkg-dark text-text-primary-light dark:text-text-primary-dark font-sans transition-colors duration-500;
+          position: relative;
+          overflow-x: hidden;
+        }
+        body::before {
+          content: '';
+          position: fixed;
+          top: -20%; left: -20%;
+          width: 140%; height: 140%;
+          background-image:
+            radial-gradient(circle at 15% 25%, theme('colors.primary.dark / 15%'), transparent 40%),
+            radial-gradient(circle at 85% 75%, theme('colors.accent.DEFAULT / 12%'), transparent 50%);
+          background-color: transparent;
+          will-change: transform;
+          animation: gradient-pan 45s linear infinite;
+          z-index: -1;
+        }
+        .dark body::before {
+           background-image:
+            radial-gradient(circle at 15% 25%, theme('colors.primary.dark / 20%'), transparent 40%),
+            radial-gradient(circle at 85% 75%, theme('colors.accent.dark / 15%'), transparent 50%);
+        }
       }
-      
-      @keyframes score-pop {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.15); color: var(--color-accent-success); }
-        100% { transform: scale(1); }
+      @layer components {
+        .glass-card {
+            @apply bg-surface-light dark:bg-surface-dark backdrop-blur-2xl border border-white/20 dark:border-slate-700/60 shadow-2xl rounded-3xl;
+        }
+        .btn {
+            @apply px-6 py-3 font-bold rounded-xl shadow-lg transition-all duration-300 ease-in-out flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed;
+        }
+        .btn-primary {
+            @apply btn bg-primary text-white hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-primary/50 transform hover:-translate-y-1;
+        }
+        .btn-secondary {
+            @apply btn bg-slate-500/20 text-text-primary-light dark:text-text-primary-dark hover:bg-slate-500/30 focus:outline-none focus:ring-4 focus:ring-slate-500/50;
+        }
+         .form-input {
+            @apply w-full px-4 py-3 bg-slate-500/10 dark:bg-slate-900/40 border-2 border-slate-300 dark:border-slate-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition;
+        }
       }
-      .animate-score-pop {
-        animation: score-pop 0.5s ease-in-out;
+      @keyframes gradient-pan {
+        0% { transform: rotate(0deg) scale(1.2); }
+        50% { transform: rotate(180deg) scale(1.3); }
+        100% { transform: rotate(360deg) scale(1.2); }
       }
-      
-      @keyframes confetti-fall {
-        0% { transform: translateY(-10vh) rotateZ(0deg) rotateY(0deg); opacity: 1; }
-        100% { transform: translateY(110vh) rotateZ(720deg) rotateY(360deg); opacity: 0; }
+      @keyframes fade-in {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0px); }
       }
-      .confetti-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-        pointer-events: none;
-      }
-      .confetti-piece {
-        position: absolute;
-        width: 8px;
-        height: 16px;
-        opacity: 0;
-        animation-name: confetti-fall;
-        animation-timing-function: linear;
-        animation-fill-mode: forwards;
-      }
-
-      body {
-        font-family: 'Vazirmatn', sans-serif;
-        background-color: var(--color-bg);
-        color: var(--color-text-primary);
-        transition: background-color 0.3s ease, color 0.3s ease;
-        background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4"%3E%3Cpath fill="%239C92AC" fill-opacity="0.05" d="M1 3h1v1H1V3zm2-2h1v1H3V1z"%3E%3C/path%3E%3C/svg%3E');
-      }
-      .dark body {
-        background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4"%3E%3Cpath fill="%239C92AC" fill-opacity="0.08" d="M1 3h1v1H1V3zm2-2h1v1H3V1z"%3E%3C/path%3E%3C/svg%3E');
-      }
-      .font-numeric {
-        font-family: 'Vazirmatn', monospace;
-      }
-      .glass-card {
-        background-color: var(--color-surface);
-        backdrop-filter: blur(16px) saturate(180%);
-        -webkit-backdrop-filter: blur(16px) saturate(180%);
-        border: 1px solid var(--color-border);
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
-      }
-      .btn-primary {
-        @apply w-full justify-center inline-flex items-center px-6 py-3 border border-transparent text-base font-bold rounded-xl shadow-lg text-white disabled:bg-gray-400 disabled:cursor-not-allowed transition-all transform hover:scale-[1.02];
-        background-color: var(--color-accent-primary);
-      }
-      .btn-primary:hover:not(:disabled) {
-        filter: brightness(1.1);
-      }
-      .btn-primary:focus {
-        outline: none;
-        box-shadow: 0 0 0 4px var(--color-accent-primary-light);
-      }
-      .dark .btn-primary:focus {
-         box-shadow: 0 0 0 4px var(--color-accent-primary-dark);
-      }
-      .btn-secondary {
-        @apply w-full justify-center inline-flex items-center px-6 py-3 border text-base font-bold rounded-xl shadow-sm focus:outline-none transition-all transform hover:scale-[1.02];
-        background-color: var(--color-surface);
-        color: var(--color-text-primary);
-        border-color: var(--color-border);
-      }
-      .btn-secondary:hover {
-        filter: brightness(1.1);
+      .animate-fade-in {
+        animation: fade-in 0.5s ease-out forwards;
       }
     </style>
+    <script>
+      if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
   <script type="importmap">
 {
   "imports": {
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.27.0",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "react": "https://aistudiocdn.com/react@^19.2.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.27.0"
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
   }
 }
-</script>
-<script>
-  if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark')
-  } else {
-    document.documentElement.classList.remove('dark')
-  }
-
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js').then(registration => {
-        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-      }, err => {
-        console.log('ServiceWorker registration failed: ', err);
-      });
-    });
-  }
 </script>
 </head>
   <body>

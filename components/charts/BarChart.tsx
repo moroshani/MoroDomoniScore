@@ -14,7 +14,7 @@ export const BarChart: React.FC<BarChartProps> = ({ data, title }) => {
 
   return (
     <div className="p-4 rounded-lg">
-      <h3 className="text-xl font-bold text-center mb-6 text-gray-800 dark:text-gray-100">{title}</h3>
+      <h3 className="text-xl font-bold text-center mb-6 text-[var(--color-text-primary)]">{title}</h3>
       <svg viewBox={`0 0 ${chartWidth} ${chartHeight + 60}`} className="w-full h-auto" aria-label={title} role="img">
         <defs>
           {data.map((d, i) => (
@@ -23,7 +23,7 @@ export const BarChart: React.FC<BarChartProps> = ({ data, title }) => {
             </clipPath>
           ))}
         </defs>
-        <line x1="0" y1={chartHeight} x2={chartWidth} y2={chartHeight} stroke="currentColor" className="text-gray-300/50 dark:text-gray-600/50" strokeWidth="2" />
+        <line x1="0" y1={chartHeight} x2={chartWidth} y2={chartHeight} stroke="var(--color-border)" strokeWidth="2" />
         {data.map((d, i) => {
           const barHeight = maxValue > 0 ? (d.value / maxValue) * chartHeight : 0;
           const x = i * (barWidth + barMargin) + barMargin;
@@ -37,12 +37,12 @@ export const BarChart: React.FC<BarChartProps> = ({ data, title }) => {
                 width={barWidth}
                 height={barHeight}
                 rx="4"
-                className="fill-current text-teal-500 dark:text-teal-400 transition-all duration-300 hover:opacity-80"
+                className="fill-current text-[var(--color-accent-primary)] transition-all duration-300 hover:opacity-80"
               />
-              <text x={x + barWidth / 2} y={chartHeight + 10} textAnchor="middle" dominantBaseline="hanging" className="text-xs fill-current text-gray-700 dark:text-gray-200 font-semibold">
+              <text x={x + barWidth / 2} y={chartHeight + 10} textAnchor="middle" dominantBaseline="hanging" className="text-xs fill-current text-[var(--color-text-secondary)] font-semibold">
                 {d.label}
               </text>
-              <text x={x + barWidth / 2} y={y - 8} textAnchor="middle" className="text-sm fill-current text-gray-800 dark:text-gray-100 font-bold">
+              <text x={x + barWidth / 2} y={y - 8} textAnchor="middle" className="text-sm fill-current text-[var(--color-text-primary)] font-bold">
                 {d.value}%
               </text>
               {d.avatar ? (
