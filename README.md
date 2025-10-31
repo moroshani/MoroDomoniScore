@@ -4,17 +4,32 @@
 
 # Run and deploy your AI Studio app
 
-This contains everything you need to run your app locally.
-
-View your app in AI Studio: https://ai.studio/apps/drive/18HkIse9hVukJy0PZCh51oDCMcwUKqWYd
+Modernised Domino Helper now expects Supabase for authentication and storage while remaining deployable on shared hosting. Use these instructions to run or build the app locally.
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
+**Prerequisites:**  Node.js 18+
 
+1. Install dependencies (if the network blocks npm, add packages manually to `package.json`):
+   ```bash
+   npm install
+   ```
+2. Create `.env.local` with the required keys:
+   ```bash
+   VITE_SUPABASE_URL=your-supabase-url
+   VITE_SUPABASE_ANON_KEY=your-public-anon-key
+   GEMINI_API_KEY=your-gemini-api-key
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+   The app registers a service worker automatically, so open it on `http://localhost:5173` to test PWA install and offline behaviour.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Production build
+
+```
+npm run build
+```
+
+The generated `dist/` folder can be uploaded to shared hosting. Ensure the same Supabase environment variables are injected at build time.

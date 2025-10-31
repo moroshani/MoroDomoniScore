@@ -30,17 +30,56 @@ export const History: React.FC<HistoryProps> = ({ onBack }) => {
   const { user } = useAuth();
   const [history, setHistory] = useState<NightRecord[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (user) {
-      setHistory(getHistory(user.id).sort((a, b) => parseInt(b.id) - parseInt(a.id)));
-    }
+    let isMounted = true;
+
+    const loadHistory = async () => {
+      if (!user) {
+        if (isMounted) {
+          setHistory([]);
+          setIsLoading(false);
+        }
+        return;
+      }
+
+      setIsLoading(true);
+      setError(null);
+
+      try {
+        const remoteHistory = await getHistory(user.id);
+        if (!isMounted) return;
+        setHistory(remoteHistory.sort((a, b) => parseInt(b.id) - parseInt(a.id)));
+      } catch (err) {
+        console.error('Failed to load history', err);
+        if (isMounted) {
+          setError('بارگذاری تاریخچه با مشکل مواجه شد. اتصال خود را بررسی و دوباره تلاش کنید.');
+        }
+      } finally {
+        if (isMounted) {
+          setIsLoading(false);
+        }
+      }
+    };
+
+    loadHistory();
+
+    return () => {
+      isMounted = false;
+    };
   }, [user]);
 
-  const handleClearHistory = () => {
+  const handleClearHistory = async () => {
     if (user && window.confirm("آیا مطمئن هستید که می‌خواهید تمام تاریخچه بازی‌ها را برای همیشه حذف کنید؟")) {
-      clearHistoryFromStorage(user.id);
-      setHistory([]);
+      try {
+        await clearHistoryFromStorage(user.id);
+        setHistory([]);
+      } catch (err) {
+        console.error('Failed to clear history', err);
+        setError('حذف تاریخچه انجام نشد. لطفاً دوباره تلاش کنید.');
+      }
     }
   };
 
@@ -103,7 +142,17 @@ export const History: React.FC<HistoryProps> = ({ onBack }) => {
         </div>
       )}
 
-      {history.length === 0 ? (
+      {isLoading ? (
+        <div className="text-center glass-card p-12 rounded-3xl">
+          <h2 className="text-2xl font-bold text-[var(--color-text-secondary)]">در حال بارگذاری تاریخچه...</h2>
+          <p className="mt-2 text-gray-500 dark:text-gray-400">لطفاً صبر کنید.</p>
+        </div>
+      ) : error ? (
+        <div className="text-center glass-card p-12 rounded-3xl">
+          <h2 className="text-2xl font-bold text-red-600 dark:text-red-300">خطا در بارگذاری تاریخچه</h2>
+          <p className="mt-2 text-gray-500 dark:text-gray-400">{error}</p>
+        </div>
+      ) : history.length === 0 ? (
         <div className="text-center glass-card p-12 rounded-3xl">
           <h2 className="text-2xl font-bold text-[var(--color-text-secondary)]">هنوز هیچ بازی انجام نشده است</h2>
           <p className="mt-2 text-gray-500 dark:text-gray-400">یک بازی انجام دهید تا تاریخچه آن را اینجا ببینید!</p>

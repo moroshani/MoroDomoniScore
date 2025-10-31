@@ -1,149 +1,229 @@
-import React, { createContext, useState, useEffect, useContext } from 'react';
+import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import type { User } from '../types';
+import { supabase, isSupabaseConfigured } from '../lib/supabaseClient';
 
-// This enum defines the two possible screens for an unauthenticated user.
 export type AuthScreen = 'login' | 'register';
 
 interface IAuthContext {
-    user: User | null;
-    isAuthenticated: boolean;
-    isLoading: boolean;
-    authScreen: AuthScreen;
-    setAuthScreen: (screen: AuthScreen) => void;
-    login: (email: string, password?: string) => Promise<void>;
-    register: (name: string, email: string, password?: string) => Promise<void>;
-    loginWithGoogle: () => void;
-    logout: () => void;
+  user: User | null;
+  isAuthenticated: boolean;
+  isLoading: boolean;
+  authScreen: AuthScreen;
+  setAuthScreen: (screen: AuthScreen) => void;
+  login: (email: string, password: string) => Promise<void>;
+  register: (name: string, email: string, password: string) => Promise<void>;
+  loginWithGoogle: () => Promise<void>;
+  logout: () => Promise<void>;
+  authError: string | null;
 }
 
 const AuthContext = createContext<IAuthContext | undefined>(undefined);
 
-// --- MOCK API FUNCTIONS ---
-// In a real application, you would replace these with `fetch` calls to your backend API.
-
-const fakeApiCall = (delay = 1000) => new Promise(resolve => setTimeout(resolve, delay));
-
-const mockLogin = async (email: string, password?: string): Promise<User> => {
-    await fakeApiCall();
-    console.log(`Attempting login with email: ${email}`);
-    // Basic validation for demonstration. A real backend would handle this.
-    if (!email || !password) {
-        throw new Error("ایمیل و رمز عبور لازم است.");
-    }
-    if (password === 'password123') {
-        return { id: 'user-123', name: 'کاربر تستی', email: email };
-    }
-    throw new Error("نام کاربری یا رمز عبور نامعتبر است.");
+const getDisplayName = (metadata: Record<string, any> | undefined, email: string | null) => {
+  if (metadata?.full_name) return metadata.full_name as string;
+  if (metadata?.name) return metadata.name as string;
+  if (email) return email.split('@')[0];
+  return 'بازیکن دومینو';
 };
 
-const mockRegister = async (name: string, email: string, password?: string): Promise<User> => {
-    await fakeApiCall();
-    console.log(`Attempting registration for: ${name} <${email}>`);
-    if (!name || !email || !password) {
-        throw new Error("نام، ایمیل و رمز عبور لازم است.");
-    }
-    // Simulate successful registration
-    return { id: `user-${Date.now()}`, name, email };
+const mapSupabaseUserToUser = (supabaseUser: NonNullable<Awaited<ReturnType<typeof supabase.auth.getUser>>['data']['user']>>): User => {
+  return {
+    id: supabaseUser.id,
+    email: supabaseUser.email ?? '',
+    name: getDisplayName(supabaseUser.user_metadata, supabaseUser.email ?? null),
+  };
 };
 
-// --- AUTH PROVIDER ---
+export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [user, setUser] = useState<User | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [authScreen, setAuthScreen] = useState<AuthScreen>('login');
+  const [authError, setAuthError] = useState<string | null>(null);
 
-export const AuthProvider: React.FC<{children: React.ReactNode}> = ({ children }) => {
-    const [user, setUser] = useState<User | null>(null);
-    const [isLoading, setIsLoading] = useState(true);
-    const [authScreen, setAuthScreen] = useState<AuthScreen>('login');
+  useEffect(() => {
+    let mounted = true;
 
-    useEffect(() => {
-        // This effect simulates checking for an existing session on app load.
-        // In a real app, you might validate a token with a `GET /api/auth/me` endpoint.
-        const checkSession = async () => {
-            setIsLoading(true);
-            try {
-                // Simulate checking a stored token
-                const token = sessionStorage.getItem('authToken');
-                if (token) {
-                    await fakeApiCall(500); // Simulate network latency
-                    // In a real app, you would decode the token or send it to the backend for validation
-                    setUser({ id: 'user-123', name: 'کاربر تستی', email: 'test@example.com' });
-                }
-            } catch (error) {
-                setUser(null);
-            } finally {
-                setIsLoading(false);
-            }
-        };
-        checkSession();
-    }, []);
+    const init = async () => {
+      if (!isSupabaseConfigured) {
+        console.error('Supabase credentials are missing. Authentication is disabled.');
+        setIsLoading(false);
+        setAuthError('پیکربندی سوبا‌بیس کامل نشده است. مقادیر VITE_SUPABASE_URL و VITE_SUPABASE_ANON_KEY را تنظیم کنید.');
+        return;
+      }
 
-    const login = async (email: string, password?: string) => {
-        setIsLoading(true);
-        try {
-            const loggedInUser = await mockLogin(email, password);
-            setUser(loggedInUser);
-            sessionStorage.setItem('authToken', 'fake-jwt-token'); // Simulate session persistence
-        } catch (error) {
-            alert((error as Error).message);
-            throw error;
-        } finally {
-            setIsLoading(false);
+      try {
+        const { data, error } = await supabase.auth.getSession();
+        if (error) throw error;
+
+        if (data?.session?.user && mounted) {
+          setUser(mapSupabaseUserToUser(data.session.user));
         }
-    };
-
-    const register = async (name: string, email: string, password?: string) => {
-        setIsLoading(true);
-        try {
-            const registeredUser = await mockRegister(name, email, password);
-            setUser(registeredUser);
-            sessionStorage.setItem('authToken', 'fake-jwt-token'); // Simulate session persistence
-        } catch (error) {
-            alert((error as Error).message);
-            throw error;
-        } finally {
-            setIsLoading(false);
+      } catch (error) {
+        console.error('Failed to restore Supabase session', error);
+        if (mounted) {
+          setAuthError('مشکلی در بازیابی نشست وجود دارد. لطفاً دوباره وارد شوید.');
         }
-    };
-    
-    const loginWithGoogle = () => {
-        // In a real application, this would redirect to your backend's Google auth route.
-        // e.g., window.location.href = '/api/auth/google';
-        alert("منطق ورود با گوگل در اینجا پیاده‌سازی می‌شود. این کار باعث هدایت به بک‌اند شما می‌شود.");
-        // For demonstration, we'll just log in a mock user after a delay.
-        setIsLoading(true);
-        setTimeout(() => {
-            const googleUser = { id: 'google-user-456', name: 'کاربر گوگل', email: 'google.user@example.com' };
-            setUser(googleUser);
-            sessionStorage.setItem('authToken', 'fake-google-jwt-token');
-            setIsLoading(false);
-        }, 1500);
+      } finally {
+        if (mounted) {
+          setIsLoading(false);
+        }
+      }
     };
 
-    const logout = () => {
+    init();
+
+    if (!isSupabaseConfigured) {
+      return () => {
+        mounted = false;
+      };
+    }
+
+    const { data: authListener } = supabase.auth.onAuthStateChange((event, session) => {
+      if (!mounted) return;
+      if (event === 'SIGNED_IN' && session?.user) {
+        setUser(mapSupabaseUserToUser(session.user));
+        setAuthError(null);
+      }
+      if (event === 'TOKEN_REFRESHED' && session?.user) {
+        setUser(mapSupabaseUserToUser(session.user));
+      }
+      if (event === 'SIGNED_OUT') {
         setUser(null);
-        sessionStorage.removeItem('authToken');
-        setAuthScreen('login'); // Reset to login screen after logout
+      }
+    });
+
+    return () => {
+      mounted = false;
+      authListener.subscription.unsubscribe();
     };
-    
-    return (
-        <AuthContext.Provider value={{ 
-            user, 
-            isAuthenticated: !!user,
-            isLoading,
-            authScreen,
-            setAuthScreen,
-            login,
-            register,
-            loginWithGoogle,
-            logout 
-        }}>
-            {children}
-        </AuthContext.Provider>
-    );
+  }, []);
+
+  const login = useCallback(async (email: string, password: string) => {
+    if (!email || !password) {
+      setAuthError('لطفاً ایمیل و رمز عبور را وارد کنید.');
+      return;
+    }
+
+    if (!isSupabaseConfigured) {
+      setAuthError('ورود بدون پیکربندی سوپابیس ممکن نیست.');
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      const { error } = await supabase.auth.signInWithPassword({ email, password });
+      if (error) throw error;
+      setAuthError(null);
+    } catch (error: any) {
+      console.error('Supabase login failed', error);
+      setAuthError(error?.message ?? 'ورود ناموفق بود. لطفاً دوباره تلاش کنید.');
+      throw error;
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
+
+  const register = useCallback(async (name: string, email: string, password: string) => {
+    if (!email || !password) {
+      setAuthError('ایمیل و رمز عبور لازم است.');
+      return;
+    }
+
+    if (!isSupabaseConfigured) {
+      setAuthError('ثبت‌نام بدون پیکربندی سوپابیس ممکن نیست.');
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      const { error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          emailRedirectTo: `${window.location.origin}/auth/callback`,
+          data: { full_name: name },
+        },
+      });
+      if (error) throw error;
+      setAuthScreen('login');
+      setAuthError('برای فعال‌سازی حساب ایمیل خود را بررسی کنید.');
+    } catch (error: any) {
+      console.error('Supabase sign up failed', error);
+      setAuthError(error?.message ?? 'ثبت نام ناموفق بود.');
+      throw error;
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
+
+  const loginWithGoogle = useCallback(async () => {
+    if (!isSupabaseConfigured) {
+      setAuthError('ورود گوگل بدون سوپابیس ممکن نیست.');
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          queryParams: {
+            access_type: 'offline',
+            prompt: 'consent',
+          },
+          redirectTo: `${window.location.origin}/auth/callback`,
+        },
+      });
+      if (error) throw error;
+      setAuthError(null);
+    } catch (error: any) {
+      console.error('Supabase Google login failed', error);
+      setAuthError(error?.message ?? 'ورود با گوگل انجام نشد.');
+      throw error;
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
+
+  const logout = useCallback(async () => {
+    if (!isSupabaseConfigured) {
+      setUser(null);
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      const { error } = await supabase.auth.signOut();
+      if (error) throw error;
+      setUser(null);
+    } catch (error: any) {
+      console.error('Supabase logout failed', error);
+      setAuthError(error?.message ?? 'خروج انجام نشد.');
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
+
+  const value = useMemo<IAuthContext>(() => ({
+    user,
+    isAuthenticated: !!user,
+    isLoading,
+    authScreen,
+    setAuthScreen,
+    login,
+    register,
+    loginWithGoogle,
+    logout,
+    authError,
+  }), [authError, authScreen, isLoading, login, loginWithGoogle, logout, register, user]);
+
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
 export const useAuth = () => {
-    const context = useContext(AuthContext);
-    if (context === undefined) {
-        throw new Error('useAuth must be used within an AuthProvider');
-    }
-    return context;
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error('useAuth must be used within an AuthProvider');
+  }
+  return context;
 };

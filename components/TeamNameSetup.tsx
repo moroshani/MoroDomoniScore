@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import type { GameModeDetails, Player } from '../types';
 import { getPlayers } from '../lib/players';
 import { PlayerManagementModal } from './PlayerManagementModal';
@@ -25,16 +25,32 @@ export const TeamNameSetup: React.FC<TeamNameSetupProps> = ({ mode, onSubmit, on
   const [selectedPlayers, setSelectedPlayers] = useState<Player[][]>(
     Array(mode.teams).fill(null).map(() => Array(mode.playersPerTeam).fill({ id: '', name: '' }))
   );
-  
+
   const [pointCap, setPointCap] = useState(mode.pointCap);
   const [gamesPerSet, setGamesPerSet] = useState(3);
   const [setsPerNight, setSetsPerNight] = useState(1);
   const [isPlayerModalOpen, setIsPlayerModalOpen] = useState(false);
   const [step, setStep] = useState<'players' | 'rules'>('players');
+  const [isLoadingPlayers, setIsLoadingPlayers] = useState(false);
+  const [loadError, setLoadError] = useState<string | null>(null);
 
-  const fetchPlayers = () => {
-      if (user) {
-          setAllPlayers(getPlayers(user.id));
+  const fetchPlayers = async () => {
+      if (!user) {
+        setAllPlayers([]);
+        return;
+      }
+
+      setIsLoadingPlayers(true);
+      setLoadError(null);
+
+      try {
+        const remotePlayers = await getPlayers(user.id);
+        setAllPlayers(remotePlayers);
+      } catch (err) {
+        console.error('Failed to fetch saved players', err);
+        setLoadError('بارگذاری بازیکنان ذخیره‌شده با مشکل مواجه شد.');
+      } finally {
+        setIsLoadingPlayers(false);
       }
   };
 
@@ -61,7 +77,19 @@ export const TeamNameSetup: React.FC<TeamNameSetupProps> = ({ mode, onSubmit, on
   
   const playerSelectionScreen = (
     <div className="space-y-8 animate-fade-in">
-        {allPlayers.length === 0 ? (
+        {isLoadingPlayers ? (
+          <div className="text-center p-4 border-2 border-dashed border-primary/50 rounded-2xl">
+              <SparklesIcon className="w-16 h-16 mx-auto text-primary mb-4 animate-spin" />
+              <h3 className="text-xl font-bold text-text-primary-light dark:text-text-primary-dark">در حال بارگذاری بازیکنان...</h3>
+              <p className="mt-2 text-text-secondary-light dark:text-text-secondary-dark">لطفاً صبر کنید.</p>
+          </div>
+        ) : loadError ? (
+          <div className="text-center p-4 border-2 border-dashed border-red-500/50 rounded-2xl">
+              <h3 className="text-xl font-bold text-red-600 dark:text-red-300">خطا در بارگذاری بازیکنان</h3>
+              <p className="mt-2 text-text-secondary-light dark:text-text-secondary-dark">{loadError}</p>
+              <button type="button" onClick={fetchPlayers} className="btn-secondary mt-4">تلاش مجدد</button>
+          </div>
+        ) : allPlayers.length === 0 ? (
           <div className="text-center p-4 border-2 border-dashed border-primary/50 rounded-2xl">
               <SparklesIcon className="w-16 h-16 mx-auto text-primary mb-4" />
               <h3 className="text-xl font-bold text-text-primary-light dark:text-text-primary-dark">به امتیاز شمار دومینو خوش آمدید!</h3>
@@ -97,7 +125,7 @@ export const TeamNameSetup: React.FC<TeamNameSetupProps> = ({ mode, onSubmit, on
           </div>
         )}
 
-        {allPlayers.length > 0 && (
+        {!isLoadingPlayers && allPlayers.length > 0 && (
             <button type="button" onClick={() => setIsPlayerModalOpen(true)} className="w-full btn-secondary bg-primary/10 text-primary">مدیریت بازیکنان</button>
         )}
 
@@ -198,9 +226,9 @@ export const TeamNameSetup: React.FC<TeamNameSetupProps> = ({ mode, onSubmit, on
       {isPlayerModalOpen && (
         <PlayerManagementModal
           isOpen={isPlayerModalOpen}
-          onClose={() => {
+          onClose={async () => {
               setIsPlayerModalOpen(false);
-              fetchPlayers();
+              await fetchPlayers();
           }}
           onPlayersUpdate={setAllPlayers}
         />

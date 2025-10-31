@@ -228,8 +228,15 @@ export const GameProvider: React.FC<{children: React.ReactNode}> = ({ children }
     const handleNightEnd = async (nightRecord: NightRecord, nightWinner: Team) => {
         if (!user) return;
         const finalNightRecord = { ...nightRecord, nightWinnerTeamId: nightWinner.id };
-        const history = getHistory(user.id);
-        saveHistory(user.id, [...history, finalNightRecord]);
+
+        try {
+            const history = await getHistory(user.id);
+            const dedupedHistory = history.filter(night => night.id !== finalNightRecord.id);
+            await saveHistory(user.id, [finalNightRecord, ...dedupedHistory]);
+        } catch (error) {
+            console.error('Failed to persist night history', error);
+        }
+
         setCurrentNight(finalNightRecord);
 
         setIsNightRecapVisible(true);
