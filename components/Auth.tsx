@@ -3,11 +3,13 @@ import { useAuth } from '../context/AuthContext';
 import { GoogleIcon, AtSymbolIcon, LockClosedIcon, UserCircleIcon, UsersIcon } from './icons';
 
 export const Auth: React.FC = () => {
-    const { authScreen, setAuthScreen, login, register, loginWithGoogle, isLoading } = useAuth();
-    
+    const { authScreen, setAuthScreen, login, register, loginWithGoogle, isLoading, authError } = useAuth();
+
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const isConfigError = authError?.includes('سوپابیس');
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -80,12 +82,18 @@ export const Auth: React.FC = () => {
                         />
                     </div>
 
-                    <button type="submit" className="btn-primary w-full !text-lg" disabled={isLoading}>
+                    <button type="submit" className="btn-primary w-full !text-lg" disabled={isLoading || isConfigError}>
                         {isLoading ? (
                             <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white"></div>
                         ) : (isLogin ? 'ورود' : 'ثبت نام')}
                     </button>
                 </form>
+
+                {authError && (
+                    <div className={`mt-4 text-sm font-medium p-3 rounded-lg ${isConfigError ? 'bg-red-500/20 text-red-800 dark:text-red-200 dark:bg-red-500/30' : 'bg-amber-500/20 text-amber-800 dark:text-amber-100 dark:bg-amber-500/30'}`}>
+                        {authError}
+                    </div>
+                )}
 
                 <div className="relative my-6">
                     <div className="absolute inset-0 flex items-center">
@@ -98,7 +106,7 @@ export const Auth: React.FC = () => {
                     </div>
                 </div>
 
-                <button onClick={loginWithGoogle} className="btn-secondary w-full" disabled={isLoading}>
+                <button onClick={loginWithGoogle} className="btn-secondary w-full" disabled={isLoading || isConfigError}>
                     <GoogleIcon className="w-5 h-5 fill-current" />
                     <span>{isLogin ? 'ورود با گوگل' : 'ثبت نام با گوگل'}</span>
                 </button>

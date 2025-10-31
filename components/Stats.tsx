@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getHistory } from '../lib/storage';
 import { calculatePlayerStats, calculateHeadToHeadStats } from '../lib/stats';
 import type { PlayerStats, HeadToHeadStats } from '../types';
@@ -7,6 +7,7 @@ import { AIAnalysisModal } from './AIAnalysisModal';
 import { BarChart } from './charts/BarChart';
 import { GoogleGenAI } from '@google/genai';
 import { useAuth } from '../context/AuthContext';
+import type { NightRecord } from '../types';
 
 interface StatsProps {
   onBack: () => void;
@@ -23,41 +24,78 @@ const PlayerAvatar: React.FC<{ avatar?: string; className?: string }> = ({ avata
 
 export const Stats: React.FC<StatsProps> = ({ onBack }) => {
   const { user } = useAuth();
+  const [history, setHistory] = useState<NightRecord[]>([]);
   const [stats, setStats] = useState<PlayerStats[]>([]);
   const [selectedPlayer, setSelectedPlayer] = useState<PlayerStats | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoadingAnalysis, setIsLoadingAnalysis] = useState(false);
   const [analysisContent, setAnalysisContent] = useState('');
+  const [isLoadingHistory, setIsLoadingHistory] = useState(false);
+  const [historyError, setHistoryError] = useState<string | null>(null);
 
   const [h2hPlayer1, setH2hPlayer1] = useState<string>('');
   const [h2hPlayer2, setH2hPlayer2] = useState<string>('');
   const [h2hStats, setH2hStats] = useState<HeadToHeadStats | null>(null);
 
   useEffect(() => {
-    if (!user) return;
-    const history = getHistory(user.id);
-    const calculatedStats = calculatePlayerStats(history);
-    setStats(calculatedStats);
-    if (calculatedStats.length >= 2) {
-        setH2hPlayer1(calculatedStats[0].name);
-        setH2hPlayer2(calculatedStats[1].name);
-    } else if (calculatedStats.length > 0) {
-        setH2hPlayer1(calculatedStats[0].name);
-        setH2hPlayer2('');
-    } else {
-        setH2hPlayer1('');
-        setH2hPlayer2('');
-    }
+    let isMounted = true;
+
+    const loadStats = async () => {
+      if (!user) {
+        if (isMounted) {
+          setHistory([]);
+          setStats([]);
+          setH2hPlayer1('');
+          setH2hPlayer2('');
+        }
+        return;
+      }
+
+      setIsLoadingHistory(true);
+      setHistoryError(null);
+
+      try {
+        const remoteHistory = await getHistory(user.id);
+        if (!isMounted) return;
+        setHistory(remoteHistory);
+        const calculatedStats = calculatePlayerStats(remoteHistory);
+        setStats(calculatedStats);
+        if (calculatedStats.length >= 2) {
+          setH2hPlayer1(calculatedStats[0].name);
+          setH2hPlayer2(calculatedStats[1].name);
+        } else if (calculatedStats.length > 0) {
+          setH2hPlayer1(calculatedStats[0].name);
+          setH2hPlayer2('');
+        } else {
+          setH2hPlayer1('');
+          setH2hPlayer2('');
+        }
+      } catch (err) {
+        console.error('Failed to load stats history', err);
+        if (isMounted) {
+          setHistoryError('امکان بارگذاری آمار وجود ندارد. اتصال یا تنظیمات سوپابیس را بررسی کنید.');
+        }
+      } finally {
+        if (isMounted) {
+          setIsLoadingHistory(false);
+        }
+      }
+    };
+
+    loadStats();
+
+    return () => {
+      isMounted = false;
+    };
   }, [user]);
 
   useEffect(() => {
-    if (user && h2hPlayer1 && h2hPlayer2 && h2hPlayer1 !== h2hPlayer2) {
-      const history = getHistory(user.id);
+    if (h2hPlayer1 && h2hPlayer2 && h2hPlayer1 !== h2hPlayer2) {
       setH2hStats(calculateHeadToHeadStats(h2hPlayer1, h2hPlayer2, history));
     } else {
       setH2hStats(null);
     }
-  }, [h2hPlayer1, h2hPlayer2, user]);
+  }, [h2hPlayer1, h2hPlayer2, history]);
 
   const handleAnalyze = async (player: PlayerStats) => {
     setSelectedPlayer(player);
@@ -104,7 +142,17 @@ export const Stats: React.FC<StatsProps> = ({ onBack }) => {
         <button onClick={onBack} className="btn-secondary !w-auto !py-2 !px-4 !text-sm">بازگشت به منو</button>
       </header>
 
-      {stats.length === 0 ? (
+      {isLoadingHistory ? (
+        <div className="text-center glass-card p-12 rounded-3xl">
+          <h2 className="text-2xl font-bold text-[var(--color-text-secondary)]">در حال آماده‌سازی آمار...</h2>
+          <p className="mt-2 text-[var(--color-text-secondary)]">لطفاً صبر کنید.</p>
+        </div>
+      ) : historyError ? (
+        <div className="text-center glass-card p-12 rounded-3xl">
+          <h2 className="text-2xl font-bold text-red-600 dark:text-red-300">خطا در بارگذاری آمار</h2>
+          <p className="mt-2 text-[var(--color-text-secondary)]">{historyError}</p>
+        </div>
+      ) : stats.length === 0 ? (
         <div className="text-center glass-card p-12 rounded-3xl">
           <h2 className="text-2xl font-bold text-[var(--color-text-secondary)]">آماری برای نمایش وجود ندارد</h2>
           <p className="mt-2 text-[var(--color-text-secondary)]">چند بازی انجام دهید تا آمار بازیکنان را اینجا ببینید!</p>
