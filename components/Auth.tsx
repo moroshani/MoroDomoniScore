@@ -1,15 +1,14 @@
+
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { GoogleIcon, AtSymbolIcon, LockClosedIcon, UserCircleIcon, UsersIcon } from './icons';
+import { GoogleIcon, AtSymbolIcon, LockClosedIcon, UserCircleIcon, UsersIcon, SparklesIcon } from './icons';
 
 export const Auth: React.FC = () => {
-    const { authScreen, setAuthScreen, login, register, loginWithGoogle, isLoading, authError } = useAuth();
-
+    const { authScreen, setAuthScreen, login, register, loginWithGoogle, isLoading } = useAuth();
+    
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
-    const isConfigError = authError?.includes('سوپابیس');
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -21,6 +20,14 @@ export const Auth: React.FC = () => {
             }
         } catch (error) {
             console.error("Authentication failed", error);
+        }
+    };
+
+    const handleDemoLogin = async () => {
+        try {
+            await login('test@example.com', 'password123');
+        } catch (error) {
+            console.error("Demo login failed", error);
         }
     };
     
@@ -82,18 +89,12 @@ export const Auth: React.FC = () => {
                         />
                     </div>
 
-                    <button type="submit" className="btn-primary w-full !text-lg" disabled={isLoading || isConfigError}>
+                    <button type="submit" className="btn-primary w-full !text-lg" disabled={isLoading}>
                         {isLoading ? (
                             <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white"></div>
                         ) : (isLogin ? 'ورود' : 'ثبت نام')}
                     </button>
                 </form>
-
-                {authError && (
-                    <div className={`mt-4 text-sm font-medium p-3 rounded-lg ${isConfigError ? 'bg-red-500/20 text-red-800 dark:text-red-200 dark:bg-red-500/30' : 'bg-amber-500/20 text-amber-800 dark:text-amber-100 dark:bg-amber-500/30'}`}>
-                        {authError}
-                    </div>
-                )}
 
                 <div className="relative my-6">
                     <div className="absolute inset-0 flex items-center">
@@ -106,10 +107,23 @@ export const Auth: React.FC = () => {
                     </div>
                 </div>
 
-                <button onClick={loginWithGoogle} className="btn-secondary w-full" disabled={isLoading || isConfigError}>
-                    <GoogleIcon className="w-5 h-5 fill-current" />
-                    <span>{isLogin ? 'ورود با گوگل' : 'ثبت نام با گوگل'}</span>
-                </button>
+                <div className="space-y-3">
+                    <button onClick={loginWithGoogle} className="btn-secondary w-full" disabled={isLoading}>
+                        <GoogleIcon className="w-5 h-5 fill-current" />
+                        <span>{isLogin ? 'ورود با گوگل' : 'ثبت نام با گوگل'}</span>
+                    </button>
+
+                    {isLogin && (
+                        <button 
+                            onClick={handleDemoLogin} 
+                            className="btn w-full bg-emerald-600 text-white hover:bg-emerald-700 shadow-emerald-500/20"
+                            disabled={isLoading}
+                        >
+                            <SparklesIcon className="w-5 h-5" />
+                            <span>دسترسی سریع (پیش‌نمایش)</span>
+                        </button>
+                    )}
+                </div>
                 
                 <p className="mt-6 text-center text-sm">
                     <span className="text-text-secondary-light dark:text-text-secondary-dark">
@@ -122,6 +136,14 @@ export const Auth: React.FC = () => {
                         {isLogin ? 'ثبت نام کنید' : 'وارد شوید'}
                     </button>
                 </p>
+
+                {isLogin && (
+                    <div className="mt-4 pt-4 border-t border-slate-300/30 text-center">
+                        <p className="text-xs text-text-secondary-light dark:text-text-secondary-dark">
+                            اطلاعات ورود تست: <span className="font-mono">test@example.com</span> | <span className="font-mono">password123</span>
+                        </p>
+                    </div>
+                )}
             </div>
         </div>
     );

@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import { GameProvider } from './context/GameContext';
 import { AuthProvider } from './context/AuthContext';
-import { registerServiceWorker } from './lib/pwa';
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -20,5 +19,3 @@ root.render(
     </AuthProvider>
   </React.StrictMode>
 );
-
-registerServiceWorker();
