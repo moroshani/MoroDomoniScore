@@ -1,0 +1,28 @@
+name: Roadmap Wave0 Governance
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  wave0-governance:
+    runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres?schema=public
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Wave 0 governance gate
+        run: npm run roadmap:wave0

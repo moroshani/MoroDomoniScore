@@ -1,0 +1,47 @@
+{
+  "product": "android-native",
+  "sourceOfTruth": "stable-web-pwa",
+  "quickGameModes": [
+    {
+      "id": "2P",
+      "title": "2-player",
+      "teams": 2,
+      "playersPerTeam": 1,
+      "pointCap": 101,
+      "inputMode": "manual_names_only"
+    },
+    {
+      "id": "3P",
+      "title": "3-player",
+      "teams": 3,
+      "playersPerTeam": 1,
+      "pointCap": 151,
+      "inputMode": "manual_names_only"
+    },
+    {
+      "id": "4P",
+      "title": "4-player-2v2",
+      "teams": 2,
+      "playersPerTeam": 2,
+      "pointCap": 151,
+      "inputMode": "manual_team_names_only"
+    }
+  ],
+  "rules": {
+    "gamesPerSet": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 3
+    },
+    "setsPerNight": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 1
+    }
+  },
+  "persistence": {
+    "setupNamesAreDisposable": true,
+    "requiresSavedPlayers": false,
+    "localContinuationAllowed": true
+  }
+}

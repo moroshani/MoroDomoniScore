@@ -12,6 +12,27 @@ dist
 dist-ssr
 *.local
 
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Test and generated reports
+test-results/
+playwright-report/
+
+# Android generated files
+android-native/android-app/.gradle/
+android-native/android-app/**/build/
+android-native/android-app/local.properties
+
+# Licensed font source bundles; runtime subsets live in public/fonts and Android res/font.
+Yekan Bakh - Pro/
+YekanBakh4 Pro/
+
+# MCP settings (user-local agent config)
+mcp_settings.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

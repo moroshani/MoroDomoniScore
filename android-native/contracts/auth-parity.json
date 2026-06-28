@@ -1,0 +1,24 @@
+{
+  "product": "android-native",
+  "sourceOfTruth": "stable-web-pwa",
+  "auth": {
+    "identifierInputs": ["email", "username"],
+    "login": {
+      "method": "password",
+      "rememberMe": true,
+      "backendEndpoint": "/api/auth/login"
+    },
+    "register": {
+      "requiredFields": ["name", "username", "email", "password"],
+      "backendEndpoint": "/api/auth/register"
+    },
+    "logout": {
+      "backendEndpoint": "/api/auth/logout"
+    },
+    "profile": {
+      "readEndpoint": "/api/users/me",
+      "updateEndpoint": "/api/users/me",
+      "passwordEndpoint": "/api/users/me/password"
+    }
+  }
+}

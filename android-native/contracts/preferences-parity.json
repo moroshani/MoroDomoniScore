@@ -1,0 +1,18 @@
+{
+  "product": "android-native",
+  "sourceOfTruth": "stable-web-pwa",
+  "preferences": {
+    "theme": {
+      "values": ["light", "dark"],
+      "required": true
+    },
+    "soundEnabled": {
+      "type": "boolean",
+      "required": true
+    },
+    "hapticsEnabled": {
+      "type": "boolean",
+      "required": true
+    }
+  }
+}
