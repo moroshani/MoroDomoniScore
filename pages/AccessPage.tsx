@@ -99,43 +99,38 @@ export const AccessPage: React.FC = () => {
         </p>
       </section>
 
-      <section className="glass-card p-4 sm:p-6 space-y-3">
-        <h2 className="text-lg sm:text-xl font-bold text-text-primary-light dark:text-text-primary-dark">دانلود مستقیم</h2>
-        {directDownloadUrl ? (
-          <div className="space-y-2">
-            <div className="flex flex-wrap gap-2">
-              <a href={directDownloadUrl} target="_blank" rel="noreferrer" className="btn-secondary !w-auto !px-4 !py-2 !text-xs sm:!text-sm inline-flex">دانلود مستقیم APK</a>
-              {directDownloadShaUrl && (
-                <a href={directDownloadShaUrl} target="_blank" rel="noreferrer" className="btn-secondary !w-auto !px-4 !py-2 !text-xs sm:!text-sm inline-flex">دانلود فایل SHA-256</a>
-              )}
-            </div>
-            {(androidReleaseVersion || androidReleaseDate || androidReleaseSha256) && (
-              <div className="rounded-2xl bg-slate-500/10 p-3 text-xs text-text-secondary-light dark:text-text-secondary-dark space-y-1">
-                {!!androidReleaseVersion && <p>نسخه اندروید: <span className="font-semibold">{androidReleaseVersion}</span></p>}
-                {!!androidReleaseDate && <p>تاریخ انتشار: <span className="font-semibold">{androidReleaseDate}</span></p>}
-                {!!releaseSizeLabel && <p>حجم فایل: <span className="font-semibold">{releaseSizeLabel}</span></p>}
-                {!!androidReleaseSha256 && (
-                  <p className="break-all">
-                    SHA-256: <span className="font-mono">{androidReleaseSha256}</span>
-                  </p>
-                )}
-              </div>
-            )}
-            <div className="rounded-2xl bg-amber-500/10 border border-amber-600/30 p-3 text-xs text-amber-800 dark:text-amber-200 space-y-1">
-              <p className="font-semibold">هشدار انطباق انتشار</p>
-              <p>دانلود مستقیم فقط مسیر کنترل‌شده برای تست/پایلوت یا شرایط اضطراری است.</p>
-              <p>پیش از نصب، مقدار SHA-256 و نسخه را با اطلاعیه رسمی انتشار تطبیق دهید.</p>
-            </div>
-            <p className="text-xs text-amber-700 dark:text-amber-300">
-              این مسیر کنترل‌شده است. قبل از نصب، نسخه و SHA-256 را با اطلاعیه رسمی انتشار تطبیق دهید.
-            </p>
-          </div>
-        ) : (
-          <p className="text-xs text-text-secondary-light dark:text-text-secondary-dark">
-            لینک دانلود مستقیم هنوز تنظیم نشده است.
-          </p>
-        )}
-      </section>
+<section className="glass-card p-4 sm:p-6 space-y-3">
+         <h2 className="text-lg sm:text-xl font-bold text-text-primary-light dark:text-text-primary-dark">دانلود مستقیم APK</h2>
+         {directDownloadUrl ? (
+           <div className="space-y-2">
+             <div className="flex flex-wrap gap-2">
+               <a href={directDownloadUrl} target="_blank" rel="noreferrer" className="btn-primary text-center">دانلود APK ({releaseSizeLabel || 'نسخه تست'})</a>
+               {directDownloadShaUrl && (
+                 <a href={directDownloadShaUrl} target="_blank" rel="noreferrer" className="btn-secondary text-center">فایل تأیید SHA-256</a>
+               )}
+             </div>
+             <div className="rounded-2xl bg-slate-100 dark:bg-slate-800 p-3 text-xs space-y-1">
+               {!!androidReleaseVersion && <p className="text-text-primary-light dark:text-text-primary-dark">نسخه: <span className="font-semibold">{androidReleaseVersion}</span></p>}
+               {!!androidReleaseDate && <p className="text-text-primary-light dark:text-text-primary-dark">تاریخ: <span className="font-semibold">{androidReleaseDate}</span></p>}
+               {!!releaseSizeLabel && <p className="text-text-primary-light dark:text-text-primary-dark">حجم فایل: <span className="font-semibold">{releaseSizeLabel}</span></p>}
+               {!!androidReleaseSha256 && (
+                 <p className="text-text-primary-light dark:text-text-primary-dark break-all">
+                   SHA-256: <span className="font-mono">{androidReleaseSha256}</span>
+                 </p>
+               )}
+             </div>
+             <div className="rounded-2xl bg-blue-500/10 border border-blue-600/30 dark:bg-blue-400/10 dark:border-blue-400/30 p-3 text-xs text-blue-800 dark:text-blue-200 space-y-1">
+               <p className="font-semibold">اطلاعات دانلود</p>
+               <p>این مسیر برای دانلود نسخه‌های تست و توسعه است. برای انتشار عمومی، مایکت مرجع نصب است.</p>
+               <p className="break-all">قبل از نصب، SHA-256 را با این مقدار تطبیق دهید: {androidReleaseSha256}</p>
+             </div>
+           </div>
+         ) : (
+           <p className="text-xs text-text-secondary-light dark:text-text-secondary-dark">
+             فایل APK موجود نیست. لطفاً از مایکت نصب کنید.
+           </p>
+         )}
+       </section>
 
       {!isAuthenticated && (
         <section className="glass-card p-4 sm:p-6 space-y-3">
