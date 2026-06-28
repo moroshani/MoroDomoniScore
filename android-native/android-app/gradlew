@@ -1,0 +1,28 @@
+#!/usr/bin/env sh
+
+set -e
+
+APP_HOME=$(cd "$(dirname "$0")" && pwd)
+WRAPPER_JAR="$APP_HOME/gradle/wrapper/gradle-wrapper.jar"
+
+if [ ! -f "$WRAPPER_JAR" ]; then
+  echo "gradle-wrapper.jar is not present yet."
+  echo "Run this once on a machine with Gradle installed: gradle wrapper"
+  exit 1
+fi
+
+if command -v java >/dev/null 2>&1; then
+  exec java -classpath "$WRAPPER_JAR" org.gradle.wrapper.GradleWrapperMain "$@"
+fi
+
+if [ -x "/mnt/c/Users/moroshani/AppData/Local/Java/jdk-17/bin/java.exe" ]; then
+  WRAPPER_JAR_WIN=$(wslpath -w "$WRAPPER_JAR")
+  exec "/mnt/c/Users/moroshani/AppData/Local/Java/jdk-17/bin/java.exe" -classpath "$WRAPPER_JAR_WIN" org.gradle.wrapper.GradleWrapperMain "$@"
+fi
+
+if [ -x "/mnt/c/Users/moroshani/AppData/Local/Java/jdk-17/bin/java" ]; then
+  exec "/mnt/c/Users/moroshani/AppData/Local/Java/jdk-17/bin/java" -classpath "$WRAPPER_JAR" org.gradle.wrapper.GradleWrapperMain "$@"
+fi
+
+echo "Missing Java runtime. Install JDK 17 or point gradlew to your Windows JDK."
+exit 1
