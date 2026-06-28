@@ -1,0 +1,778 @@
+{
+  "count": 39,
+  "posts": [
+    {
+      "id": 5118,
+      "date": "2025-02-17T11:19:53",
+      "modified": "2025-03-01T17:42:22",
+      "slug": "nowruz1404",
+      "link": "https://developers.cafebazaar.ir/fa/nowruz1404/",
+      "title": {
+        "rendered": "وضعیت پیشخان و زمان‌بندی تصفیه‌حساب توسعه‌دهندگان در آستانه‌ی نوروز ۱۴۰۴"
+      },
+      "excerpt": {
+        "rendered": "<p>وضعیت پیشخان و زمان‌بندی تصفیه‌حساب توسعه‌دهندگان در آستانه‌ی نوروز ۱۴۰۴ </p>\n",
+        "protected": false
+      },
+      "categories": [
+        57
+      ],
+      "tags": [
+        221,
+        307,
+        293,
+        313,
+        215,
+        305,
+        311,
+        299,
+        289
+      ]
+    },
+    {
+      "id": 4933,
+      "date": "2024-10-13T14:33:20",
+      "modified": "2024-10-13T14:36:16",
+      "slug": "financial-settlement",
+      "link": "https://developers.cafebazaar.ir/fa/financial-settlement/",
+      "title": {
+        "rendered": "فرآیند جدید تصفیه‌حساب با توسعه‌دهندگان حقوقی از آبان ۱۴۰۳"
+      },
+      "excerpt": {
+        "rendered": "<p>فرآیند جدید تصفیه حساب با توسعه‌دهندگان حقوقی، به منظور کسب رضایت و سهولت بیشتر</p>\n",
+        "protected": false
+      },
+      "categories": [
+        16,
+        57
+      ],
+      "tags": [
+        297,
+        293,
+        215,
+        295,
+        305,
+        301,
+        303,
+        299
+      ]
+    },
+    {
+      "id": 4748,
+      "date": "2023-07-05T13:09:44",
+      "modified": "2024-04-04T13:39:01",
+      "slug": "shaparak-fee",
+      "link": "https://developers.cafebazaar.ir/fa/shaparak-fee/",
+      "title": {
+        "rendered": "مهم: اطلاع‌رسانی دریافت کارمزد از تراکنش‌ها، توسط شبکه‌ي شاپرک"
+      },
+      "excerpt": {
+        "rendered": "<p>براساس ابلاغیه‌ی بانک مرکزی و شبکه‌ي شاپرک، از چهارم تیرماه ۱۴۰۲ تمامی درگاه‌های پرداخت اینترنتی مشمول کارمزد هستند. این کارمزد به ازای هر تراکنش از طریق درگاه‌های پرداخت محاسبه شده و از مجموع مبلغ پرداختی شرکت شاپرک به پذیرنده کسر می‌شود. کارمزد اعمال شده بسته به مبلغ تراکنش متفاوت بوده و در بازه‌ي ۱۲۰ تومان [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        57
+      ],
+      "tags": []
+    },
+    {
+      "id": 4657,
+      "date": "2022-11-30T10:55:05",
+      "modified": "2022-11-30T10:55:07",
+      "slug": "antiviruses-scans-bazaar",
+      "link": "https://developers.cafebazaar.ir/fa/antiviruses-scans-bazaar/",
+      "title": {
+        "rendered": "نتایج بررسی هر برنامه‌ توسط ده آنتی‌ویروس معتبر به کاربران بازار اعلام می‌شود￼"
+      },
+      "excerpt": {
+        "rendered": "<p>کاربران بازار از این پس می‌توانند پیش از نصب هر برنامه یا بازی ایرانی، نتایج بررسی امنیت آن را توسط ده آنتی‌ویروس جهانی ببینند. در تازه‌ترین نسخه‌ی بازار، گزارش بررسی امنیتی ده آنتی‌ویروس بازار به صفحه «جزییات» هر برنامه و بازی اضافه شده است. با این قابلیت، نتایج بررسی سلامت‌سنجی هر برنامه در اختیار کاربر [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        57
+      ],
+      "tags": []
+    },
+    {
+      "id": 4652,
+      "date": "2022-11-16T11:39:25",
+      "modified": "2022-11-16T11:39:29",
+      "slug": "bazaar-autoupdates",
+      "link": "https://developers.cafebazaar.ir/fa/bazaar-autoupdates/",
+      "title": {
+        "rendered": "بازار از این پس به‌روزرسانی برنامه‌ها را خودکار منتشر می‌کند￼"
+      },
+      "excerpt": {
+        "rendered": "<p>بازار تصمیم گرفته است که اقدام به انتشار خودکار به‌روزرسانی‌های برنامه‌‌ها کند.</p>\n",
+        "protected": false
+      },
+      "categories": [
+        57
+      ],
+      "tags": []
+    },
+    {
+      "id": 4421,
+      "date": "2022-06-28T18:16:35",
+      "modified": "2022-06-28T18:16:39",
+      "slug": "change-the-rating-of-applications-and-games",
+      "link": "https://developers.cafebazaar.ir/fa/change-the-rating-of-applications-and-games/",
+      "title": {
+        "rendered": "شیوه محاسبه امتیاز برنامه و بازی‌ها در بازار تغییر می‌کند"
+      },
+      "excerpt": {
+        "rendered": "<p>با هدف تاکید بیشتر بخش امتیازات کاربران روی «وضعیت فعلی» برنامه و بازی‌ها، بازار شیوه محاسبه امتیاز کاربران را تغییر خواهد داد. با توجه به این تغییرات، وزن نظرات جدیدتر نسبت به نظرات قدیمی در اپلیکیشن بازار بیشتر خواهد شد. محمد تکلو مدیر محصول بازار در مورد دلایل رخ دادن این تغییر می‌گوید: «با شکل [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        57
+      ],
+      "tags": [
+        215
+      ]
+    },
+    {
+      "id": 4394,
+      "date": "2022-06-21T12:05:31",
+      "modified": "2022-06-21T12:07:35",
+      "slug": "gamehypenews",
+      "link": "https://developers.cafebazaar.ir/fa/gamehypenews/",
+      "title": {
+        "rendered": "بازار رویداد «گیم‌هایپ» را با هدف ساخت بازی‌های هایپر کژوال برگزار می‌کند"
+      },
+      "excerpt": {
+        "rendered": "<p>ساخت بازی‌های هایپر کژوال یکی از مرسوم و بهترین راه‌های تیم‌سازی و محک زدن توانایی توسعه‌دهندگان بازی‌های موبایلی در بازه زمانی کوتاه است. با این هدف، بازار در تیر و مرداد ۱۴۰۱ رویداد «گیم‌هایپ» را با پنل‌هایی از بازی‌سازان و ناشران معتبر از سراسر جهان برگزار خواهد کرد. این رویداد شامل ۵۰۰۰ دلار جایزه نقدی [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        57
+      ],
+      "tags": [
+        268
+      ]
+    },
+    {
+      "id": 4333,
+      "date": "2022-06-13T12:39:23",
+      "modified": "2022-06-13T13:02:56",
+      "slug": "video-tutorials-in-bazaar",
+      "link": "https://developers.cafebazaar.ir/video-tutorials-in-bazaar/",
+      "title": {
+        "rendered": ""
+      },
+      "excerpt": {
+        "rendered": "<p>محصول جدید بازار، با عنوان آموزش به منظور فراهم ساختن بستری برای رساندن محتوای آموزشی ویدئویی با کیفیت، میان کاربران بازار و تولید کنندگان محتوا به زودی شروع به کار خواهد کرد. آموزش، به عنوان یکی از محصولات اپلیکیشن بازار خواهد بود. ۳۵ میلیون کاربر فعال ماهانه اپ بازار، پتانسیل زیادی برای تعامل و ارتباط [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        1
+      ],
+      "tags": []
+    },
+    {
+      "id": 4236,
+      "date": "2022-05-14T18:11:07",
+      "modified": "2022-06-08T15:26:04",
+      "slug": "installation-from-bazaar",
+      "link": "https://developers.cafebazaar.ir/fa/installation-from-bazaar/",
+      "title": {
+        "rendered": "با هدف بهبود خدمات به توسعه‌دهندگان، آمار «نصب از بازار» جایگزین «نصب فعال» می‌شود"
+      },
+      "excerpt": {
+        "rendered": "<p>بازار با توجه به بازخوردهای توسعه‌دهندگان و با هدف بهبود خدماتش، از اول خرداد ۱۴۰۱ آمار «نصب از بازار» را جایگزین «نصب فعال» می‌کند. در نتیجه این تغییر، کاربران به جای تعداد نصب فعال هر برنامه یا بازی، تعداد نصب آن برنامه از بازار را مشاهده خواهند کرد. آمار نصب از بازار از ابتدای خرداد [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        16,
+        57
+      ],
+      "tags": [
+        258
+      ]
+    },
+    {
+      "id": 4054,
+      "date": "2022-02-19T15:52:00",
+      "modified": "2022-02-20T12:24:22",
+      "slug": "update-on-icon-display",
+      "link": "https://developers.cafebazaar.ir/fa/update-on-icon-display/",
+      "title": {
+        "rendered": "نحوه نمایش آیکون‌ برنامه‌ها در بازار از ابتدای سال ۱۴۰۱ تغییر می‌کند"
+      },
+      "excerpt": {
+        "rendered": "<p>با هدف یکپارچه‌سازی محیط کاربری بازار و بروز شدن نحوه نمایش برنامه برنامه‌ها، از ابتدای اردیبهشت ۱۴۰۱، آیکون برنامه‌ها در بازار در دو مرحله و پس از گرد شدن کنارها و اضافه شدن سایه  در اپلیکیشن بازار به نمایش در خواهد آمد. در راستای این تغییرات لازم است که توسعه دهندگان در طراحی لوگو جدید [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        57
+      ],
+      "tags": [
+        250
+      ]
+    },
+    {
+      "id": 4034,
+      "date": "2022-02-13T14:44:07",
+      "modified": "2022-02-13T14:44:08",
+      "slug": "last-month-account-clearance",
+      "link": "https://developers.cafebazaar.ir/fa/last-month-account-clearance/",
+      "title": {
+        "rendered": "زمان‌بندی تصفیه‌حساب توسعه دهندگان بازار در اسفند ۱۴۰۰ مشخص شد"
+      },
+      "excerpt": {
+        "rendered": "<p>تصفیه‌حساب اسفند ۱۴۰۰ در دو مرحله انجام خواهد شد. در مرحله اول، مبالغ بالای ۵۰ هزار تومان در بازه یکم تا بیستم اسفند ماه، ظرف ۵ روز کاری از تاریخ ۲۰ اسفند به حساب توسعه‌دهندگان واریز خواهد شد. در مرحله دوم نیز برای بازه ۲۱ام تا ۲۹ اسفند ماه، کلیه مبالغ قابل تصفیه بالای ۵ [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        16,
+        57
+      ],
+      "tags": [
+        221,
+        215
+      ]
+    },
+    {
+      "id": 4027,
+      "date": "2022-02-07T13:54:47",
+      "modified": "2022-02-07T13:57:10",
+      "slug": "working-hours-during-nowruz",
+      "link": "https://developers.cafebazaar.ir/fa/working-hours-during-nowruz/",
+      "title": {
+        "rendered": "خدمات به توسعه‌دهندگان بازار در تعطیلات نوروز ۱۴۰۱ ادامه خواهد داشت"
+      },
+      "excerpt": {
+        "rendered": "<p>به درخواست توسعه‌دهندگان، پیشخان بازار طی تعطیلات رسمی نوروز ۱۴۰۱ به کار خود ادامه خواهد داد و هیچ‌یک از بخش‌های پنل مسدود یا محدود نخواهد بود. توسعه‌دهندگان می‌توانند در این بازه زمانی همچنان از قابلیت‌های پیشخان بازار استفاده کنند و سؤالات خود را از طریق ثبت تیکت با پشتیبانی توسعه‌دهندگان در میان بگذارند. &nbsp;با توجه [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        16,
+        57
+      ],
+      "tags": [
+        221,
+        227,
+        215
+      ]
+    },
+    {
+      "id": 3978,
+      "date": "2022-01-19T15:18:15",
+      "modified": "2022-01-19T15:18:16",
+      "slug": "global-game-jam",
+      "link": "https://developers.cafebazaar.ir/fa/global-game-jam/",
+      "title": {
+        "rendered": "آواگیمز با همکاری بازار گلوبال گیم جم را برگزار می‌کند"
+      },
+      "excerpt": {
+        "rendered": "<p>امسال ششمین دوره رویداد گلوبال گیم جم توسط آواگیمز با همکاری بازار برگزار خواهد شد. در این رویداد بین‌المللی بازی‌سازان از سرتاسر دنیا به صورت همزمان دو روز فرصت خواهند داشت تا در مورد یک موضوع واحد، بازی‌های جدید و خلاقانه تولید کنند. طبق اعلام آواگیمز شرکت‌های مطرح بازی‌سازی کشور هم در میان تیم‌های شرکت‌کننده [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        57
+      ],
+      "tags": [
+        221,
+        215
+      ]
+    },
+    {
+      "id": 3931,
+      "date": "2022-01-09T16:50:04",
+      "modified": "2022-01-18T16:42:22",
+      "slug": "huaweicupnews",
+      "link": "https://developers.cafebazaar.ir/fa/huaweicupnews/",
+      "title": {
+        "rendered": "هواوی با همکاری بازار Huawei Code Cup را برای توسعه دهندگان برگزار می‌کند"
+      },
+      "excerpt": {
+        "rendered": "<p>برای شرکت در مسابقه هواوی کد کاپ روی این لینک کلیک کنید بازار از توسعه‌دهندگان دعوت می‌کند با شرکت در مسابقه جام کدنویسی هواوی نسخه HUAWEI Mobile Services برنامه خود را توسعه دهند. طی سال‌های اخیر نسخه HMS برنامه‌های موبایلی مخاطبان گسترده‌ای پیدا کرده‌اند. در متن فراخوان هواوی برای جام کدنویسی هواوی آمده است: «یکی [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        16,
+        57
+      ],
+      "tags": [
+        221,
+        215
+      ]
+    },
+    {
+      "id": 3926,
+      "date": "2022-01-04T11:51:19",
+      "modified": "2022-01-04T11:51:44",
+      "slug": "services-for-developers",
+      "link": "https://developers.cafebazaar.ir/fa/services-for-developers/",
+      "title": {
+        "rendered": "در یک سال گذشته چه کردیم؟ در آینده چه خواهیم کرد؟"
+      },
+      "excerpt": {
+        "rendered": "<p>بازار همواره در تلاش برای بهبود خدمات خود به توسعه‌دهندگان و کمک به رشد صنعت برنامه‌ها و بازی‌های بومی بوده است و در راستای تحقق این هدف اقدامات مختلفی را در طول سال‌های گذشته انجام داده است. این اقدامات با درنظرگرفتن بازخوردهای توسعه دهندگان بازار و با هدف پاسخ‌گویی به نیازها و دغدغه‌های آنان صورت [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        16,
+        57
+      ],
+      "tags": [
+        221,
+        227,
+        215
+      ]
+    },
+    {
+      "id": 3869,
+      "date": "2021-12-22T14:30:08",
+      "modified": "2021-12-22T14:34:17",
+      "slug": "fast-payment-news",
+      "link": "https://developers.cafebazaar.ir/fa/fast-payment-news/",
+      "title": {
+        "rendered": "معرفی تمدید خودکار و پرداخت سریع: ابزارهایی برای تحول در کسب‌وکار توسعه‌دهندگان"
+      },
+      "excerpt": {
+        "rendered": "<p>استفاده از مدل درآمدی اشتراک به یکی از ترندهای اصلی امروز کسب‌وکارهای دنیای تکنولوژی تبدیل شده و کسب‌وکارهای بزرگ و کوچک زیادی به استفاده از این روش که پیش از این هم بارها امتحان خود را پس داده علاقه‌مند شده‌اند. حال که دیگر استفاده از این روش درآمدزایی یک راه‌حل ثابت‌شده است، دغدغه اصلی توسعه [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        16,
+        57
+      ],
+      "tags": [
+        215,
+        234,
+        236
+      ]
+    },
+    {
+      "id": 3811,
+      "date": "2021-11-28T17:49:01",
+      "modified": "2021-12-18T01:39:46",
+      "slug": "new-restrictions-for-violators",
+      "link": "https://developers.cafebazaar.ir/fa/new-restrictions-for-violators/",
+      "title": {
+        "rendered": "محدودیت‌های تازه برای برنامه‌ها و بازی‌های متخلف در بازار"
+      },
+      "excerpt": {
+        "rendered": "<p>بازار به‌‌منظور رعایت حقوق کاربران و حفظ سلامت فضای رقابت در صنعت بازی و برنامه، با برنامه‌ها و بازی‌هایی که عملکرد فریب‌کارانه‌ای دارند، برخورد خواهد کرد. از این پس، برنامه‌‌ها و بازی‌هایی که به فضای سالم رقابت توسعه‌دهندگان بازی و برنامه ضربه وارد می‌کنند و به کاربران خود اطلاعاتی غلط ارائه می‌دهند، در بازار با [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        16,
+        57
+      ],
+      "tags": [
+        221,
+        215
+      ]
+    },
+    {
+      "id": 3804,
+      "date": "2021-11-17T13:51:41",
+      "modified": "2021-11-17T13:52:06",
+      "slug": "pishkhan-api-news",
+      "link": "https://developers.cafebazaar.ir/fa/pishkhan-api-news/",
+      "title": {
+        "rendered": "API پیشخان بازار؛ گامی به‌سوی مکانیزه‌شدن مدیریت برنامه"
+      },
+      "excerpt": {
+        "rendered": "<p>اکنون می‌توانید برای انجام فرآیند مدیریت برنامه و بازی خود از «API پیشخان بازار» استفاده کنید.&nbsp; «API پیشخان بازار» با هدف مکانیزه‌کردن فرآیند مدیریت برنامه و بازی در پیشخان توسعه‌دهندگان بازار توسعه پیدا کرده است. با استفاده از این قابلیت، پیشخان بازار به صورت یک API مبتنی‌ بر REST در دسترس شما قرار می‌گیرد و [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        16
+      ],
+      "tags": [
+        227,
+        215
+      ]
+    },
+    {
+      "id": 3675,
+      "date": "2021-10-25T10:54:33",
+      "modified": "2021-10-25T11:23:49",
+      "slug": "featured-games-and-apps-news",
+      "link": "https://developers.cafebazaar.ir/fa/featured-games-and-apps-news/",
+      "title": {
+        "rendered": "چگونه یکی از برگزیده‌های بازار باشید؟‌"
+      },
+      "excerpt": {
+        "rendered": "<p>پس از ماه‌ها تلاش، برنامه و بازی خود را توسعه داده‌ و در بازار منتشر کرده‌‌اید و حالا می‌خواهید آن را به کاربران معرفی کنید. از آن‌جایی‌که ده‌ها هزار برنامه و بازی دیگر نیز توسط توسعه دهندگان بازار پیش از این منتشر شده‌‌اند، دیده‌شدن محصول شما در میان دریایی از محصولات متنوع کار دشواری به‌نظر [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        16,
+        57
+      ],
+      "tags": [
+        221,
+        215
+      ]
+    },
+    {
+      "id": 3578,
+      "date": "2021-10-09T16:26:34",
+      "modified": "2021-10-11T15:15:01",
+      "slug": "bundle-video",
+      "link": "https://developers.cafebazaar.ir/fa/bundle-video/",
+      "title": {
+        "rendered": "چگونه برنامه و بازی خود را با فرمت App Bundle در بازار منتشر کنید؟"
+      },
+      "excerpt": {
+        "rendered": "<p>اپ باندل بروزترین فرمت انتشار برنامه‌ها و بازی‌‌های اندرویدی است، که به کاهش حجم برنامه‌ و بازی شما و بهینه‌سازی آن‌ها روی دستگاه‌های مختلف کمک می‌کند.</p>\n",
+        "protected": false
+      },
+      "categories": [
+        16,
+        57
+      ],
+      "tags": [
+        215
+      ]
+    },
+    {
+      "id": 3312,
+      "date": "2021-09-02T10:36:18",
+      "modified": "2021-09-11T12:14:57",
+      "slug": "bazaar-in-app-billing-news",
+      "link": "https://developers.cafebazaar.ir/fa/bazaar-in-app-billing-news/",
+      "title": {
+        "rendered": "با ویژگی‌های جدید سرویس اشتراک بازار آشنا شوید"
+      },
+      "excerpt": {
+        "rendered": "<p>سرویس اشتراک بازار هر روز در حال کامل‌تر شدن است و حال ویژگی‌های جدیدی به آن اضافه شده که کمک می‌کند با امکانات گسترده‌تری به پشتیبانی از کاربران، ارائه خدمات تازه‌ و راهنمایی آن‌ها دسترسی داشته باشید. گزینه‌های بیشتر و مدیریت بهتر پیش از این بازه‌های زمانی قابل برنامه‌ریزی در سرویس اشتراک بازار تنها یک [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        57
+      ],
+      "tags": []
+    },
+    {
+      "id": 3299,
+      "date": "2021-08-30T11:18:43",
+      "modified": "2021-08-30T13:13:44",
+      "slug": "cafe-bazaar-developer-service-updates",
+      "link": "https://developers.cafebazaar.ir/fa/cafe-bazaar-developer-service-updates/",
+      "title": {
+        "rendered": "به‌روزرسانی خدمات توسعه دهندگان بازار"
+      },
+      "excerpt": {
+        "rendered": "<p>وب‌سایت و پیشخان توسعه دهندگان بازار با هدف توان‌مندسازی توسعه‌دهندگان و پاسخ‌گویی مؤثرتر به نیازهای آنان بروزرسانی شد.&nbsp; بروزرسانی وب‌سایت توسعه‌دهندگان بازار در چند مرحله مختلف، از جمله بازطراحی و ارتقاء رابط کاربری وب‌سایت، بروزرسانی محتوای مستندات و افزودن دسته‌بندی‌ها و مستندات جدید صورت گرفته است.&nbsp; افزودن بخش «تبلیغات» به دسته‌بندی‌های اصلی، ازجمله تغییرات ‌وب‌سایت [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        57
+      ],
+      "tags": []
+    },
+    {
+      "id": 3282,
+      "date": "2021-08-28T11:14:13",
+      "modified": "2021-08-28T16:09:31",
+      "slug": "installation-health-news",
+      "link": "https://developers.cafebazaar.ir/fa/installation-health-news/",
+      "title": {
+        "rendered": "خطای نصب در پیشخان بازار چگونه کار می‌کند؟"
+      },
+      "excerpt": {
+        "rendered": "<p>توسعه دهندگان بازار با مراجعه به پیشخان و بخش داشبورد می‌توانند به نمودارهای مختلفی در ارتباط با وضعیت برنامه خود روی بازار دسترسی داشته باشند. یکی از این نمودارها مربوط به «سلامت نصب» می‌شود، نموداری که در ادامه از آن خواهیم گفت. در بخش داشبورد و پایین صفحه، شما به نمودار سلامت نصب برنامه دسترسی [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        57
+      ],
+      "tags": []
+    },
+    {
+      "id": 3245,
+      "date": "2021-08-15T16:15:42",
+      "modified": "2021-10-09T16:38:33",
+      "slug": "app-bundle-on-bazaar",
+      "link": "https://developers.cafebazaar.ir/fa/app-bundle-on-bazaar/",
+      "title": {
+        "rendered": "پشتیبانی از اپ باندل به بازار اضافه شد"
+      },
+      "excerpt": {
+        "rendered": "<p>اکنون توسعه دهندگان می‌توانند برنامه‌ خود را با استفاده از فرمت باندل (aab.) در بازار منتشر کنند. باندل (aab.) یک فرمت انتشار جدید برای برنامه‌های اندرویدی است که تمامی کدهای کامپایل‌شده (compiled) و منابع (resources) برنامه شما را دربرمی‌گیرد. بازار از باندل برنامه‌ی شما برای تولید و انتشار بسته‌های بهینه‌تر و سازگار با دستگاه‌های مختلف [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        57
+      ],
+      "tags": []
+    },
+    {
+      "id": 3236,
+      "date": "2021-08-14T17:13:32",
+      "modified": "2021-08-14T17:13:33",
+      "slug": "supporting-app-bundle-on-bazaar",
+      "link": "https://developers.cafebazaar.ir/supporting-app-bundle-on-bazaar/",
+      "title": {
+        "rendered": "Supporting App Bundle on Bazaar"
+      },
+      "excerpt": {
+        "rendered": "<p>Developers can publish their applications on Bazaar, using bundle format now.&nbsp; Bundle (.aab) is a new publishing format that includes all of your app’s compiled codes and resources. Bazaar uses your app bundle to generate and publish optimized packages for devices with different configurations. Publishing an application using the app bundle helps you accelerate your [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        96
+      ],
+      "tags": []
+    },
+    {
+      "id": 2047,
+      "date": "2021-06-19T11:45:37",
+      "modified": "2021-07-02T15:20:06",
+      "slug": "trusted-web-application",
+      "link": "https://developers.cafebazaar.ir/trusted-web-application/",
+      "title": {
+        "rendered": "Publishing‌ ‌Trusted‌ ‌Web‌ ‌Application‌ ‌on‌ ‌Bazaar‌ ‌"
+      },
+      "excerpt": {
+        "rendered": "<p>From now on, using the TWA protocol, developers can publish WebView and PWA applications on Bazaar. Trusted Web Activity is a new way to open your web-app content in apps like Progressive Web App (PWA). This protocol which Google provides, helps to improve the function of WebView applications. TWA allows you to use all Google [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        1
+      ],
+      "tags": []
+    },
+    {
+      "id": 1459,
+      "date": "2021-06-14T12:09:44",
+      "modified": "2021-07-02T19:44:18",
+      "slug": "expansion-files",
+      "link": "https://developers.cafebazaar.ir/expansion-files/",
+      "title": {
+        "rendered": "Expansion Files (OBB): Smaller Updates For Users"
+      },
+      "excerpt": {
+        "rendered": "<p>Based on Bazaar regulations, the size of the uploaded APK must not be more than 150MB. For most apps, this amount provides enough space for application codes and assets. However, some apps need more space for high-quality graphic files, media files, and other large assets. Before, developers had to upload all of their application assets [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        1
+      ],
+      "tags": []
+    },
+    {
+      "id": 1456,
+      "date": "2021-06-14T12:06:23",
+      "modified": "2021-07-02T19:45:47",
+      "slug": "staged-rollout",
+      "link": "https://developers.cafebazaar.ir/staged-rollout/",
+      "title": {
+        "rendered": "What is staged rollout?"
+      },
+      "excerpt": {
+        "rendered": "<p>To be on a successful path for application growth, releasing new features in regular intervals is necessary. Still, there is always a doubt whether the new feature is worth updating the application or not.&nbsp; With the staged rollout feature, developers can release an app update to a limited set of users and after receiving positive [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        1
+      ],
+      "tags": []
+    },
+    {
+      "id": 1454,
+      "date": "2021-06-14T12:01:26",
+      "modified": "2021-07-03T12:04:12",
+      "slug": "trusted-web-application",
+      "link": "https://developers.cafebazaar.ir/fa/trusted-web-application/",
+      "title": {
+        "rendered": "انتشار برنامه‌ی Trusted Web Application در بازار"
+      },
+      "excerpt": {
+        "rendered": "<p>از این پس، توسعه‌دهندگان می‌توانند با رعایت پروتکل‌ TWA، برنامه‌های Web View و PWA در بازار منتشر کنند. Trusted Web Activity راه حل جدیدی است که برای باز‌کردن محتوای web-app در برنامه‌‌هایی مانند Progressive Web App یا PWA به کار می‌رود. این پروتکل که توسط گوگل کروم ارائه شده، به بهبود عملکرد برنامه‌های web view [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        57
+      ],
+      "tags": []
+    },
+    {
+      "id": 1452,
+      "date": "2021-06-14T11:59:43",
+      "modified": "2021-07-02T15:20:55",
+      "slug": "boof",
+      "link": "https://developers.cafebazaar.ir/boof/",
+      "title": {
+        "rendered": "Boof: a place for developers’ contribution"
+      },
+      "excerpt": {
+        "rendered": "<p>Have you ever faced any problems in the Bazaar Developers Panel and wanted to report? Or had any suggestions to improve the panel but couldn’t find a clear path to mention? Before, using support tickets was the only way to submit your requests and report the bugs in the panel. Now, Bazaar implemented a new [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        96
+      ],
+      "tags": []
+    },
+    {
+      "id": 1449,
+      "date": "2021-06-14T11:58:10",
+      "modified": "2021-08-23T00:37:43",
+      "slug": "boof",
+      "link": "https://developers.cafebazaar.ir/fa/boof/",
+      "title": {
+        "rendered": "با بازار مستقیم در ارتباط باشید"
+      },
+      "excerpt": {
+        "rendered": "<p>تا به حال پیش آمده در پیشخان توسعه‌دهندگان بازار به مشکلی برخورده باشید و بخواهید آن را گزارش کنید؟ یا پیشنهادی برای بهبود پیشخان بازار داشته‌ و برای مطرح‌کردن آن مسیر روشنی پیدا نکرده باشید؟ تا پیش از این، برای ثبت درخواست‌ها و گزارش باگ‌های پیشخان،‌ استفاده از تیکت‌های پشتیبانی تنها مسیر ممکن بود، بنابراین [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        16
+      ],
+      "tags": []
+    },
+    {
+      "id": 1447,
+      "date": "2021-06-14T11:46:31",
+      "modified": "2021-07-02T15:21:25",
+      "slug": "device-specification",
+      "link": "https://developers.cafebazaar.ir/device-specification/",
+      "title": {
+        "rendered": "Device Specification: Multiple Packages in One Release"
+      },
+      "excerpt": {
+        "rendered": "<p>To be successful as a developer, you should make your app available for all Android devices. But supporting all devices with different configurations in one package increases the package size. In this case, your application would not be available for all of your users easily. So, Bazaar has devised a new feature for you to [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        1
+      ],
+      "tags": []
+    },
+    {
+      "id": 1444,
+      "date": "2021-06-14T11:44:17",
+      "modified": "2021-06-14T17:45:13",
+      "slug": "device-specification",
+      "link": "https://developers.cafebazaar.ir/fa/device-specification/",
+      "title": {
+        "rendered": "بارگذاری چند بسته در یک رهانش"
+      },
+      "excerpt": {
+        "rendered": "<p>اگر می‌خواهید برنامه‌ موفقی داشته باشید باید امکانی فراهم کنید که تمامی دستگاه‌های اندرویدی به برنامه شما دسترسی داشته باشند. اما پشتیبانی از تمامی دستگاه‌ها با معماری‌های متفاوت در یک بسته، باعث افزایش حجم آن بسته می‌شود و این مسئله دسترسی به برنامه‌تان را برای کاربران دشوار می‌کند. بازار برای حل این مشکل قابلیت جدیدی [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        16
+      ],
+      "tags": []
+    },
+    {
+      "id": 1435,
+      "date": "2021-06-14T11:23:24",
+      "modified": "2021-06-14T17:45:41",
+      "slug": "bazaar-login",
+      "link": "https://developers.cafebazaar.ir/fa/bazaar-login/",
+      "title": {
+        "rendered": "قابلیت جدید ورود با بازار"
+      },
+      "excerpt": {
+        "rendered": "<p>قابلیت «ورود با بازار» با اهداف ساده‌سازی ورود کاربر به برنامه و بازی، تسهیل فرایند پرداخت و حفظ و رضایت کاربران در پیشخان توسعه‌دهندگان فعال شده است.&nbsp; برای فعال‌سازی این امکان پیش از هر چیز لازم است در بخش کلاینت (client) برنامه و بازی‌، کتابخانه ورود با بازار پیاده‌سازی شود. برای راهنمایی پیاده سازی بازار [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        16
+      ],
+      "tags": []
+    },
+    {
+      "id": 1427,
+      "date": "2021-06-14T11:10:34",
+      "modified": "2021-06-14T17:38:11",
+      "slug": "expansion-files",
+      "link": "https://developers.cafebazaar.ir/fa/expansion-files/",
+      "title": {
+        "rendered": "بروزرسانی‌‌هایی با حجم کمتر برای کاربران شما"
+      },
+      "excerpt": {
+        "rendered": "<p>امکان بارگذاری «فایل‌های پیوست» در پیشخان توسعه‌دهندگان بازار فعال شد همانطور که می‌دانید، طبق قوانین بازار حجم بسته‌ای که توسعه‌دهندگان برای برنامه خود بارگذاری می‌کنند، نباید بیشتر از ۱۵۰ مگابایت باشد. این حجم برای کدها و دارایی‌های بیشتر برنامه‌ها، فضایی کافی در اختیار توسعه‌دهنده قرار می‌دهد. با وجود این، برخی از برنامه‌ها برای فایل‌های گرافیکی [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        16
+      ],
+      "tags": []
+    },
+    {
+      "id": 1425,
+      "date": "2021-06-14T10:58:08",
+      "modified": "2021-09-28T11:11:11",
+      "slug": "discovery-ads",
+      "link": "https://developers.cafebazaar.ir/fa/discovery-ads/",
+      "title": {
+        "rendered": "آغاز به کار تبلیغات در گشت‌وگذار"
+      },
+      "excerpt": {
+        "rendered": "<p>از زمستان سال ۱۳۹۷ با قابلیت «تبلیغات در جست‌وجو»، همکاری تبلیغاتی با توسعه‌دهندگان در مسیر جذب هدف‌مند کاربران براساس انواع جست‌وجوی آن‌ها در بازار طراحی شد. از دی ماه سال ۱۳۹۹،‌ مسیر تبلیغاتی «گشت‌وگذار در بازار» به کمپین‌های تبلیغاتی بازار اضافه شد و توسعه‌دهندگان می‌توانند علاوه بر استفاده از تبلیغات «جست‌وجو در بازار»، از روش [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        57
+      ],
+      "tags": []
+    },
+    {
+      "id": 1140,
+      "date": "2021-06-12T06:23:27",
+      "modified": "2021-06-12T06:23:29",
+      "slug": "new-feature-exact-phrase-search",
+      "link": "https://developers.cafebazaar.ir/new-feature-exact-phrase-search/",
+      "title": {
+        "rendered": "New feature: Exact phrase search"
+      },
+      "excerpt": {
+        "rendered": "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        1,
+        96,
+        98
+      ],
+      "tags": []
+    },
+    {
+      "id": 1007,
+      "date": "2021-05-18T18:03:09",
+      "modified": "2021-06-14T17:47:26",
+      "slug": "staged-rollout",
+      "link": "https://developers.cafebazaar.ir/fa/staged-rollout/",
+      "title": {
+        "rendered": "رهانش تدریجی (Staged Rollout) چیست؟"
+      },
+      "excerpt": {
+        "rendered": "<p>برای موفقیت هر برنامه اضافه کردن قابلیت‌های جدید در فاصله‌های زمانی منظم ضروری است. اما همیشه این شک وجود دارد که آیا قابلیت جدید، ارزش بروزرسانی نرم‌افزار را دارد یا نه؟ با طراحی قابلیتی به‌نام رهانش تدریجی‌، توسعه‌دهندگان می‌توانند بروزرسانی برنامه را تنها برای عده مشخصی از کاربران ارائه دهند. در صورت دریافت بازخورد مثبت، [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        16
+      ],
+      "tags": []
+    },
+    {
+      "id": 4339,
+      "date": "2020-06-13T12:46:00",
+      "modified": "2022-06-22T18:08:06",
+      "slug": "video-tutorial-in-bazaar",
+      "link": "https://developers.cafebazaar.ir/fa/video-tutorial-in-bazaar/",
+      "title": {
+        "rendered": "اضافه شدن بخش آموزش ویدیو به بازار"
+      },
+      "excerpt": {
+        "rendered": "<p>محصول جدید بازار، با عنوان آموزش به منظور فراهم ساختن بستری برای رساندن محتوای آموزشی ویدئویی با کیفیت، میان کاربران بازار و تولید کنندگان محتوا به زودی شروع به کار خواهد کرد. آموزش، به عنوان یکی از محصولات اپلیکیشن بازار خواهد بود. ۴۵ میلیون کاربر فعال، پتانسیل زیادی برای تعامل و ارتباط میان مخاطبان و [&hellip;]</p>\n",
+        "protected": false
+      },
+      "categories": [
+        16
+      ],
+      "tags": []
+    }
+  ]
+}

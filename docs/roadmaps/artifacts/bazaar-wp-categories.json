@@ -1,0 +1,45 @@
+{
+  "count": 8,
+  "categories": [
+    {
+      "id": 1,
+      "name": "Industry analysis",
+      "slug": "industry-analysis"
+    },
+    {
+      "id": 3,
+      "name": "Mobile App Industry Report",
+      "slug": "mobile-app-industry-report"
+    },
+    {
+      "id": 96,
+      "name": "News",
+      "slug": "news-2"
+    },
+    {
+      "id": 59,
+      "name": "Quarterly reports",
+      "slug": "quarterly-reports"
+    },
+    {
+      "id": 98,
+      "name": "Updates",
+      "slug": "updates"
+    },
+    {
+      "id": 16,
+      "name": "ابزار و قابلیت",
+      "slug": "feature"
+    },
+    {
+      "id": 57,
+      "name": "اخبار و اطلاع‌رسانی",
+      "slug": "news"
+    },
+    {
+      "id": 21,
+      "name": "گزارش فصلی",
+      "slug": "report"
+    }
+  ]
+}

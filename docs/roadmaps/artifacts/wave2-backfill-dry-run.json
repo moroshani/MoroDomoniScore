@@ -1,0 +1,14 @@
+{
+  "mode": "dry-run",
+  "generatedAt": "2026-02-25T01:17:05.789Z",
+  "usersScanned": 31,
+  "usersProcessed": 31,
+  "personalAlliancesCreated": 0,
+  "playersMirrored": 0,
+  "playersCreated": 0,
+  "nightsMirrored": 0,
+  "nightsAlreadyMirrored": 1,
+  "participantsCreated": 0,
+  "unnamedParticipantsSkipped": 0,
+  "errors": []
+}

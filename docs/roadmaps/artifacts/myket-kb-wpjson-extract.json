@@ -1,0 +1,61 @@
+{
+  "count": 14,
+  "results": [
+    {
+      "slug": "developer-cd",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "slug": "publish_multiple_apk",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "slug": "version-rollout",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "slug": "in-app-update",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "slug": "manage-sku-items",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "slug": "server-to-server-payment-validation-api",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "slug": "api-consume",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "slug": "myket-in-app-purchase-fa",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "slug": "get-pki-public-key-fa",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "slug": "security-recommendations",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "slug": "check-version-update-service",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "slug": "user-rate-comment-submission-intent",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "slug": "open-application-page-in-myket",
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "slug": "open-list-of-developer-apps-in-myket",
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ]
+}

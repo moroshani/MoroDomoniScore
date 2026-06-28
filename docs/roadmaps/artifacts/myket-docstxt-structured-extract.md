@@ -1,0 +1,22 @@
+# Myket Docs.txt Structured Extract (2026-06-02)
+
+- Source: `/mnt/c/Users/moroshani/Desktop/myket docs.txt`
+- Link sections parsed: 21
+
+## Extracted Technical Constraints
+- **release_bundle_list_endpoint**: `https://developer.myket.ir/api/partners/applications/{packageName}/release-bundle?status={status}&offset={offset}&limit={limit}`
+- **release_statuses**: `['JustCreated', 'WaitingForApproval', 'Rejected', 'Approved', 'RolledBack']`
+- **limit_range**: `1..20`
+- **offset_rule**: `>0`
+- **api_endpoints**: `['https://developer.myket.i/apir/partners/applications/{packageName}/release-bundle/commit', 'https://developer.myket.ir/api/partners/applications/{PACKAGE_NAME}/products?limit=10&offset=0', 'https://developer.myket.ir/api/partners/applications/{PACKAGE_NAME}/purchases/products/{SKU_ID}/verify', 'https://developer.myket.ir/api/partners/applications/{PAKCAGE_NAME}/products', 'https://developer.myket.ir/api/partners/applications/{PAKCAGE_NAME}/products/{SKU_ID}', 'https://developer.myket.ir/api/partners/applications/{PAKCAGE_NAME}/purchases/products/{SKU_ID}/tokens/{TOKEN}/consume', 'https://developer.myket.ir/api/partners/applications/{packageName}/release-bundle', 'https://developer.myket.ir/api/partners/applications/{packageName}/release-bundle/revert', 'https://developer.myket.ir/api/partners/applications/{packageName}/release-bundle/upload', 'https://developer.myket.ir/api/partners/applications/{packageName}/release-bundle?status={status}&amp;offset={offset}&limit={limit}']`
+- **upload_size_limit_mb**: `500`
+- **auth_header**: `X-Access-Token`
+- **server_to_server_required**: `True`
+- **rollout_field**: `stagedRolloutPercent`
+- **http_codes**: `['200', '400', '401', '404', '500']`
+- **message_codes**: `['BadRequest', 'EditNotPossible', 'InternalError', 'MissingRequiredData', 'NotFound', 'PostAppFailed', 'PurchasedSkuNotFound', 'ReleaseNotFound', 'SkuAlreadyConsumed', 'SkuIdNotFound', 'Successful', 'UnAuthorized', 'UploadReleaseVersionFailed']`
+- **iap_endpoints**: `['https://developer.myket.ir/api/partners/applications/{PACKAGE_NAME}/products?limit=10&offset=0', 'https://developer.myket.ir/api/partners/applications/{PACKAGE_NAME}/purchases/products/{SKU_ID}/verify', 'https://developer.myket.ir/api/partners/applications/{PAKCAGE_NAME}/products', 'https://developer.myket.ir/api/partners/applications/{PAKCAGE_NAME}/products/{SKU_ID}', 'https://developer.myket.ir/api/partners/applications/{PAKCAGE_NAME}/purchases/products/{SKU_ID}/tokens/{TOKEN}/consume']`
+
+## Notes
+- Values above come from the provided local Myket corpus file (including copied KB content).
+- Some API URL examples include placeholders and occasional source typos; final execution URLs must be verified in Myket developer panel/API docs before automation rollout.

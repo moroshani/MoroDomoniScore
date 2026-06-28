@@ -1,0 +1,496 @@
+{
+  "count": 34,
+  "results": [
+    {
+      "url": "https://myket.ir/kb/pages/developer-cd/",
+      "status": 200,
+      "final_url": "https://myket.ir/kb/pages/developer-cd/",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "سرویس‌های انتشار نسخه‌ی جدید در مایکت | پایگاه دانش مایکت",
+      "h1": "پایگاه دانش مایکت",
+      "h2": [
+        "مستندات فنی",
+        "قوانین انتشار برنامه در مایکت"
+      ],
+      "keywords": [
+        "500",
+        "consume",
+        "مایکت",
+        "درون‌برنامه‌ای"
+      ],
+      "sample_bytes": 250000
+    },
+    {
+      "url": "https://developer.myket.ir/api/partners/applications/{packageName}/release-bundle?status={status}&offset={offset}&limit={limit}",
+      "error": "HTTP Error 401: Unauthorized"
+    },
+    {
+      "url": "https://developer.myket.ir/api/partners/applications/{packageName}/release-bundle",
+      "error": "HTTP Error 401: Unauthorized"
+    },
+    {
+      "url": "https://developer.myket.ir/api/partners/applications/{packageName}/release-bundle/upload",
+      "error": "HTTP Error 405: Method Not Allowed"
+    },
+    {
+      "url": "https://developer.myket.ir/api/partners/applications/{packageName}/release-bundle/revert",
+      "error": "HTTP Error 405: Method Not Allowed"
+    },
+    {
+      "url": "https://myket.ir/kb/pages/check-version-update-service/",
+      "status": 200,
+      "final_url": "https://myket.ir/kb/pages/check-version-update-service/",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "بررسی به‌‌روز بودن برنامه | پایگاه دانش مایکت",
+      "h1": "پایگاه دانش مایکت",
+      "h2": [
+        "مستندات فنی",
+        "قوانین انتشار برنامه در مایکت"
+      ],
+      "keywords": [
+        "500",
+        "consume",
+        "مایکت",
+        "درون‌برنامه‌ای"
+      ],
+      "sample_bytes": 250000
+    },
+    {
+      "url": "https://myket.ir/kb/wp-content/uploads/2020/03/MyketUpdateHelper.zip",
+      "status": 200,
+      "final_url": "https://myket.ir/kb/wp-content/uploads/2020/03/MyketUpdateHelper.zip",
+      "content_type": "application/zip",
+      "sample_bytes": 8014
+    },
+    {
+      "url": "https://myket.ir/kb/wp-content/uploads/2020/03/MyketDeveloperHelperSample.zip",
+      "status": 200,
+      "final_url": "https://myket.ir/kb/wp-content/uploads/2020/03/MyketDeveloperHelperSample.zip",
+      "content_type": "application/zip",
+      "sample_bytes": 91853
+    },
+    {
+      "url": "https://myket.ir/kb/pages/publish_multiple_apk/",
+      "status": 200,
+      "final_url": "https://myket.ir/kb/pages/publish_multiple_apk/",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "قابلیت بارگذاری چند بسته در یک انتشار | پایگاه دانش مایکت",
+      "h1": "پایگاه دانش مایکت",
+      "h2": [
+        "مستندات فنی",
+        "قوانین انتشار برنامه در مایکت"
+      ],
+      "keywords": [
+        "500",
+        "consume",
+        "مایکت",
+        "درون‌برنامه‌ای"
+      ],
+      "sample_bytes": 250000
+    },
+    {
+      "url": "https://myket.ir/kb/pages/version-rollout/",
+      "status": 200,
+      "final_url": "https://myket.ir/kb/pages/version-rollout/",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "انتشار تدریجی نسخه | پایگاه دانش مایکت",
+      "h1": "پایگاه دانش مایکت",
+      "h2": [
+        "مستندات فنی",
+        "قوانین انتشار برنامه در مایکت"
+      ],
+      "keywords": [
+        "500",
+        "consume",
+        "مایکت",
+        "درون‌برنامه‌ای"
+      ],
+      "sample_bytes": 250000
+    },
+    {
+      "url": "https://myket.ir/kb/pages/in-app-update/",
+      "status": 200,
+      "final_url": "https://myket.ir/kb/pages/in-app-update/",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "به‌روزرسانی درون‌برنامه‌ای مایکت | پایگاه دانش مایکت",
+      "h1": "پایگاه دانش مایکت",
+      "h2": [
+        "مستندات فنی",
+        "قوانین انتشار برنامه در مایکت"
+      ],
+      "keywords": [
+        "500",
+        "consume",
+        "مایکت",
+        "درون‌برنامه‌ای"
+      ],
+      "sample_bytes": 250000
+    },
+    {
+      "url": "https://myket.ir/kb/pages/user-rate-comment-submission-intent/",
+      "status": 200,
+      "final_url": "https://myket.ir/kb/pages/user-rate-comment-submission-intent/",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "ارسال امتیاز و نظر کاربر درباره برنامه | پایگاه دانش مایکت",
+      "h1": "پایگاه دانش مایکت",
+      "h2": [
+        "مستندات فنی",
+        "قوانین انتشار برنامه در مایکت"
+      ],
+      "keywords": [
+        "500",
+        "consume",
+        "مایکت",
+        "درون‌برنامه‌ای"
+      ],
+      "sample_bytes": 250000
+    },
+    {
+      "url": "https://myket.ir/kb/pages/open-application-page-in-myket/",
+      "status": 200,
+      "final_url": "https://myket.ir/kb/pages/open-application-page-in-myket/",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "باز کردن صفحه برنامه در مایکت | پایگاه دانش مایکت",
+      "h1": "پایگاه دانش مایکت",
+      "h2": [
+        "مستندات فنی",
+        "قوانین انتشار برنامه در مایکت"
+      ],
+      "keywords": [
+        "500",
+        "consume",
+        "مایکت",
+        "درون‌برنامه‌ای"
+      ],
+      "sample_bytes": 250000
+    },
+    {
+      "url": "https://myket.ir/kb/pages/open-list-of-developer-apps-in-myket/",
+      "status": 200,
+      "final_url": "https://myket.ir/kb/pages/open-list-of-developer-apps-in-myket/",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "نمایش لیست برنامه‌های توسعه‌دهنده | پایگاه دانش مایکت",
+      "h1": "پایگاه دانش مایکت",
+      "h2": [
+        "مستندات فنی",
+        "قوانین انتشار برنامه در مایکت"
+      ],
+      "keywords": [
+        "500",
+        "consume",
+        "مایکت",
+        "درون‌برنامه‌ای"
+      ],
+      "sample_bytes": 250000
+    },
+    {
+      "url": "https://myket.ir/kb/pages/manage-sku-items/",
+      "status": 200,
+      "final_url": "https://myket.ir/kb/pages/manage-sku-items/",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "مدیریت محصولات درون‌برنامه‌ای با استفاده از API | پایگاه دانش مایکت",
+      "h1": "پایگاه دانش مایکت",
+      "h2": [
+        "مستندات فنی",
+        "قوانین انتشار برنامه در مایکت"
+      ],
+      "keywords": [
+        "X-Access-Token",
+        "Server to Server",
+        "500",
+        "consume",
+        "مایکت",
+        "درون‌برنامه‌ای"
+      ],
+      "sample_bytes": 250000
+    },
+    {
+      "url": "https://developer.myket.ir/api/partners/applications/{PACKAGE_NAME}/products?limit=10&offset=0",
+      "error": "HTTP Error 401: Unauthorized"
+    },
+    {
+      "url": "https://developer.myket.ir/api/partners/applications/{PAKCAGE_NAME}/products",
+      "error": "HTTP Error 401: Unauthorized"
+    },
+    {
+      "url": "https://developer.myket.ir/api/partners/applications/{PAKCAGE_NAME}/products/{SKU_ID}",
+      "error": "HTTP Error 405: Method Not Allowed"
+    },
+    {
+      "url": "https://myket.ir/kb/pages/server-to-server-payment-validation-api/",
+      "status": 200,
+      "final_url": "https://myket.ir/kb/pages/server-to-server-payment-validation-api/",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "استفاده از API صحت سنجی خرید | پایگاه دانش مایکت",
+      "h1": "پایگاه دانش مایکت",
+      "h2": [
+        "مستندات فنی",
+        "قوانین انتشار برنامه در مایکت"
+      ],
+      "keywords": [
+        "Server to Server",
+        "500",
+        "consume",
+        "مایکت",
+        "درون‌برنامه‌ای"
+      ],
+      "sample_bytes": 250000
+    },
+    {
+      "url": "https://developer.myket.ir/api/partners/applications/{PACKAGE_NAME}/purchases/products/{SKU_ID}/verify",
+      "error": "HTTP Error 405: Method Not Allowed"
+    },
+    {
+      "url": "https://myket.ir/kb/pages/api-consume/",
+      "status": 200,
+      "final_url": "https://myket.ir/kb/pages/api-consume/",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "مصرف خرید درون‌برنامه‌ای با استفاده از API | پایگاه دانش مایکت",
+      "h1": "پایگاه دانش مایکت",
+      "h2": [
+        "مستندات فنی",
+        "قوانین انتشار برنامه در مایکت"
+      ],
+      "keywords": [
+        "Server to Server",
+        "500",
+        "consume",
+        "مایکت",
+        "درون‌برنامه‌ای"
+      ],
+      "sample_bytes": 250000
+    },
+    {
+      "url": "https://developer.myket.ir/api/partners/applications/{PAKCAGE_NAME}/purchases/products/{SKU_ID}/tokens/{TOKEN}/consume",
+      "error": "HTTP Error 405: Method Not Allowed"
+    },
+    {
+      "url": "https://myket.ir/kb/pages/myket-in-app-purchase-fa/",
+      "status": 200,
+      "final_url": "https://myket.ir/kb/pages/myket-in-app-purchase-fa/",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "خرید درون‌برنامه‌ای مایکت | پایگاه دانش مایکت",
+      "h1": "پایگاه دانش مایکت",
+      "h2": [
+        "مستندات فنی",
+        "قوانین انتشار برنامه در مایکت"
+      ],
+      "keywords": [
+        "500",
+        "consume",
+        "مایکت",
+        "درون‌برنامه‌ای"
+      ],
+      "sample_bytes": 250000
+    },
+    {
+      "url": "https://myket.ir/kb/pages/get-pki-public-key-fa/",
+      "status": 200,
+      "final_url": "https://myket.ir/kb/pages/get-pki-public-key-fa/",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "دریافت کلید عمومی برنامه | پایگاه دانش مایکت",
+      "h1": "پایگاه دانش مایکت",
+      "h2": [
+        "مستندات فنی",
+        "قوانین انتشار برنامه در مایکت"
+      ],
+      "keywords": [
+        "500",
+        "consume",
+        "مایکت",
+        "درون‌برنامه‌ای"
+      ],
+      "sample_bytes": 250000
+    },
+    {
+      "url": "https://myket.ir/kb/pages/myket-iab-intro/",
+      "status": 200,
+      "final_url": "https://myket.ir/kb/pages/myket-iab-intro/",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "آشنایی با مفاهیم پرداخت درون‌برنامه‌ای مایکت | پایگاه دانش مایکت",
+      "h1": "پایگاه دانش مایکت",
+      "h2": [
+        "مستندات فنی",
+        "قوانین انتشار برنامه در مایکت"
+      ],
+      "keywords": [
+        "500",
+        "consume",
+        "مایکت",
+        "درون‌برنامه‌ای"
+      ],
+      "sample_bytes": 250000
+    },
+    {
+      "url": "https://myket.ir/kb/pages/java/",
+      "status": 200,
+      "final_url": "https://myket.ir/kb/pages/java/",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "جاوا (Java) | پایگاه دانش مایکت",
+      "h1": "پایگاه دانش مایکت",
+      "h2": [
+        "مستندات فنی",
+        "قوانین انتشار برنامه در مایکت"
+      ],
+      "keywords": [
+        "500",
+        "consume",
+        "مایکت",
+        "درون‌برنامه‌ای"
+      ],
+      "sample_bytes": 250000
+    },
+    {
+      "url": "https://myket.ir/kb/pages/unity-with-gradle-fa/",
+      "status": 200,
+      "final_url": "https://myket.ir/kb/pages/unity-with-gradle-fa/",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "یونیتی (Unity) با Gradle | پایگاه دانش مایکت",
+      "h1": "پایگاه دانش مایکت",
+      "h2": [
+        "مستندات فنی",
+        "قوانین انتشار برنامه در مایکت"
+      ],
+      "keywords": [
+        "500",
+        "consume",
+        "مایکت",
+        "درون‌برنامه‌ای"
+      ],
+      "sample_bytes": 250000
+    },
+    {
+      "url": "https://myket.ir/kb/pages/unity-fa/",
+      "status": 200,
+      "final_url": "https://myket.ir/kb/pages/unity-fa/",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "یونیتی (Unity) | پایگاه دانش مایکت",
+      "h1": "پایگاه دانش مایکت",
+      "h2": [
+        "مستندات فنی",
+        "قوانین انتشار برنامه در مایکت"
+      ],
+      "keywords": [
+        "500",
+        "consume",
+        "مایکت",
+        "درون‌برنامه‌ای"
+      ],
+      "sample_bytes": 250000
+    },
+    {
+      "url": "https://myket.ir/kb/pages/iab-flutter/",
+      "status": 200,
+      "final_url": "https://myket.ir/kb/pages/iab-flutter/",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "پلاگین خرید درون‌برنامه‌ای فلاتر (Flutter) | پایگاه دانش مایکت",
+      "h1": "پایگاه دانش مایکت",
+      "h2": [
+        "مستندات فنی",
+        "قوانین انتشار برنامه در مایکت"
+      ],
+      "keywords": [
+        "500",
+        "consume",
+        "مایکت",
+        "درون‌برنامه‌ای"
+      ],
+      "sample_bytes": 250000
+    },
+    {
+      "url": "https://myket.ir/kb/pages/adding-inapp-purchase-in-react-native/",
+      "status": 200,
+      "final_url": "https://myket.ir/kb/pages/adding-inapp-purchase-in-react-native/",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "پلاگین خرید درون‌برنامه‌ای React Native | پایگاه دانش مایکت",
+      "h1": "پایگاه دانش مایکت",
+      "h2": [
+        "مستندات فنی",
+        "قوانین انتشار برنامه در مایکت"
+      ],
+      "keywords": [
+        "500",
+        "consume",
+        "مایکت",
+        "درون‌برنامه‌ای"
+      ],
+      "sample_bytes": 250000
+    },
+    {
+      "url": "https://myket.ir/kb/pages/security-recommendations/",
+      "status": 200,
+      "final_url": "https://myket.ir/kb/pages/security-recommendations/",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "توصیه‌های امنیتی | پایگاه دانش مایکت",
+      "h1": "پایگاه دانش مایکت",
+      "h2": [
+        "مستندات فنی",
+        "قوانین انتشار برنامه در مایکت"
+      ],
+      "keywords": [
+        "500",
+        "consume",
+        "مایکت",
+        "درون‌برنامه‌ای"
+      ],
+      "sample_bytes": 250000
+    },
+    {
+      "url": "https://myket.ir/kb/topics/myket-app-publishing-rules-fa/",
+      "status": 200,
+      "final_url": "https://myket.ir/kb/topics/myket-app-publishing-rules-fa/",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "قوانین انتشار برنامه در مایکت Archives | پایگاه دانش مایکت",
+      "h1": "پایگاه دانش مایکت",
+      "h2": [
+        "مستندات فنی",
+        "قوانین انتشار برنامه در مایکت"
+      ],
+      "keywords": [
+        "500",
+        "consume",
+        "مایکت",
+        "درون‌برنامه‌ای"
+      ],
+      "sample_bytes": 250000
+    },
+    {
+      "url": "https://myket.ir/kb/topics/myket-app-publishing-guide-fa/",
+      "status": 200,
+      "final_url": "https://myket.ir/kb/topics/myket-app-publishing-guide-fa/",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "راهنمای انتشار برنامه در مایکت Archives | پایگاه دانش مایکت",
+      "h1": "پایگاه دانش مایکت",
+      "h2": [
+        "مستندات فنی",
+        "قوانین انتشار برنامه در مایکت"
+      ],
+      "keywords": [
+        "500",
+        "consume",
+        "مایکت",
+        "درون‌برنامه‌ای"
+      ],
+      "sample_bytes": 250000
+    },
+    {
+      "url": "https://myket.ir/kb/topics/faq/",
+      "status": 200,
+      "final_url": "https://myket.ir/kb/topics/faq/",
+      "content_type": "text/html; charset=UTF-8",
+      "title": "سوالات متداول توسعه‌دهندگان Archives | پایگاه دانش مایکت",
+      "h1": "پایگاه دانش مایکت",
+      "h2": [
+        "مستندات فنی",
+        "قوانین انتشار برنامه در مایکت"
+      ],
+      "keywords": [
+        "500",
+        "consume",
+        "مایکت",
+        "درون‌برنامه‌ای"
+      ],
+      "sample_bytes": 250000
+    }
+  ]
+}

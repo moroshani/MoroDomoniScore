@@ -1,0 +1,2278 @@
+{
+  "version": 1,
+  "generated_at_utc": "2026-02-26T12:14:32.676Z",
+  "source": "scripts/roadmap/generate-registry.mjs",
+  "entries": [
+    {
+      "id": "01-foundation/README",
+      "path": "docs/roadmaps/01-foundation/README.md",
+      "owner": "governance",
+      "status": "done",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "01 Foundation Roadmap",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for foundation.",
+        "current_implementation_snapshot": "`Implemented (core and automation)`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "01-foundation/roadmap-registry-and-governance",
+      "path": "docs/roadmaps/01-foundation/roadmap-registry-and-governance.md",
+      "owner": "governance",
+      "status": "done",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Registry and Governance",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for foundation.",
+        "current_implementation_snapshot": "`Implemented baseline`, `Operational`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "02-pwa-cross-platform/README",
+      "path": "docs/roadmaps/02-pwa-cross-platform/README.md",
+      "owner": "pwa-platform",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-04-12",
+      "contracts": [
+        "C1",
+        "C3",
+        "C4",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "metadata": {
+        "title": "02 PWA Cross-Platform Roadmap",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for pwa cross platform.",
+        "current_implementation_snapshot": "`Implemented (strong baseline)`, `Partial (telemetry and platform QA depth)`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C3",
+          "C4",
+          "C8",
+          "C9",
+          "C10",
+          "C11"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "02-pwa-cross-platform/install-android-desktop",
+      "path": "docs/roadmaps/02-pwa-cross-platform/install-android-desktop.md",
+      "owner": "pwa-platform",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-04-12",
+      "contracts": [
+        "C1",
+        "C3",
+        "C4",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Android/Desktop Install",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for pwa cross platform.",
+        "current_implementation_snapshot": "`Implemented baseline`, `Partial advanced analytics`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C3",
+          "C4",
+          "C8",
+          "C9",
+          "C10",
+          "C11"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "02-pwa-cross-platform/install-ios",
+      "path": "docs/roadmaps/02-pwa-cross-platform/install-ios.md",
+      "owner": "pwa-platform",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-04-12",
+      "contracts": [
+        "C1",
+        "C3",
+        "C4",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: iOS Install",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for pwa cross platform.",
+        "current_implementation_snapshot": "`Implemented baseline`, `Partial for deep iOS polish`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C3",
+          "C4",
+          "C8",
+          "C9",
+          "C10",
+          "C11"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "02-pwa-cross-platform/push-notification-readiness",
+      "path": "docs/roadmaps/02-pwa-cross-platform/push-notification-readiness.md",
+      "owner": "pwa-platform",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-04-12",
+      "contracts": [
+        "C1",
+        "C3",
+        "C4",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Push Notification Readiness",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for pwa cross platform.",
+        "current_implementation_snapshot": "`Not implemented`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C3",
+          "C4",
+          "C8",
+          "C9",
+          "C10",
+          "C11"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "02-pwa-cross-platform/storage-durability-and-eviction",
+      "path": "docs/roadmaps/02-pwa-cross-platform/storage-durability-and-eviction.md",
+      "owner": "pwa-platform",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-04-12",
+      "contracts": [
+        "C1",
+        "C3",
+        "C4",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Storage Durability and Eviction",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for pwa cross platform.",
+        "current_implementation_snapshot": "`Partial`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C3",
+          "C4",
+          "C8",
+          "C9",
+          "C10",
+          "C11"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "02-pwa-cross-platform/update-and-offline-lifecycle",
+      "path": "docs/roadmaps/02-pwa-cross-platform/update-and-offline-lifecycle.md",
+      "owner": "pwa-platform",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-04-12",
+      "contracts": [
+        "C1",
+        "C3",
+        "C4",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Update and Offline Lifecycle",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for pwa cross platform.",
+        "current_implementation_snapshot": "`Implemented baseline`, `Partial for advanced observability`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C3",
+          "C4",
+          "C8",
+          "C9",
+          "C10",
+          "C11"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "03-auth-session-security/README",
+      "path": "docs/roadmaps/03-auth-session-security/README.md",
+      "owner": "security-auth",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C2",
+        "C6",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "metadata": {
+        "title": "03 Auth, Session, Security Roadmap",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for auth session security.",
+        "current_implementation_snapshot": "`Implemented baseline`, `Wave 1 hardening complete`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C2",
+          "C6",
+          "C9",
+          "C10",
+          "C11"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "03-auth-session-security/abuse-prevention-and-anomaly-detection",
+      "path": "docs/roadmaps/03-auth-session-security/abuse-prevention-and-anomaly-detection.md",
+      "owner": "security-auth",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C2",
+        "C6",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Abuse Prevention and Anomaly Detection",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for auth session security.",
+        "current_implementation_snapshot": "`Implemented Wave 1 baseline`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C2",
+          "C6",
+          "C9",
+          "C10",
+          "C11"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "03-auth-session-security/account-protection-and-recovery",
+      "path": "docs/roadmaps/03-auth-session-security/account-protection-and-recovery.md",
+      "owner": "security-auth",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C2",
+        "C6",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Account Protection and Recovery",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for auth session security.",
+        "current_implementation_snapshot": "`Implemented protection baseline`, `Recovery workflow implemented (Wave 1)`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C2",
+          "C6",
+          "C9",
+          "C10",
+          "C11"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "03-auth-session-security/sessions-and-remember-me",
+      "path": "docs/roadmaps/03-auth-session-security/sessions-and-remember-me.md",
+      "owner": "security-auth",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C2",
+        "C6",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Sessions and Remember-Me",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for auth session security.",
+        "current_implementation_snapshot": "`Implemented baseline`, `Implemented advanced session intelligence (Wave 1)`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C2",
+          "C6",
+          "C9",
+          "C10",
+          "C11"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "03-auth-session-security/transport-and-browser-security",
+      "path": "docs/roadmaps/03-auth-session-security/transport-and-browser-security.md",
+      "owner": "security-auth",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C2",
+        "C6",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Transport and Browser Security",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for auth session security.",
+        "current_implementation_snapshot": "`Implemented Wave 1 baseline`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C2",
+          "C6",
+          "C9",
+          "C10",
+          "C11"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "04-ui-responsive-accessibility/README",
+      "path": "docs/roadmaps/04-ui-responsive-accessibility/README.md",
+      "owner": "ui-ux",
+      "status": "planned",
+      "risk_level": "medium",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-04-12",
+      "contracts": [
+        "C1",
+        "C4",
+        "C5",
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "04 UI, Responsive, Accessibility Roadmap",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for ui responsive accessibility.",
+        "current_implementation_snapshot": "`Implemented baseline`, `Partial for deep AA hardening and visual regression automation`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C4",
+          "C5",
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "04-ui-responsive-accessibility/accessibility-aa",
+      "path": "docs/roadmaps/04-ui-responsive-accessibility/accessibility-aa.md",
+      "owner": "ui-ux",
+      "status": "planned",
+      "risk_level": "medium",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-04-12",
+      "contracts": [
+        "C1",
+        "C4",
+        "C5",
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Accessibility (WCAG 2.2 AA)",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for ui responsive accessibility.",
+        "current_implementation_snapshot": "`Partial`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C4",
+          "C5",
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "04-ui-responsive-accessibility/design-system-and-visual-governance",
+      "path": "docs/roadmaps/04-ui-responsive-accessibility/design-system-and-visual-governance.md",
+      "owner": "ui-ux",
+      "status": "planned",
+      "risk_level": "medium",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-04-12",
+      "contracts": [
+        "C1",
+        "C4",
+        "C5",
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Design System and Visual Governance",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for ui responsive accessibility.",
+        "current_implementation_snapshot": "`Partial`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C4",
+          "C5",
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "04-ui-responsive-accessibility/forms-and-input-ergonomics",
+      "path": "docs/roadmaps/04-ui-responsive-accessibility/forms-and-input-ergonomics.md",
+      "owner": "ui-ux",
+      "status": "planned",
+      "risk_level": "medium",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-04-12",
+      "contracts": [
+        "C1",
+        "C4",
+        "C5",
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Forms and Input Ergonomics",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for ui responsive accessibility.",
+        "current_implementation_snapshot": "`Implemented baseline`, `Partial for fast-entry workflows`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C4",
+          "C5",
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "04-ui-responsive-accessibility/navigation-and-header",
+      "path": "docs/roadmaps/04-ui-responsive-accessibility/navigation-and-header.md",
+      "owner": "ui-ux",
+      "status": "planned",
+      "risk_level": "medium",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-04-12",
+      "contracts": [
+        "C1",
+        "C4",
+        "C5",
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Navigation and Header",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for ui responsive accessibility.",
+        "current_implementation_snapshot": "`Implemented baseline`, `Partial discoverability optimization`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C4",
+          "C5",
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "04-ui-responsive-accessibility/responsive-layouts",
+      "path": "docs/roadmaps/04-ui-responsive-accessibility/responsive-layouts.md",
+      "owner": "ui-ux",
+      "status": "planned",
+      "risk_level": "medium",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-04-12",
+      "contracts": [
+        "C1",
+        "C4",
+        "C5",
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Responsive Layouts",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for ui responsive accessibility.",
+        "current_implementation_snapshot": "`Implemented baseline`, `Partial automation`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C4",
+          "C5",
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "05-performance-reliability/README",
+      "path": "docs/roadmaps/05-performance-reliability/README.md",
+      "owner": "performance-reliability",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "05 Performance and Reliability Roadmap",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for performance reliability.",
+        "current_implementation_snapshot": "`Implemented baseline`, `Partial advanced instrumentation`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C7",
+          "C8",
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "05-performance-reliability/api-runtime-performance",
+      "path": "docs/roadmaps/05-performance-reliability/api-runtime-performance.md",
+      "owner": "performance-reliability",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: API and Runtime Performance",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for performance reliability.",
+        "current_implementation_snapshot": "`Implemented baseline`, `Partial observability`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C7",
+          "C8",
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "05-performance-reliability/caching-observability",
+      "path": "docs/roadmaps/05-performance-reliability/caching-observability.md",
+      "owner": "performance-reliability",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Caching and Observability",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for performance reliability.",
+        "current_implementation_snapshot": "`Implemented baseline`, `Partial diagnostics`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C7",
+          "C8",
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "05-performance-reliability/network-delivery-and-edge",
+      "path": "docs/roadmaps/05-performance-reliability/network-delivery-and-edge.md",
+      "owner": "performance-reliability",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Network Delivery and Edge Optimization",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for performance reliability.",
+        "current_implementation_snapshot": "`Partial`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C7",
+          "C8",
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "05-performance-reliability/web-performance",
+      "path": "docs/roadmaps/05-performance-reliability/web-performance.md",
+      "owner": "performance-reliability",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Web Performance",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for performance reliability.",
+        "current_implementation_snapshot": "`Implemented baseline`, `Partial optimization depth`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C7",
+          "C8",
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "06-product-surface/README",
+      "path": "docs/roadmaps/06-product-surface/README.md",
+      "owner": "product-engineering",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-04-12",
+      "contracts": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "metadata": {
+        "title": "06 Product Surface Roadmap",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for product surface.",
+        "current_implementation_snapshot": "`Implemented baseline`, `Partial depth in stress/scale scenarios`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C2",
+          "C4",
+          "C5",
+          "C9",
+          "C10",
+          "C11"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "06-product-surface/data-portability-and-trust-controls",
+      "path": "docs/roadmaps/06-product-surface/data-portability-and-trust-controls.md",
+      "owner": "product-engineering",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-04-12",
+      "contracts": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Data Portability and Trust Controls",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for product surface.",
+        "current_implementation_snapshot": "`Partial`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C2",
+          "C4",
+          "C5",
+          "C9",
+          "C10",
+          "C11"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "06-product-surface/gameplay-and-scoring",
+      "path": "docs/roadmaps/06-product-surface/gameplay-and-scoring.md",
+      "owner": "product-engineering",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-04-12",
+      "contracts": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Gameplay and Scoring",
+        "scope": "Roadmap scope for docs/roadmaps/06-product-surface/gameplay-and-scoring.md",
+        "current_implementation_snapshot": "`Implemented baseline`, `Partial stress hardening`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C2",
+          "C4",
+          "C5",
+          "C9",
+          "C10",
+          "C11"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "06-product-surface/history-stats-spectator",
+      "path": "docs/roadmaps/06-product-surface/history-stats-spectator.md",
+      "owner": "product-engineering",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-04-12",
+      "contracts": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: History, Stats, Spectator",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for product surface.",
+        "current_implementation_snapshot": "`Implemented baseline + teamup/household matchup analytics + teamup snapshot materialization`, `Partial large-scale optimization`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C2",
+          "C4",
+          "C5",
+          "C9",
+          "C10",
+          "C11"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "06-product-surface/profile-settings-and-security",
+      "path": "docs/roadmaps/06-product-surface/profile-settings-and-security.md",
+      "owner": "product-engineering",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-04-12",
+      "contracts": [
+        "C1",
+        "C2",
+        "C4",
+        "C5",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Profile, Settings, Security UX",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for product surface.",
+        "current_implementation_snapshot": "`Implemented strong baseline + avatar/session controls`, `Partial diagnostics depth`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C2",
+          "C4",
+          "C5",
+          "C9",
+          "C10",
+          "C11"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "07-devops-release/README",
+      "path": "docs/roadmaps/07-devops-release/README.md",
+      "owner": "platform-ops",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "07 DevOps and Release Roadmap",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for devops release.",
+        "current_implementation_snapshot": "`Implemented baseline`, `Wave 1 automation complete`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C7",
+          "C8",
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "07-devops-release/deployment-and-rollback",
+      "path": "docs/roadmaps/07-devops-release/deployment-and-rollback.md",
+      "owner": "platform-ops",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Deployment and Rollback",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for devops release.",
+        "current_implementation_snapshot": "`Implemented baseline`, `Wave 1 robust preflight/rollback automation complete`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C7",
+          "C8",
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "07-devops-release/domain-ssl-and-email",
+      "path": "docs/roadmaps/07-devops-release/domain-ssl-and-email.md",
+      "owner": "platform-ops",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Domain, SSL, Email Endpoints",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for devops release.",
+        "current_implementation_snapshot": "`Implemented baseline`, `Wave 1 TLS/DNS audit automation complete`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C7",
+          "C8",
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "07-devops-release/environment-and-secret-governance",
+      "path": "docs/roadmaps/07-devops-release/environment-and-secret-governance.md",
+      "owner": "platform-ops",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Environment and Secret Governance",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for devops release.",
+        "current_implementation_snapshot": "`Implemented Wave 1 baseline`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C7",
+          "C8",
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "07-devops-release/ops-monitoring-and-dr",
+      "path": "docs/roadmaps/07-devops-release/ops-monitoring-and-dr.md",
+      "owner": "platform-ops",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Monitoring and Disaster Recovery",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for devops release.",
+        "current_implementation_snapshot": "`Implemented Wave 1 baseline`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C7",
+          "C8",
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "owner": "automation-ops",
+      "status": "planned",
+      "risk_level": "medium",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C7",
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "current_implementation_snapshot": "`Planned`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C7",
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "owner": "automation-ops",
+      "status": "planned",
+      "risk_level": "medium",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C7",
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Alerting and Reporting Workflows",
+        "current_implementation_snapshot": "`Missing (workflow implementation)`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C7",
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "owner": "automation-ops",
+      "status": "planned",
+      "risk_level": "medium",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C7",
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Backup and Retention Workflows",
+        "current_implementation_snapshot": "`Missing (workflow implementation)`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C7",
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "owner": "automation-ops",
+      "status": "planned",
+      "risk_level": "medium",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C7",
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Workflow Security and Change Management",
+        "current_implementation_snapshot": "`Planned`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C7",
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "09-strategy-future/README",
+      "path": "docs/roadmaps/09-strategy-future/README.md",
+      "owner": "strategy",
+      "status": "planned",
+      "risk_level": "medium",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-04-27",
+      "contracts": [
+        "C1",
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "09 Strategy and Future Programs",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for strategy future.",
+        "current_implementation_snapshot": "`Documented`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "09-strategy-future/mdadmin-control-plane",
+      "path": "docs/roadmaps/09-strategy-future/mdadmin-control-plane.md",
+      "owner": "strategy",
+      "status": "planned",
+      "risk_level": "medium",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-04-27",
+      "contracts": [
+        "C1",
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: mdadmin Control Plane",
+        "scope": "Roadmap scope for docs/roadmaps/09-strategy-future/mdadmin-control-plane.md",
+        "current_implementation_snapshot": "`Planned`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "09-strategy-future/nextjs-migration",
+      "path": "docs/roadmaps/09-strategy-future/nextjs-migration.md",
+      "owner": "strategy",
+      "status": "planned",
+      "risk_level": "medium",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-04-27",
+      "contracts": [
+        "C1",
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Next.js Migration",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for strategy future.",
+        "current_implementation_snapshot": "`Planned`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "09-strategy-future/portfolio-prioritization-and-kpi-governance",
+      "path": "docs/roadmaps/09-strategy-future/portfolio-prioritization-and-kpi-governance.md",
+      "owner": "strategy",
+      "status": "planned",
+      "risk_level": "medium",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-04-27",
+      "contracts": [
+        "C1",
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Portfolio Prioritization and KPI Governance",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for strategy future.",
+        "current_implementation_snapshot": "`Partial`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "09-strategy-future/research-and-experiments",
+      "path": "docs/roadmaps/09-strategy-future/research-and-experiments.md",
+      "owner": "strategy",
+      "status": "planned",
+      "risk_level": "medium",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-04-27",
+      "contracts": [
+        "C1",
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Research and Experiments Backlog",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for strategy future.",
+        "current_implementation_snapshot": "`Documented`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "10-alliance-shared-identity/README",
+      "path": "docs/roadmaps/10-alliance-shared-identity/README.md",
+      "owner": "collaboration-platform",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "metadata": {
+        "title": "10 Alliance, World, and Shared Identity Roadmap",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for alliance shared identity.",
+        "current_implementation_snapshot": "`Wave 2 and Wave 5 shared-stats foundations implemented; later-wave UX/realtime/world tracks pending`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C6",
+          "C8",
+          "C9",
+          "C10",
+          "C11"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "10-alliance-shared-identity/api-authorization-and-encryption",
+      "path": "docs/roadmaps/10-alliance-shared-identity/api-authorization-and-encryption.md",
+      "owner": "collaboration-platform",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: API Authorization and Encryption",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for alliance shared identity.",
+        "current_implementation_snapshot": "`Implemented in Wave 2 (policy-table baseline)`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C6",
+          "C8",
+          "C9",
+          "C10",
+          "C11"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "10-alliance-shared-identity/chat-capability-and-moderation",
+      "path": "docs/roadmaps/10-alliance-shared-identity/chat-capability-and-moderation.md",
+      "owner": "collaboration-platform",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Chat Capability and Moderation",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for alliance shared identity.",
+        "current_implementation_snapshot": "`Missing`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C6",
+          "C8",
+          "C9",
+          "C10",
+          "C11"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "10-alliance-shared-identity/household-subgroups-and-cross-family-play",
+      "path": "docs/roadmaps/10-alliance-shared-identity/household-subgroups-and-cross-family-play.md",
+      "owner": "collaboration-platform",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Household Subgroups and Cross-Family Play",
+        "scope": "- Add household/family subgroups inside one alliance.",
+        "current_implementation_snapshot": "`Implemented baseline + household-vs-household matchup analytics + household invite shortcuts; advanced policy/recommendation tracks still pending`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C6",
+          "C8",
+          "C9",
+          "C10",
+          "C11"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "10-alliance-shared-identity/identity-model-and-terminology",
+      "path": "docs/roadmaps/10-alliance-shared-identity/identity-model-and-terminology.md",
+      "owner": "collaboration-platform",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Identity Model and Terminology",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for alliance shared identity.",
+        "current_implementation_snapshot": "`Implemented in Wave 2 (foundation phase)`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C6",
+          "C8",
+          "C9",
+          "C10",
+          "C11"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "10-alliance-shared-identity/match-scope-alliance-world-local",
+      "path": "docs/roadmaps/10-alliance-shared-identity/match-scope-alliance-world-local.md",
+      "owner": "collaboration-platform",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Match Scope (Alliance, World, Local)",
+        "scope": "Roadmap scope for docs/roadmaps/10-alliance-shared-identity/match-scope-alliance-world-local.md",
+        "current_implementation_snapshot": "`Implemented in Wave 2 (foundation phase)`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C6",
+          "C8",
+          "C9",
+          "C10",
+          "C11"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "10-alliance-shared-identity/membership-roles-invitations-and-claims",
+      "path": "docs/roadmaps/10-alliance-shared-identity/membership-roles-invitations-and-claims.md",
+      "owner": "collaboration-platform",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Membership, Roles, Invitations, and Claims",
+        "scope": "- Role model for alliance membership.",
+        "current_implementation_snapshot": "`Implemented in Wave 2 (foundation phase)`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C6",
+          "C8",
+          "C9",
+          "C10",
+          "C11"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "10-alliance-shared-identity/offline-survivability-and-continuity",
+      "path": "docs/roadmaps/10-alliance-shared-identity/offline-survivability-and-continuity.md",
+      "owner": "collaboration-platform",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Offline Survivability and Continuity",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for alliance shared identity.",
+        "current_implementation_snapshot": "`Partial baseline`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C6",
+          "C8",
+          "C9",
+          "C10",
+          "C11"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "10-alliance-shared-identity/online-connectivity-and-lobby-architecture",
+      "path": "docs/roadmaps/10-alliance-shared-identity/online-connectivity-and-lobby-architecture.md",
+      "owner": "collaboration-platform",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Online Connectivity and Lobby Architecture",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for alliance shared identity.",
+        "current_implementation_snapshot": "`Partial baseline`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C6",
+          "C8",
+          "C9",
+          "C10",
+          "C11"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "10-alliance-shared-identity/shared-stats-data-model-and-migration",
+      "path": "docs/roadmaps/10-alliance-shared-identity/shared-stats-data-model-and-migration.md",
+      "owner": "collaboration-platform",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Shared Stats Data Model and Migration",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for alliance shared identity.",
+        "current_implementation_snapshot": "`Implemented in Wave 2/Wave 5 (foundation + snapshot materialization + parity tooling)`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C6",
+          "C8",
+          "C9",
+          "C10",
+          "C11"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "10-alliance-shared-identity/sync-consistency-and-observability",
+      "path": "docs/roadmaps/10-alliance-shared-identity/sync-consistency-and-observability.md",
+      "owner": "collaboration-platform",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: Sync, Consistency, and Observability",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for alliance shared identity.",
+        "current_implementation_snapshot": "`Partial baseline`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C6",
+          "C8",
+          "C9",
+          "C10",
+          "C11"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "10-alliance-shared-identity/ux-ui-alliance-surface",
+      "path": "docs/roadmaps/10-alliance-shared-identity/ux-ui-alliance-surface.md",
+      "owner": "collaboration-platform",
+      "status": "planned",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C6",
+        "C8",
+        "C9",
+        "C10",
+        "C11"
+      ],
+      "metadata": {
+        "title": "Mini-Roadmap: UX/UI Alliance Surface",
+        "scope": "This roadmap item defines execution boundaries and delivery policy for alliance shared identity.",
+        "current_implementation_snapshot": "`Implemented baseline`, `Partial advanced polish`",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C6",
+          "C8",
+          "C9",
+          "C10",
+          "C11"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "IMPLEMENTATION_ORDER",
+      "path": "docs/roadmaps/IMPLEMENTATION_ORDER.md",
+      "owner": "governance",
+      "status": "done",
+      "risk_level": "medium",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Implementation Order (Approved Baseline)",
+        "scope": "This file defines the authoritative execution order, dependencies, and gate sequence for all roadmap topics.",
+        "current_implementation_snapshot": "Wave 0 complete, Wave 1 complete, Wave 2 complete, Wave 3 complete.",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "IMPLEMENTATION_READINESS",
+      "path": "docs/roadmaps/IMPLEMENTATION_READINESS.md",
+      "owner": "governance",
+      "status": "done",
+      "risk_level": "medium",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Implementation Readiness Matrix",
+        "scope": "This file certifies readiness state for all roadmap topics and defines pre-implementation acceptance criteria.",
+        "current_implementation_snapshot": "`Ready` across all topics by planning criteria, with Wave 0/1/2 execution evidence published.",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "README",
+      "path": "docs/roadmaps/README.md",
+      "owner": "governance",
+      "status": "done",
+      "risk_level": "medium",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Roadmap System (Hierarchical)",
+        "scope": "This file defines the structure, execution method, and source-of-truth policy for the hierarchical roadmap system.",
+        "current_implementation_snapshot": "`Governance baseline implemented`, `Wave 1 and Wave 2 implementation artifacts published`, `automation checks active`.",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "artifacts/wave0-governance-signoff",
+      "path": "docs/roadmaps/artifacts/wave0-governance-signoff.md",
+      "owner": "product-engineering",
+      "status": "planned",
+      "risk_level": "medium",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-04-12",
+      "contracts": [
+        "C1",
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Wave 0 Governance Signoff",
+        "scope": "Roadmap scope for docs/roadmaps/artifacts/wave0-governance-signoff.md",
+        "current_implementation_snapshot": "Documented in roadmap file.",
+        "priority_tiers": [
+          "P0"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "artifacts/wave1-implementation-signoff",
+      "path": "docs/roadmaps/artifacts/wave1-implementation-signoff.md",
+      "owner": "product-engineering",
+      "status": "planned",
+      "risk_level": "medium",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-04-12",
+      "contracts": [
+        "C1",
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Wave 1 Implementation Signoff",
+        "scope": "Roadmap scope for docs/roadmaps/artifacts/wave1-implementation-signoff.md",
+        "current_implementation_snapshot": "Documented in roadmap file.",
+        "priority_tiers": [
+          "P0"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "artifacts/wave2-implementation-signoff",
+      "path": "docs/roadmaps/artifacts/wave2-implementation-signoff.md",
+      "owner": "product-engineering",
+      "status": "planned",
+      "risk_level": "medium",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-04-12",
+      "contracts": [
+        "C1",
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Wave 2 Implementation Signoff",
+        "scope": "Roadmap scope for docs/roadmaps/artifacts/wave2-implementation-signoff.md",
+        "current_implementation_snapshot": "Documented in roadmap file.",
+        "priority_tiers": [
+          "P0"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "artifacts/wave3-implementation-signoff",
+      "path": "docs/roadmaps/artifacts/wave3-implementation-signoff.md",
+      "owner": "product-engineering",
+      "status": "planned",
+      "risk_level": "medium",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-04-12",
+      "contracts": [
+        "C1",
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Wave 3 Implementation Signoff",
+        "scope": "Roadmap scope for docs/roadmaps/artifacts/wave3-implementation-signoff.md",
+        "current_implementation_snapshot": "Documented in roadmap file.",
+        "priority_tiers": [
+          "P0"
+        ],
+        "verification_contract_references": [
+          "C1",
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "contracts/release-gates",
+      "path": "docs/roadmaps/contracts/release-gates.md",
+      "owner": "governance",
+      "status": "done",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Release Gates",
+        "scope": "Roadmap scope for docs/roadmaps/contracts/release-gates.md",
+        "current_implementation_snapshot": "Documented in roadmap file.",
+        "priority_tiers": [
+          "P0"
+        ],
+        "verification_contract_references": [
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "contracts/research-protocol",
+      "path": "docs/roadmaps/contracts/research-protocol.md",
+      "owner": "governance",
+      "status": "done",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Research Protocol",
+        "scope": "Roadmap scope for docs/roadmaps/contracts/research-protocol.md",
+        "current_implementation_snapshot": "Documented in roadmap file.",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "contracts/roadmap-registry-contract",
+      "path": "docs/roadmaps/contracts/roadmap-registry-contract.md",
+      "owner": "governance",
+      "status": "done",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Roadmap Registry Contract",
+        "scope": "Roadmap scope for docs/roadmaps/contracts/roadmap-registry-contract.md",
+        "current_implementation_snapshot": "Documented in roadmap file.",
+        "priority_tiers": [
+          "P0",
+          "P1",
+          "P2"
+        ],
+        "verification_contract_references": [
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    },
+    {
+      "id": "contracts/verification-contracts",
+      "path": "docs/roadmaps/contracts/verification-contracts.md",
+      "owner": "governance",
+      "status": "done",
+      "risk_level": "high",
+      "last_reviewed_utc": "2026-02-26",
+      "next_review_utc": "2026-03-28",
+      "contracts": [
+        "C9",
+        "C10"
+      ],
+      "metadata": {
+        "title": "Verification Contracts",
+        "scope": "Roadmap scope for docs/roadmaps/contracts/verification-contracts.md",
+        "current_implementation_snapshot": "Documented in roadmap file.",
+        "priority_tiers": [
+          "P0"
+        ],
+        "verification_contract_references": [
+          "C9",
+          "C10"
+        ],
+        "risk_and_rollback_summary": "See section \"Risk and Rollback Summary\" in roadmap file."
+      }
+    }
+  ]
+}

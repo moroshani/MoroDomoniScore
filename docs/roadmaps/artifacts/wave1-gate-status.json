@@ -1,0 +1,144 @@
+{
+  "wave": "Wave 1",
+  "run_at_utc": "2026-02-24T23:00:47Z",
+  "pass": true,
+  "checks": [
+    {
+      "name": "build_local",
+      "command": "npm run build",
+      "ok": true,
+      "evidence": "vite build passed"
+    },
+    {
+      "name": "prisma_validate_local",
+      "command": "set -a; source .env.local; set +a; npx prisma validate",
+      "ok": true,
+      "evidence": "schema valid"
+    },
+    {
+      "name": "auth_session_smoke_local",
+      "command": "register/login/me/sessions/revoke/recovery",
+      "ok": true,
+      "evidence": {
+        "register": 201,
+        "login": 200,
+        "me": 200,
+        "sessions": 200,
+        "session_patch": 200,
+        "revoke": 204,
+        "post_revoke_me": 401,
+        "recovery": 202,
+        "remember_ttl_short_seconds": 604800,
+        "remember_ttl_long_seconds": 2592000
+      }
+    },
+    {
+      "name": "security_headers_local",
+      "command": "curl -I http://127.0.0.1:4000/api/health",
+      "ok": true,
+      "evidence": {
+        "content_security_policy": true,
+        "hsts_over_plain_http": false
+      }
+    },
+    {
+      "name": "pwa_assets_local",
+      "command": "vite preview + curl manifest/sw/offline",
+      "ok": true,
+      "evidence": {
+        "manifest": 200,
+        "sw": 200,
+        "offline": 200,
+        "passkey_endpoint": 404
+      }
+    },
+    {
+      "name": "responsive_contract_local",
+      "command": "npx playwright test tests/w1-responsive.spec.js",
+      "ok": true,
+      "evidence": {
+        "checks": 60,
+        "overflow_failures": 0,
+        "report": "test-results/wave1-responsive/report.json"
+      }
+    },
+    {
+      "name": "deploy_vps",
+      "command": "bash scripts/deploy_to_aria_vps.sh",
+      "ok": true,
+      "evidence": "deploy_result=PASS"
+    },
+    {
+      "name": "rollback_drill_vps",
+      "command": "bash scripts/ops/rollback_last_release.sh",
+      "ok": true,
+      "evidence": "rollback executed and services recovered; latest release redeployed"
+    },
+    {
+      "name": "parity_local_vs_vps",
+      "command": "bash scripts/ops/local_vs_vps_parity.sh",
+      "ok": true,
+      "evidence": "critical file hashes and route checks passed"
+    },
+    {
+      "name": "domain_tls_dns_audit",
+      "command": "bash scripts/ops/domain_tls_audit.sh",
+      "ok": true,
+    },
+    {
+      "name": "dr_backup_restore_verify",
+      "command": "bash scripts/ops/dr_backup_verify.sh",
+      "ok": true,
+      "evidence": "backup + restore verification passed"
+    },
+    {
+      "name": "auth_session_smoke_live",
+      "command": "register/login/me/sessions/revoke/recovery on https://dominoyar.ir",
+      "ok": true,
+      "evidence": {
+        "register": 201,
+        "login": 200,
+        "me": 200,
+        "sessions": 200,
+        "revoke": 204,
+        "post_revoke_me": 401,
+        "recovery": 202,
+        "passkey_endpoint": 404,
+        "hsts": true,
+        "csp": true,
+        "remember_ttl_short_seconds": 604800,
+        "remember_ttl_long_seconds": 2592000
+      }
+    },
+    {
+      "name": "registry_governance_checks",
+      "command": "roadmap:normalize + registry/index/metadata checks",
+      "ok": true,
+      "evidence": {
+        "registry": "PASS",
+        "metadata": "PASS",
+        "index": "PASS"
+      }
+    }
+  ],
+  "gates": {
+    "G2_build_gate": true,
+    "G3_pre_deploy_gate": true,
+    "G4_post_deploy_gate": true,
+    "G5_stabilization_gate": true,
+    "G6_governance_gate": true
+  },
+  "contracts": {
+    "C1": true,
+    "C2": true,
+    "C3": true,
+    "C4": true,
+    "C5": true,
+    "C6": true,
+    "C7": true,
+    "C8": true,
+    "C9": true,
+    "C10": true,
+    "C11": true
+  }
+}

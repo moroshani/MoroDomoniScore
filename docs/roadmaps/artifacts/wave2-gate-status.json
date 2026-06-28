@@ -1,0 +1,144 @@
+{
+  "wave": "Wave 2",
+  "run_at_utc": "2026-02-25T01:37:00Z",
+  "pass": true,
+  "checks": [
+    {
+      "name": "build_local",
+      "command": "npm run build",
+      "ok": true,
+      "evidence": "vite build passed"
+    },
+    {
+      "name": "prisma_validate_local",
+      "command": "set -a; source .env.local; set +a; npx prisma validate",
+      "ok": true,
+      "evidence": "schema valid"
+    },
+    {
+      "name": "wave2_backfill_dry_local",
+      "command": "npm run ops:wave2:backfill:dry",
+      "ok": true,
+      "evidence": {
+        "usersScanned": 31,
+        "errors": 0,
+        "report": "docs/roadmaps/artifacts/wave2-backfill-dry-run.json"
+      }
+    },
+    {
+      "name": "wave2_backfill_apply_local",
+      "command": "npm run ops:wave2:backfill:apply",
+      "ok": true,
+      "evidence": {
+        "usersScanned": 31,
+        "errors": 0,
+        "report": "docs/roadmaps/artifacts/wave2-backfill-apply.json"
+      }
+    },
+    {
+      "name": "wave2_parity_local",
+      "command": "npm run ops:wave2:parity",
+      "ok": true,
+      "evidence": {
+        "usersScanned": 31,
+        "usersWithNoPersonalAlliance": 0,
+        "usersWithMirrorCoverageGap": 0,
+        "mismatchCount": 0,
+        "report": "docs/roadmaps/artifacts/wave2-parity-report.json"
+      }
+    },
+    {
+      "name": "wave2_smoke_local",
+      "command": "WAVE2_BASE_URL=http://127.0.0.1:4000 npm run ops:wave2:smoke",
+      "ok": true,
+      "evidence": {
+        "health": 200,
+        "register": "ok",
+        "login": "ok",
+        "personalAllianceBootstrap": 1,
+        "inviteAccept": "ok",
+        "membersCount": 2,
+        "claimFlow": "ok",
+        "allianceStatsPlayers": 2,
+        "legacyHistoryCount": 1,
+        "passkeyRemoved": 404
+      }
+    },
+    {
+      "name": "responsive_regression_local",
+      "command": "npx playwright test tests/w1-responsive.spec.js",
+      "ok": true,
+      "evidence": {
+        "checks": 60,
+        "overflow_failures": 0,
+        "report": "test-results/wave1-responsive/report.json"
+      }
+    },
+    {
+      "name": "deploy_vps",
+      "command": "npm run ops:deploy:vps",
+      "ok": true,
+      "evidence": "DEPLOY_RESULT=PASS"
+    },
+    {
+      "name": "synthetic_live",
+      "command": "npm run ops:synthetic",
+      "ok": true,
+      "evidence": "SYNTHETIC_PROBE=PASS"
+    },
+    {
+      "name": "local_vs_vps_parity",
+      "command": "npm run ops:parity:vps",
+      "ok": true,
+      "evidence": "PARITY_RESULT=PASS"
+    },
+    {
+      "name": "tls_audit",
+      "command": "npm run ops:tls:audit",
+      "ok": true,
+    },
+    {
+      "name": "dr_backup_restore_verify",
+      "command": "npm run ops:dr:verify",
+      "ok": true,
+      "evidence": "DR_BACKUP_VERIFY=PASS"
+    },
+    {
+      "name": "wave2_smoke_live",
+      "command": "WAVE2_BASE_URL=https://dominoyar.ir npm run ops:wave2:smoke",
+      "ok": true,
+      "evidence": {
+        "health": 200,
+        "register": "ok",
+        "login": "ok",
+        "personalAllianceBootstrap": 1,
+        "inviteAccept": "ok",
+        "membersCount": 2,
+        "claimFlow": "ok",
+        "allianceStatsPlayers": 2,
+        "legacyHistoryCount": 1,
+        "passkeyRemoved": 404
+      }
+    }
+  ],
+  "gates": {
+    "G2_build_gate": true,
+    "G3_pre_deploy_gate": true,
+    "G4_post_deploy_gate": true,
+    "G5_stabilization_gate": true,
+    "G6_governance_gate": true
+  },
+  "contracts": {
+    "C1": true,
+    "C2": true,
+    "C3": true,
+    "C4": true,
+    "C5": true,
+    "C6": true,
+    "C7": true,
+    "C8": true,
+    "C9": true,
+    "C10": true,
+    "C11": true
+  }
+}

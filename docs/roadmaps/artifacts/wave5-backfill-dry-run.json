@@ -1,0 +1,840 @@
+{
+  "mode": "dry-run",
+  "generatedAt": "2026-02-26T11:38:19.864Z",
+  "alliancesScanned": 92,
+  "alliancesProcessed": 92,
+  "alliancesRefreshed": 0,
+  "totalTeamups": 0,
+  "totalMatchups": 0,
+  "errors": [],
+  "details": [
+    {
+      "allianceId": "77fe8560-9729-45ed-b63b-8901a3b685ec",
+      "allianceName": "Test User - اتحاد شخصی",
+      "allianceSlug": "personal-testuser3",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "78a7833f-afc4-4d83-9874-a279addd0bc2",
+      "allianceName": "Smoke Test - اتحاد شخصی",
+      "allianceSlug": "personal-smoke_1770537783",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "e222de0e-e0fc-430d-b3d1-0232dbb0b3c8",
+      "allianceName": "Smoke Test - اتحاد شخصی",
+      "allianceSlug": "personal-smoke_1770539514",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "4681ca6a-dd9d-4e12-9ceb-a6823f231a64",
+      "allianceName": "UI Test - اتحاد شخصی",
+      "allianceSlug": "personal-ui_1770540119",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "3c8fb4c1-ead6-4403-9d8a-1dc2ea4ffbd7",
+      "allianceName": "UI Test - اتحاد شخصی",
+      "allianceSlug": "personal-ui_1770540171",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "9271b8a5-5880-4d7d-9cd5-e11dcf404683",
+      "allianceName": "UI Test - اتحاد شخصی",
+      "allianceSlug": "personal-ui_1770540200",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "f48b43fd-a209-4f4b-9576-87898666d08a",
+      "allianceName": "UI Test - اتحاد شخصی",
+      "allianceSlug": "personal-uiok_1770541080",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "431ceafc-2be5-487d-9c5c-aeeb3174d790",
+      "allianceName": "UI Test - اتحاد شخصی",
+      "allianceSlug": "personal-ui_1770547910",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "1e512d0a-8854-49a3-ba38-365a2e36088c",
+      "allianceName": "Moroshani Admin - اتحاد شخصی",
+      "allianceSlug": "personal-moroshaniofficil",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "a1328639-6831-445c-adac-e482558a4f46",
+      "allianceName": "Smoke local - اتحاد شخصی",
+      "allianceSlug": "personal-smoke_local_1771805381843",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "5f40a1f2-7bf0-4320-9166-ff80b8729085",
+      "allianceName": "Smoke - اتحاد شخصی",
+      "allianceSlug": "personal-smoke_cli_1771805560",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "a77fc7eb-f5a9-4356-8849-0cae9f17cbe6",
+      "allianceName": "Smoke - اتحاد شخصی",
+      "allianceSlug": "personal-smoke_dbg_1771805605429",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "40b6887e-f158-40c2-9689-caf57e44a88c",
+      "allianceName": "Smoke Local - اتحاد شخصی",
+      "allianceSlug": "personal-smoke_local_1771805673510",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "7f13e2d3-b9f5-45cd-bed0-695bad918d3f",
+      "allianceName": "Resp Local - اتحاد شخصی",
+      "allianceSlug": "personal-resp_local_1771805829270",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "668d29af-de9d-4b8b-8289-23c5d08fd780",
+      "allianceName": "Score Resp - اتحاد شخصی",
+      "allianceSlug": "personal-resp_score_1771805920081",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "05bf1b75-35dd-44c2-8323-b3a3e9b25b44",
+      "allianceName": "Final Smoke - اتحاد شخصی",
+      "allianceSlug": "personal-final_smoke_1771807246",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "56804480-e739-4b74-8439-217bc1ce86e8",
+      "allianceName": "Wave One - اتحاد شخصی",
+      "allianceSlug": "personal-wave1_1771966692",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "3694db5b-d57e-4c47-a04d-158b92dc5d0b",
+      "allianceName": "Wave1 Final - اتحاد شخصی",
+      "allianceSlug": "personal-w1final_1771972356",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "9d7c54c4-4002-4e72-9085-f704413959e5",
+      "allianceName": "Wave1 UI - اتحاد شخصی",
+      "allianceSlug": "personal-w1ui_1771972608",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "df41d59d-9f1f-4738-8a5c-7ff160722beb",
+      "allianceName": "Wave1 UI - اتحاد شخصی",
+      "allianceSlug": "personal-w1ui_1771972708",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "3cdc86aa-0867-49fa-91ec-4b69d40c29b5",
+      "allianceName": "Wave1 UI - اتحاد شخصی",
+      "allianceSlug": "personal-w1ui_1771972771",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "6877db74-1f7a-47d1-99a6-c11a65e5fa1f",
+      "allianceName": "Wave1 UI - اتحاد شخصی",
+      "allianceSlug": "personal-w1ui_1771972832",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "c04d97b8-76ec-49cd-9b99-ac4903a002b7",
+      "allianceName": "Wave1 UI - اتحاد شخصی",
+      "allianceSlug": "personal-w1ui_1771972934",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "682b2402-be27-4edc-bc95-f1ccb87f50e3",
+      "allianceName": "Wave1 UI - اتحاد شخصی",
+      "allianceSlug": "personal-w1ui_1771973029",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "4c1d4fe7-e1ea-4d11-9adc-e2cd85fa4714",
+      "allianceName": "Wave1 UI - اتحاد شخصی",
+      "allianceSlug": "personal-w1ui_1771973136",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "23c35b6e-706b-47fd-93d0-4bb07cbbef02",
+      "allianceName": "Wave1 UI - اتحاد شخصی",
+      "allianceSlug": "personal-w1ui_1771975040",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "481b8c8d-ae34-4146-ba96-a138d17ceb4c",
+      "allianceName": "Wave2 Admin - اتحاد شخصی",
+      "allianceSlug": "personal-w2a_1771980444554_1dada841",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "e90e0267-c567-4149-b26b-06b9dbd38652",
+      "allianceName": "Wave2 Member - اتحاد شخصی",
+      "allianceSlug": "personal-w2b_1771980444554_1dada841",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "78641787-2e4f-4816-8ae2-de1154a09855",
+      "allianceName": "اتحاد تست موج ۲",
+      "allianceSlug": "wave2-1dada841",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "1ec77ed2-5a6c-4e51-910b-df43b0b4da67",
+      "allianceName": "Wave2 Admin - اتحاد شخصی",
+      "allianceSlug": "personal-w2a_1771980581731_cd7c708f",
+      "mode": "dry-run",
+      "gameNightCount": 1,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "4e879637-19f2-40ca-8fd6-00edda3af561",
+      "allianceName": "Wave2 Member - اتحاد شخصی",
+      "allianceSlug": "personal-w2b_1771980581731_cd7c708f",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "08a8ace9-1e99-4474-bde8-f07880c635b4",
+      "allianceName": "اتحاد تست موج ۲",
+      "allianceSlug": "wave2-cd7c708f",
+      "mode": "dry-run",
+      "gameNightCount": 1,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "f1aaedbb-d258-4711-bb1a-cac9f52b84e4",
+      "allianceName": "Wave2 Resp - اتحاد شخصی",
+      "allianceSlug": "personal-w2resp_1771980670",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "4161840d-da11-4441-a615-5fc6cb380c98",
+      "allianceName": "Wave2 Admin - اتحاد شخصی",
+      "allianceSlug": "personal-w2a_1771982355654_f5970e5b",
+      "mode": "dry-run",
+      "gameNightCount": 1,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "f29095fe-124f-4e95-bd7b-c50da4f1f012",
+      "allianceName": "Wave2 Member - اتحاد شخصی",
+      "allianceSlug": "personal-w2b_1771982355654_f5970e5b",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "fb81807a-5b24-4b88-a5c9-abeb5e0232ad",
+      "allianceName": "اتحاد تست موج ۲",
+      "allianceSlug": "wave2-f5970e5b",
+      "mode": "dry-run",
+      "gameNightCount": 1,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "c62553a4-52b1-486f-bd4e-1f37bea8c7ec",
+      "allianceName": "Wave2 Admin - اتحاد شخصی",
+      "allianceSlug": "personal-w2a_1772017129315_6716be1a",
+      "mode": "dry-run",
+      "gameNightCount": 1,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "554e249b-4728-41c0-a4a3-ba0a574b778c",
+      "allianceName": "Wave2 Member - اتحاد شخصی",
+      "allianceSlug": "personal-w2b_1772017129315_6716be1a",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "38ce07b1-f8cd-4328-a63a-baa0cd9979d4",
+      "allianceName": "اتحاد تست موج ۲",
+      "allianceSlug": "wave2-6716be1a",
+      "mode": "dry-run",
+      "gameNightCount": 1,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "bfd78413-7206-4ee0-9537-e77223bc0fc2",
+      "allianceName": "Wave3 Admin - اتحاد شخصی",
+      "allianceSlug": "personal-w3a_1772017170103_0ff6c34f",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "b52dad30-c9f4-41ac-ac3c-f8931b852de0",
+      "allianceName": "Wave3 Member - اتحاد شخصی",
+      "allianceSlug": "personal-w3b_1772017170103_0ff6c34f",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "a62e601c-c401-4270-aaeb-971469f1d191",
+      "allianceName": "اتحاد تست موج ۳",
+      "allianceSlug": "wave3-0ff6c34f",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "8bbbac96-35b9-4857-bd90-52f0e8842441",
+      "allianceName": "Wave4 A - اتحاد شخصی",
+      "allianceSlug": "personal-w4a_1772038158_fb85a9",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "2dbc0d91-41bf-47cf-ab96-f2a774cd3ef9",
+      "allianceName": "Wave4 B - اتحاد شخصی",
+      "allianceSlug": "personal-w4b_1772038158_fb85a9",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "6727bf3e-3f75-4008-9efd-cb317a7cc6bb",
+      "allianceName": "اتحاد موج۴ fb85a9",
+      "allianceSlug": "wave4-fb85a9",
+      "mode": "dry-run",
+      "gameNightCount": 1,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "12b16204-781e-4056-903e-9474080ad80d",
+      "allianceName": "Wave2 Admin - اتحاد شخصی",
+      "allianceSlug": "personal-w2a_1772038185708_1397567b",
+      "mode": "dry-run",
+      "gameNightCount": 1,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "b3a65e6b-2ffd-4a5a-974c-2d0230dbb180",
+      "allianceName": "Wave2 Member - اتحاد شخصی",
+      "allianceSlug": "personal-w2b_1772038185708_1397567b",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "0171df94-68bd-4f0f-b5c7-12160bc89ed2",
+      "allianceName": "اتحاد تست موج ۲",
+      "allianceSlug": "wave2-1397567b",
+      "mode": "dry-run",
+      "gameNightCount": 1,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "6c540e93-9bc0-46ff-9ade-8708a31a24ab",
+      "allianceName": "Wave3 Admin - اتحاد شخصی",
+      "allianceSlug": "personal-w3a_1772038187150_842befce",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "494ab135-927e-4563-a53d-1272c49a782a",
+      "allianceName": "Wave3 Member - اتحاد شخصی",
+      "allianceSlug": "personal-w3b_1772038187150_842befce",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "5e39d757-404e-4783-84b3-bfbe29c8b81a",
+      "allianceName": "اتحاد تست موج ۳",
+      "allianceSlug": "wave3-842befce",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "f45ffc0e-1dbb-4ecb-80d6-a9db440b3200",
+      "allianceName": "Wave4 UI - اتحاد شخصی",
+      "allianceSlug": "personal-w4ui_1772038298",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "981d32e3-7e93-47e2-8266-caf14c80e064",
+      "allianceName": "Wave4 Owner - اتحاد شخصی",
+      "allianceSlug": "personal-w4a_1772038678899_847f6ab9",
+      "mode": "dry-run",
+      "gameNightCount": 1,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "19ce77fb-f678-4212-b794-7df2df7d28b0",
+      "allianceName": "Wave4 Member - اتحاد شخصی",
+      "allianceSlug": "personal-w4b_1772038678899_847f6ab9",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "5a3b468d-d532-447a-800e-21a934159f2f",
+      "allianceName": "اتحاد موج ۴",
+      "allianceSlug": "wave4-847f6ab9",
+      "mode": "dry-run",
+      "gameNightCount": 1,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "87faac60-f48e-4c83-ae2b-f04506942b75",
+      "allianceName": "Wave4 Alliance UI - اتحاد شخصی",
+      "allianceSlug": "personal-w4all_1772038727656",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "8d62bb55-3c6a-4842-95cf-492961abb868",
+      "allianceName": "Smoke Avatar - اتحاد شخصی",
+      "allianceSlug": "personal-avatar_teamup_1772087278",
+      "mode": "dry-run",
+      "gameNightCount": 1,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "2300c43d-a2aa-4766-bf94-6bfb425901c7",
+      "allianceName": "Smoke HH - اتحاد شخصی",
+      "allianceSlug": "personal-house_smoke_1772092262",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "909d70b1-29a0-461f-85e3-9fc2d3ecb328",
+      "allianceName": "Wave2 Admin - اتحاد شخصی",
+      "allianceSlug": "personal-w2a_1772092371731_23604869",
+      "mode": "dry-run",
+      "gameNightCount": 1,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "7e9e4816-afe9-4d34-971c-c836f6473060",
+      "allianceName": "Wave2 Member - اتحاد شخصی",
+      "allianceSlug": "personal-w2b_1772092371731_23604869",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "8d9beb7c-e245-4d65-8333-8aa314a093dd",
+      "allianceName": "اتحاد تست موج ۲",
+      "allianceSlug": "wave2-23604869",
+      "mode": "dry-run",
+      "gameNightCount": 1,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "cd7102bb-0f68-4de3-9546-615dd7fc0260",
+      "allianceName": "Wave3 Admin - اتحاد شخصی",
+      "allianceSlug": "personal-w3a_1772092373303_6167d9bd",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "2c54f72b-a1f8-45c7-8d6e-6181e3386222",
+      "allianceName": "Wave3 Member - اتحاد شخصی",
+      "allianceSlug": "personal-w3b_1772092373303_6167d9bd",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "5225af33-14be-40a5-98b6-0d63427f5391",
+      "allianceName": "اتحاد تست موج ۳",
+      "allianceSlug": "wave3-6167d9bd",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "2c6a643b-6cc3-4340-a59e-530e10901c02",
+      "allianceName": "Match Smoke - اتحاد شخصی",
+      "allianceSlug": "personal-match_smoke_1772094796",
+      "mode": "dry-run",
+      "gameNightCount": 1,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "d0879001-e3d8-414f-81ad-cf60bbd06848",
+      "allianceName": "Wave2 Admin - اتحاد شخصی",
+      "allianceSlug": "personal-w2a_1772094846203_81fdde4e",
+      "mode": "dry-run",
+      "gameNightCount": 1,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "6817551e-7d1f-4200-820c-7910ed3d1f84",
+      "allianceName": "Wave2 Member - اتحاد شخصی",
+      "allianceSlug": "personal-w2b_1772094846203_81fdde4e",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "cb558167-8ea3-4d6e-ace1-b4019ea44d13",
+      "allianceName": "اتحاد تست موج ۲",
+      "allianceSlug": "wave2-81fdde4e",
+      "mode": "dry-run",
+      "gameNightCount": 1,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "6d22f4d2-2579-449a-9ff3-3394b249960c",
+      "allianceName": "Wave3 Admin - اتحاد شخصی",
+      "allianceSlug": "personal-w3a_1772094847546_a7ca7968",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "a0cbac3c-94df-4fcf-a954-f9f7cfd831c9",
+      "allianceName": "Wave3 Member - اتحاد شخصی",
+      "allianceSlug": "personal-w3b_1772094847546_a7ca7968",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "ef737949-2448-4197-b7a3-d66a7cb4ab7f",
+      "allianceName": "اتحاد تست موج ۳",
+      "allianceSlug": "wave3-a7ca7968",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "7ffdf7ea-7312-4a99-aba6-78a3022d7341",
+      "allianceName": "Owner - اتحاد شخصی",
+      "allianceSlug": "personal-inv_owner_1772098475",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "946bdd1b-7f97-49cd-95f1-8071c7e5f656",
+      "allianceName": "Member - اتحاد شخصی",
+      "allianceSlug": "personal-inv_member_1772098475",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "eb1689c8-6df7-4e45-908d-243180ab733c",
+      "allianceName": "Wave2 Admin - اتحاد شخصی",
+      "allianceSlug": "personal-w2a_1772098566083_704b8cd3",
+      "mode": "dry-run",
+      "gameNightCount": 1,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "c1d2eec2-4e76-4246-8081-62741002f52a",
+      "allianceName": "Wave2 Member - اتحاد شخصی",
+      "allianceSlug": "personal-w2b_1772098566083_704b8cd3",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "58f42eb6-59eb-4812-89cd-869848f1d084",
+      "allianceName": "اتحاد تست موج ۲",
+      "allianceSlug": "wave2-704b8cd3",
+      "mode": "dry-run",
+      "gameNightCount": 1,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "7ec23ae9-47bb-479b-8e39-cea427dd4c30",
+      "allianceName": "Wave3 Admin - اتحاد شخصی",
+      "allianceSlug": "personal-w3a_1772098567437_b69e4470",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "e2c3ec18-8f36-4fd2-aa23-2cfd876275b4",
+      "allianceName": "Wave3 Member - اتحاد شخصی",
+      "allianceSlug": "personal-w3b_1772098567437_b69e4470",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "2f98abaf-f6ad-4932-b7a3-7bbc14905658",
+      "allianceName": "اتحاد تست موج ۳",
+      "allianceSlug": "wave3-b69e4470",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "81bfe881-a17d-4907-90aa-01b038869210",
+      "allianceName": "Avatar Admin - اتحاد شخصی",
+      "allianceSlug": "personal-ava_1772102307214_a2864f0b",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "72ecacc9-d1e7-4f63-bd12-11864e3cec2d",
+      "allianceName": "Avatar Member - اتحاد شخصی",
+      "allianceSlug": "personal-avb_1772102307214_a2864f0b",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "044e8e18-702c-416f-8476-7636dc5c02ca",
+      "allianceName": "Avatar Teamup Alliance",
+      "allianceSlug": "ava-tp-a2864f0b",
+      "mode": "dry-run",
+      "gameNightCount": 1,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "5a0108fb-a65e-409f-a3af-36178d23e689",
+      "allianceName": "Wave2 Admin - اتحاد شخصی",
+      "allianceSlug": "personal-w2a_1772102445022_218da5ee",
+      "mode": "dry-run",
+      "gameNightCount": 1,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "01d2c5da-bb75-4b76-b118-d7aa577f59d1",
+      "allianceName": "Wave2 Member - اتحاد شخصی",
+      "allianceSlug": "personal-w2b_1772102445022_218da5ee",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "e902b3e4-0d66-49e6-bd91-dc2e067242bb",
+      "allianceName": "اتحاد تست موج ۲",
+      "allianceSlug": "wave2-218da5ee",
+      "mode": "dry-run",
+      "gameNightCount": 1,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "72275f68-5928-4270-8893-d7bc3af32b45",
+      "allianceName": "Wave3 Admin - اتحاد شخصی",
+      "allianceSlug": "personal-w3a_1772102446337_61b79458",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "0658dbf0-8494-4a8c-b8b6-36a9f09e2449",
+      "allianceName": "Wave3 Member - اتحاد شخصی",
+      "allianceSlug": "personal-w3b_1772102446337_61b79458",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "e7055228-1fb4-4e84-80af-6b8c0ef74630",
+      "allianceName": "اتحاد تست موج ۳",
+      "allianceSlug": "wave3-61b79458",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "4490a892-f433-4d09-88c5-498a15316db7",
+      "allianceName": "Wave5 Owner - اتحاد شخصی",
+      "allianceSlug": "personal-w5_1772105851953_2cc2514e",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "a09d00f1-e0af-4fef-8107-d2512a09a93a",
+      "allianceName": "اتحاد موج ۵",
+      "allianceSlug": "wave5-2cc2514e",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "90719803-7549-4789-a6d2-aa471fdb209b",
+      "allianceName": "Wave5 Owner - اتحاد شخصی",
+      "allianceSlug": "personal-w5_1772105898841_9cacb377",
+      "mode": "dry-run",
+      "gameNightCount": 0,
+      "existingTeamupSnapshots": 0,
+      "existingMatchupSnapshots": 0
+    },
+    {
+      "allianceId": "67eee16a-fa07-48f1-a915-96d74ac133bf",
+      "allianceName": "اتحاد موج ۵",
+      "allianceSlug": "wave5-9cacb377",
+      "mode": "dry-run",
+      "gameNightCount": 1,
+      "existingTeamupSnapshots": 2,
+      "existingMatchupSnapshots": 1
+    }
+  ]
+}

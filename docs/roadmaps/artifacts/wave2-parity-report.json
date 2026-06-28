@@ -1,0 +1,258 @@
+{
+  "generatedAt": "2026-02-25T01:17:52.659Z",
+  "usersScanned": 31,
+  "usersCompared": 31,
+  "usersWithNoPersonalAlliance": 0,
+  "usersWithMirrorCoverageGap": 0,
+  "mismatchCount": 0,
+  "users": [
+    {
+      "userId": "ddb10724-64c7-4658-80df-a60290c79a2f",
+      "username": "testuser3",
+      "personalAllianceId": "77fe8560-9729-45ed-b63b-8901a3b685ec",
+      "legacyNights": 0,
+      "mirroredNights": 0,
+      "mismatches": []
+    },
+    {
+      "userId": "5de1914a-b40c-4027-8556-cdfcb77abfaa",
+      "username": "smoke_1770537783",
+      "personalAllianceId": "78a7833f-afc4-4d83-9874-a279addd0bc2",
+      "legacyNights": 0,
+      "mirroredNights": 0,
+      "mismatches": []
+    },
+    {
+      "userId": "ef5ca218-1e43-407b-8829-973f773ff790",
+      "username": "smoke_1770539514",
+      "personalAllianceId": "e222de0e-e0fc-430d-b3d1-0232dbb0b3c8",
+      "legacyNights": 0,
+      "mirroredNights": 0,
+      "mismatches": []
+    },
+    {
+      "userId": "e85f403d-3640-4b43-a092-7d404f6c70b6",
+      "username": "ui_1770540119",
+      "personalAllianceId": "4681ca6a-dd9d-4e12-9ceb-a6823f231a64",
+      "legacyNights": 0,
+      "mirroredNights": 0,
+      "mismatches": []
+    },
+    {
+      "userId": "f1e68610-9184-413f-9576-666fc7f8f86c",
+      "username": "ui_1770540171",
+      "personalAllianceId": "3c8fb4c1-ead6-4403-9d8a-1dc2ea4ffbd7",
+      "legacyNights": 0,
+      "mirroredNights": 0,
+      "mismatches": []
+    },
+    {
+      "userId": "06d11e89-efd8-44ab-84b1-ce4b6ec75f36",
+      "username": "ui_1770540200",
+      "personalAllianceId": "9271b8a5-5880-4d7d-9cd5-e11dcf404683",
+      "legacyNights": 0,
+      "mirroredNights": 0,
+      "mismatches": []
+    },
+    {
+      "userId": "39fe7995-1b08-461f-8c1c-15f6ec224060",
+      "username": "uiok_1770541080",
+      "personalAllianceId": "f48b43fd-a209-4f4b-9576-87898666d08a",
+      "legacyNights": 0,
+      "mirroredNights": 0,
+      "mismatches": []
+    },
+    {
+      "userId": "9acb9d83-b3ec-41be-873d-c9e2e5c0d435",
+      "username": "ui_1770547910",
+      "personalAllianceId": "431ceafc-2be5-487d-9c5c-aeeb3174d790",
+      "legacyNights": 0,
+      "mirroredNights": 0,
+      "mismatches": []
+    },
+    {
+      "userId": "42cb05e1-f12a-4fa0-999a-89fd24d62205",
+      "username": "moroshaniofficil",
+      "personalAllianceId": "1e512d0a-8854-49a3-ba38-365a2e36088c",
+      "legacyNights": 0,
+      "mirroredNights": 0,
+      "mismatches": []
+    },
+    {
+      "userId": "f951743d-09f1-4e4a-8407-db61cadfb86b",
+      "username": "smoke_local_1771805381843",
+      "personalAllianceId": "a1328639-6831-445c-adac-e482558a4f46",
+      "legacyNights": 0,
+      "mirroredNights": 0,
+      "mismatches": []
+    },
+    {
+      "userId": "b02cf656-10e2-41da-91fc-fb7ebd7e0acc",
+      "username": "smoke_cli_1771805560",
+      "personalAllianceId": "5f40a1f2-7bf0-4320-9166-ff80b8729085",
+      "legacyNights": 0,
+      "mirroredNights": 0,
+      "mismatches": []
+    },
+    {
+      "userId": "d7cf9827-ca03-4dbc-a3d4-cea4758ab6b3",
+      "username": "smoke_dbg_1771805605429",
+      "personalAllianceId": "a77fc7eb-f5a9-4356-8849-0cae9f17cbe6",
+      "legacyNights": 0,
+      "mirroredNights": 0,
+      "mismatches": []
+    },
+    {
+      "userId": "d1fe9802-b2b0-4485-9661-6427a838b3d6",
+      "username": "smoke_local_1771805673510",
+      "personalAllianceId": "40b6887e-f158-40c2-9689-caf57e44a88c",
+      "legacyNights": 0,
+      "mirroredNights": 0,
+      "mismatches": []
+    },
+    {
+      "userId": "17ef34db-16f4-428c-9519-ae86b55249bf",
+      "username": "resp_local_1771805829270",
+      "personalAllianceId": "7f13e2d3-b9f5-45cd-bed0-695bad918d3f",
+      "legacyNights": 0,
+      "mirroredNights": 0,
+      "mismatches": []
+    },
+    {
+      "userId": "e0ebd08b-c060-4b26-a772-c3dba22644de",
+      "username": "resp_score_1771805920081",
+      "personalAllianceId": "668d29af-de9d-4b8b-8289-23c5d08fd780",
+      "legacyNights": 0,
+      "mirroredNights": 0,
+      "mismatches": []
+    },
+    {
+      "userId": "34176923-1f33-4de9-8268-92939c03e68a",
+      "username": "final_smoke_1771807246",
+      "personalAllianceId": "05bf1b75-35dd-44c2-8323-b3a3e9b25b44",
+      "legacyNights": 0,
+      "mirroredNights": 0,
+      "mismatches": []
+    },
+    {
+      "userId": "b6e07b9e-c753-4bf3-906f-30d1cb37760f",
+      "username": "wave1_1771966692",
+      "personalAllianceId": "56804480-e739-4b74-8439-217bc1ce86e8",
+      "legacyNights": 0,
+      "mirroredNights": 0,
+      "mismatches": []
+    },
+    {
+      "userId": "7748176e-c035-4480-9d8e-f38914fda802",
+      "username": "w1final_1771972356",
+      "personalAllianceId": "3694db5b-d57e-4c47-a04d-158b92dc5d0b",
+      "legacyNights": 0,
+      "mirroredNights": 0,
+      "mismatches": []
+    },
+    {
+      "userId": "4fa3537a-5370-4fbb-9f14-7721f01704d9",
+      "username": "w1ui_1771972608",
+      "personalAllianceId": "9d7c54c4-4002-4e72-9085-f704413959e5",
+      "legacyNights": 0,
+      "mirroredNights": 0,
+      "mismatches": []
+    },
+    {
+      "userId": "e920dd7e-1785-4ce7-b018-f68a94b91958",
+      "username": "w1ui_1771972708",
+      "personalAllianceId": "df41d59d-9f1f-4738-8a5c-7ff160722beb",
+      "legacyNights": 0,
+      "mirroredNights": 0,
+      "mismatches": []
+    },
+    {
+      "userId": "f3882332-31ef-4cb8-aeb5-b392980527db",
+      "username": "w1ui_1771972771",
+      "personalAllianceId": "3cdc86aa-0867-49fa-91ec-4b69d40c29b5",
+      "legacyNights": 0,
+      "mirroredNights": 0,
+      "mismatches": []
+    },
+    {
+      "userId": "1f13c0a9-09e5-4d19-b18b-efe92dc9b15b",
+      "username": "w1ui_1771972832",
+      "personalAllianceId": "6877db74-1f7a-47d1-99a6-c11a65e5fa1f",
+      "legacyNights": 0,
+      "mirroredNights": 0,
+      "mismatches": []
+    },
+    {
+      "userId": "f289b254-7ac0-44f1-afcf-64e55dc63452",
+      "username": "w1ui_1771972934",
+      "personalAllianceId": "c04d97b8-76ec-49cd-9b99-ac4903a002b7",
+      "legacyNights": 0,
+      "mirroredNights": 0,
+      "mismatches": []
+    },
+    {
+      "userId": "4e418b16-75c3-4388-baeb-25949f37573a",
+      "username": "w1ui_1771973029",
+      "personalAllianceId": "682b2402-be27-4edc-bc95-f1ccb87f50e3",
+      "legacyNights": 0,
+      "mirroredNights": 0,
+      "mismatches": []
+    },
+    {
+      "userId": "2e6675a6-02c0-47a3-8615-8cc3d8b272b8",
+      "username": "w1ui_1771973136",
+      "personalAllianceId": "4c1d4fe7-e1ea-4d11-9adc-e2cd85fa4714",
+      "legacyNights": 0,
+      "mirroredNights": 0,
+      "mismatches": []
+    },
+    {
+      "userId": "3d84629d-3a7f-41fa-b39c-44356573e9fa",
+      "username": "w1ui_1771975040",
+      "personalAllianceId": "23c35b6e-706b-47fd-93d0-4bb07cbbef02",
+      "legacyNights": 0,
+      "mirroredNights": 0,
+      "mismatches": []
+    },
+    {
+      "userId": "04ed48fe-35c1-4d63-b82e-e9e6a28381f7",
+      "username": "w2a_1771980444554_1dada841",
+      "personalAllianceId": "481b8c8d-ae34-4146-ba96-a138d17ceb4c",
+      "legacyNights": 0,
+      "mirroredNights": 0,
+      "mismatches": []
+    },
+    {
+      "userId": "23423916-ac4d-41e6-8895-887b73ab57a9",
+      "username": "w2b_1771980444554_1dada841",
+      "personalAllianceId": "e90e0267-c567-4149-b26b-06b9dbd38652",
+      "legacyNights": 0,
+      "mirroredNights": 0,
+      "mismatches": []
+    },
+    {
+      "userId": "608611ff-195f-4171-b353-5c432c257f63",
+      "username": "w2a_1771980581731_cd7c708f",
+      "personalAllianceId": "1ec77ed2-5a6c-4e51-910b-df43b0b4da67",
+      "legacyNights": 1,
+      "mirroredNights": 1,
+      "mismatches": []
+    },
+    {
+      "userId": "e4e3475e-57b5-480c-b465-1cc1d84665d9",
+      "username": "w2b_1771980581731_cd7c708f",
+      "personalAllianceId": "4e879637-19f2-40ca-8fd6-00edda3af561",
+      "legacyNights": 0,
+      "mirroredNights": 0,
+      "mismatches": []
+    },
+    {
+      "userId": "3ccce029-f437-4126-bb07-8151eb835bcc",
+      "username": "w2resp_1771980670",
+      "personalAllianceId": "f1aaedbb-d258-4711-bb1a-cac9f52b84e4",
+      "legacyNights": 0,
+      "mirroredNights": 0,
+      "mismatches": []
+    }
+  ]
+}
