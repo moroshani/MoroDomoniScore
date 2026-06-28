@@ -24,7 +24,7 @@ export const GAME_MODES: GameModeDetails[] = [
     teams: 2,
     playersPerTeam: 2,
     pointCap: 151,
-  },
+  }
 ];
 
 export const DEFAULT_GAMES_PER_SET = 3;

@@ -1,73 +1,102 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
 import type { User } from '../types';
+import { apiFetch, clearAuthToken, getAuthToken, setAuthToken } from '../lib/api';
+import { getMyProfile } from '../lib/account';
 
-// This enum defines the two possible screens for an unauthenticated user.
 export type AuthScreen = 'login' | 'register';
 
 interface IAuthContext {
     user: User | null;
     isAuthenticated: boolean;
     isLoading: boolean;
+    isOfflineSession: boolean;
     authScreen: AuthScreen;
     setAuthScreen: (screen: AuthScreen) => void;
-    login: (email: string, password?: string) => Promise<void>;
-    register: (name: string, email: string, password?: string) => Promise<void>;
-    loginWithGoogle: () => void;
+    login: (identifier: string, password?: string, rememberMe?: boolean) => Promise<void>;
+    register: (name: string, username: string, email: string, password?: string, rememberMe?: boolean) => Promise<void>;
+    refreshUser: () => Promise<void>;
+    syncUser: (nextUser: User) => void;
     logout: () => void;
 }
 
 const AuthContext = createContext<IAuthContext | undefined>(undefined);
+const CACHED_USER_KEY = 'cachedUserProfile';
 
-// --- MOCK API FUNCTIONS ---
-// In a real application, you would replace these with `fetch` calls to your backend API.
-
-const fakeApiCall = (delay = 1000) => new Promise(resolve => setTimeout(resolve, delay));
-
-const mockLogin = async (email: string, password?: string): Promise<User> => {
-    await fakeApiCall();
-    console.log(`Attempting login with email: ${email}`);
-    // Basic validation for demonstration. A real backend would handle this.
-    if (!email || !password) {
-        throw new Error("ایمیل و رمز عبور لازم است.");
+const readCachedUser = (): User | null => {
+    if (typeof window === 'undefined') return null;
+    try {
+        const raw = localStorage.getItem(CACHED_USER_KEY);
+        if (!raw) return null;
+        return JSON.parse(raw) as User;
+    } catch {
+        return null;
     }
-    if (password === 'password123') {
-        return { id: 'user-123', name: 'کاربر تستی', email: email };
-    }
-    throw new Error("نام کاربری یا رمز عبور نامعتبر است.");
 };
 
-const mockRegister = async (name: string, email: string, password?: string): Promise<User> => {
-    await fakeApiCall();
-    console.log(`Attempting registration for: ${name} <${email}>`);
-    if (!name || !email || !password) {
-        throw new Error("نام، ایمیل و رمز عبور لازم است.");
+const writeCachedUser = (nextUser: User | null) => {
+    if (typeof window === 'undefined') return;
+    if (!nextUser) {
+        localStorage.removeItem(CACHED_USER_KEY);
+        return;
     }
-    // Simulate successful registration
-    return { id: `user-${Date.now()}`, name, email };
+    localStorage.setItem(CACHED_USER_KEY, JSON.stringify(nextUser));
 };
 
-// --- AUTH PROVIDER ---
+const isLikelyOfflineError = (error: unknown) => {
+    const message = String((error as Error)?.message || '').toLowerCase();
+    return message.includes('ارتباط با سرور برقرار نشد')
+        || message.includes('درخواست بیش از حد طول کشید')
+        || message.includes('network')
+        || message.includes('failed to fetch');
+};
 
 export const AuthProvider: React.FC<{children: React.ReactNode}> = ({ children }) => {
     const [user, setUser] = useState<User | null>(null);
     const [isLoading, setIsLoading] = useState(true);
+    const [isOfflineSession, setIsOfflineSession] = useState(false);
     const [authScreen, setAuthScreen] = useState<AuthScreen>('login');
 
+    const syncUser = (nextUser: User) => {
+        setUser(nextUser);
+        setIsOfflineSession(false);
+        writeCachedUser(nextUser);
+    };
+
+    const refreshUser = async () => {
+        const token = getAuthToken();
+        if (!token) {
+            setUser(null);
+            setIsOfflineSession(false);
+            writeCachedUser(null);
+            return;
+        }
+        const profile = await getMyProfile();
+        setUser(profile);
+        setIsOfflineSession(false);
+        writeCachedUser(profile);
+    };
+
     useEffect(() => {
-        // This effect simulates checking for an existing session on app load.
-        // In a real app, you might validate a token with a `GET /api/auth/me` endpoint.
         const checkSession = async () => {
             setIsLoading(true);
             try {
-                // Simulate checking a stored token
-                const token = sessionStorage.getItem('authToken');
-                if (token) {
-                    await fakeApiCall(500); // Simulate network latency
-                    // In a real app, you would decode the token or send it to the backend for validation
-                    setUser({ id: 'user-123', name: 'کاربر تستی', email: 'test@example.com' });
-                }
+                await refreshUser();
             } catch (error) {
-                setUser(null);
+                if (isLikelyOfflineError(error)) {
+                    const cachedUser = readCachedUser();
+                    if (cachedUser && getAuthToken()) {
+                        setUser(cachedUser);
+                        setIsOfflineSession(true);
+                    } else {
+                        setUser(null);
+                        setIsOfflineSession(false);
+                    }
+                } else {
+                    setUser(null);
+                    setIsOfflineSession(false);
+                    clearAuthToken();
+                    writeCachedUser(null);
+                }
             } finally {
                 setIsLoading(false);
             }
@@ -75,12 +104,24 @@ export const AuthProvider: React.FC<{children: React.ReactNode}> = ({ children }
         checkSession();
     }, []);
 
-    const login = async (email: string, password?: string) => {
+    const login = async (identifier: string, password?: string, rememberMe = true) => {
         setIsLoading(true);
         try {
-            const loggedInUser = await mockLogin(email, password);
-            setUser(loggedInUser);
-            sessionStorage.setItem('authToken', 'fake-jwt-token'); // Simulate session persistence
+            const response = await apiFetch<{
+                user: User;
+                token: string;
+                security?: { suspiciousLogin?: boolean; riskScore?: number };
+            }>('/api/auth/login', {
+                method: 'POST',
+                body: JSON.stringify({ identifier, password, rememberMe })
+            });
+            setAuthToken(response.token, rememberMe);
+            setUser(response.user);
+            setIsOfflineSession(false);
+            writeCachedUser(response.user);
+            if (response.security?.suspiciousLogin) {
+                alert('ورود مشکوک ثبت شد. لطفاً نشست‌ها و امنیت حساب را بررسی کنید.');
+            }
         } catch (error) {
             alert((error as Error).message);
             throw error;
@@ -89,38 +130,34 @@ export const AuthProvider: React.FC<{children: React.ReactNode}> = ({ children }
         }
     };
 
-    const register = async (name: string, email: string, password?: string) => {
+    const register = async (name: string, username: string, email: string, password?: string, rememberMe = true) => {
         setIsLoading(true);
         try {
-            const registeredUser = await mockRegister(name, email, password);
-            setUser(registeredUser);
-            sessionStorage.setItem('authToken', 'fake-jwt-token'); // Simulate session persistence
+            const response = await apiFetch<{ user: User; token: string }>('/api/auth/register', {
+                method: 'POST',
+                body: JSON.stringify({ name, username, email, password, rememberMe })
+            });
+            setAuthToken(response.token, rememberMe);
+            setUser(response.user);
+            setIsOfflineSession(false);
+            writeCachedUser(response.user);
         } catch (error) {
             alert((error as Error).message);
             throw error;
         } finally {
             setIsLoading(false);
         }
-    };
-    
-    const loginWithGoogle = () => {
-        // In a real application, this would redirect to your backend's Google auth route.
-        // e.g., window.location.href = '/api/auth/google';
-        alert("منطق ورود با گوگل در اینجا پیاده‌سازی می‌شود. این کار باعث هدایت به بک‌اند شما می‌شود.");
-        // For demonstration, we'll just log in a mock user after a delay.
-        setIsLoading(true);
-        setTimeout(() => {
-            const googleUser = { id: 'google-user-456', name: 'کاربر گوگل', email: 'google.user@example.com' };
-            setUser(googleUser);
-            sessionStorage.setItem('authToken', 'fake-google-jwt-token');
-            setIsLoading(false);
-        }, 1500);
     };
 
     const logout = () => {
+        if (getAuthToken()) {
+            void apiFetch<void>('/api/auth/logout', { method: 'POST' }).catch(() => {});
+        }
         setUser(null);
-        sessionStorage.removeItem('authToken');
-        setAuthScreen('login'); // Reset to login screen after logout
+        setIsOfflineSession(false);
+        clearAuthToken();
+        writeCachedUser(null);
+        setAuthScreen('login');
     };
     
     return (
@@ -128,11 +165,13 @@ export const AuthProvider: React.FC<{children: React.ReactNode}> = ({ children }
             user, 
             isAuthenticated: !!user,
             isLoading,
+            isOfflineSession,
             authScreen,
             setAuthScreen,
             login,
             register,
-            loginWithGoogle,
+            refreshUser,
+            syncUser,
             logout 
         }}>
             {children}
