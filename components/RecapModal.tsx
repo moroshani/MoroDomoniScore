@@ -6,7 +6,7 @@ import type { NightRecord, Team } from '../types';
 interface RecapModalProps {
   isOpen: boolean;
   isLoading: boolean;
-  content: string; // This is the AI content
+  content: string;
   onNewNight: () => void;
   nightRecord: NightRecord | null;
   teams: Team[];
@@ -30,7 +30,7 @@ export const RecapModal: React.FC<RecapModalProps> = ({ isOpen, isLoading, conte
     teams.forEach(t => {
       summary += `- ${t.name}: ${t.setsWon} ست\n`;
     });
-    summary += `\nتحلیل دومینو دان:\n"${content}"`;
+    summary += `\nخلاصه شب:\n"${content}"`;
     return summary;
   };
 
@@ -63,7 +63,7 @@ export const RecapModal: React.FC<RecapModalProps> = ({ isOpen, isLoading, conte
                     <p className="text-3xl font-black text-[var(--color-accent-warning)]">{nightWinner.name}</p>
                 </div>
             )}
-            <h3 className="font-bold text-[var(--color-text-primary)] mb-2">تحلیل هوش مصنوعی:</h3>
+            <h3 className="font-bold text-[var(--color-text-primary)] mb-2">خلاصه شب:</h3>
             {isLoading ? (
                 <div className="flex justify-center items-center h-24">
                     <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[var(--color-accent-primary)]"></div>

@@ -1,0 +1,662 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum AllianceMembershipRole {
+  owner
+  admin
+  member
+  viewer
+}
+
+enum AllianceMembershipStatus {
+  active
+  invited
+  suspended
+}
+
+enum AllianceInviteStatus {
+  active
+  accepted
+  revoked
+  expired
+}
+
+enum AllianceClaimStatus {
+  pending
+  approved
+  rejected
+}
+
+enum AlliancePlayerClaimState {
+  unclaimed
+  pending
+  claimed
+}
+
+enum MatchScope {
+  alliance_internal
+  cross_alliance
+  world_open
+  local_standard
+  quick_night
+}
+
+enum AllianceVisibility {
+  private
+  alliance
+  world
+}
+
+enum AllianceLobbyStatus {
+  open
+  active
+  ended
+  archived
+}
+
+enum AllianceLobbyMemberStatus {
+  joined
+  ready
+  left
+  removed
+}
+
+enum AllianceChatRoomType {
+  direct
+  alliance
+  match
+}
+
+enum AllianceChatMessageStatus {
+  active
+  deleted
+  moderated
+}
+
+enum AllianceChatReportStatus {
+  open
+  actioned
+  dismissed
+}
+
+model User {
+  id                        String                         @id @default(uuid())
+  name                      String
+  username                  String                         @unique
+  email                     String                         @unique
+  avatar                    String?
+  passwordHash              String
+  role                      String                         @default("user")
+  createdAt                 DateTime                       @default(now())
+  players                   Player[]
+  gameNights                GameNight[]
+  sessions                  Session[]
+  passkeys                  Passkey[]
+  passkeyChallenges         PasskeyChallenge[]
+  securityEvents            SecurityEvent[]
+  recoveryRequests          RecoveryRequest[]
+  alliancesCreated          Alliance[]                     @relation("AllianceCreatedBy")
+  allianceMemberships       AllianceMembership[]           @relation("AllianceMembershipUser")
+  createdAlliancePlayers    AlliancePlayer[]               @relation("AlliancePlayerCreatedBy")
+  alliancePlayerLinks       AlliancePlayerLink[]           @relation("AlliancePlayerLinkUser")
+  alliancePlayerLinksBy     AlliancePlayerLink[]           @relation("AlliancePlayerLinkByUser")
+  allianceInvitesCreated    AllianceInvite[]               @relation("AllianceInviteInvitedBy")
+  acceptedAllianceInvites   AllianceInvite[]               @relation("AllianceInviteAcceptedBy")
+  requestedAllianceClaims   AllianceClaim[]                @relation("AllianceClaimRequestedBy")
+  reviewedAllianceClaims    AllianceClaim[]                @relation("AllianceClaimReviewedBy")
+  createdAllianceHouseholds AllianceHousehold[]            @relation("AllianceHouseholdCreatedBy")
+  allianceHouseholdMemberships AllianceHouseholdUser[]     @relation("AllianceHouseholdUserMember")
+  createdAllianceGameNights AllianceGameNight[]            @relation("AllianceGameNightCreatedBy")
+  hostedAllianceLobbies     AllianceLobby[]                @relation("AllianceLobbyHost")
+  allianceLobbyMemberships  AllianceLobbyMember[]          @relation("AllianceLobbyMemberUser")
+  allianceLobbyEvents       AllianceLobbyEvent[]           @relation("AllianceLobbyEventActor")
+  createdChatRooms          AllianceChatRoom[]             @relation("AllianceChatRoomCreatedBy")
+  chatRoomMemberships       AllianceChatRoomMember[]       @relation("AllianceChatRoomMemberUser")
+  sentChatMessages          AllianceChatMessage[]          @relation("AllianceChatMessageSender")
+  moderatedChatMessages     AllianceChatMessage[]          @relation("AllianceChatMessageModeratedBy")
+  filedChatReports          AllianceChatReport[]           @relation("AllianceChatReportReporter")
+  reviewedChatReports       AllianceChatReport[]           @relation("AllianceChatReportReviewedBy")
+  chatModerationActions     AllianceChatModerationAction[] @relation("AllianceChatModerationActionActor")
+  chatModerationTargets     AllianceChatModerationAction[] @relation("AllianceChatModerationActionTargetUser")
+}
+
+model Passkey {
+  id               String   @id @default(uuid())
+  userId           String
+  credentialId     String   @unique
+  publicKey        Bytes
+  counter          Int      @default(0)
+  transportsJson   Json?
+  deviceType       String?
+  backedUp         Boolean?
+  createdAt        DateTime @default(now())
+  lastUsedAt       DateTime @default(now())
+  user             User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model PasskeyChallenge {
+  id           String   @id @default(uuid())
+  userId       String?
+  identifier   String?
+  flow         String
+  challenge    String
+  expiresAt    DateTime
+  consumedAt   DateTime?
+  createdAt    DateTime @default(now())
+  user         User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, flow, createdAt])
+  @@index([identifier, flow, createdAt])
+  @@index([expiresAt, consumedAt])
+}
+
+model Player {
+  id              String           @id @default(uuid())
+  name            String
+  avatar          String?
+  userId          String
+  createdAt       DateTime         @default(now())
+  user            User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  alliancePlayers AlliancePlayer[]
+
+  @@index([userId])
+}
+
+model GameNight {
+  id           String             @id @default(uuid())
+  userId       String
+  data         Json
+  createdAt    DateTime           @default(now())
+  user         User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  legacyMirror AllianceGameNight? @relation("LegacyGameNightMirror")
+
+  @@index([userId])
+}
+
+model Session {
+  id             String          @id @default(uuid())
+  userId         String
+  tokenId        String          @unique
+  ipAddress      String?
+  userAgent      String?
+  deviceLabel    String?
+  isTrusted      Boolean         @default(false)
+  createdAt      DateTime        @default(now())
+  lastSeenAt     DateTime        @default(now())
+  expiresAt      DateTime
+  revokedAt      DateTime?
+  user           User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  securityEvents SecurityEvent[]
+
+  @@index([userId, createdAt])
+  @@index([userId, revokedAt, expiresAt])
+}
+
+model SecurityEvent {
+  id        String   @id @default(uuid())
+  userId    String
+  sessionId String?
+  type      String
+  severity  String   @default("info")
+  ipAddress String?
+  userAgent String?
+  details   Json?
+  createdAt DateTime @default(now())
+  session   Session? @relation(fields: [sessionId], references: [id], onDelete: SetNull)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+  @@index([type, createdAt])
+}
+
+model RecoveryRequest {
+  id             String    @id @default(uuid())
+  userId         String?
+  identifier     String
+  reasonCode     String
+  description    String?
+  contactEmail   String?
+  ipAddress      String?
+  userAgent      String?
+  status         String    @default("pending")
+  createdAt      DateTime  @default(now())
+  resolvedAt     DateTime?
+  resolutionNote String?
+  user           User?     @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([identifier, createdAt])
+  @@index([status, createdAt])
+}
+
+model Alliance {
+  id              String               @id @default(uuid())
+  name            String
+  slug            String               @unique
+  createdByUserId String?
+  createdAt       DateTime             @default(now())
+  updatedAt       DateTime             @updatedAt
+  createdBy       User?                @relation("AllianceCreatedBy", fields: [createdByUserId], references: [id], onDelete: SetNull)
+  memberships     AllianceMembership[]
+  players         AlliancePlayer[]
+  gameNights      AllianceGameNight[]
+  invites         AllianceInvite[]
+  claims          AllianceClaim[]
+  households      AllianceHousehold[]
+  lobbies         AllianceLobby[]
+  chatRooms       AllianceChatRoom[]
+  teamupSnapshots AllianceTeamupSnapshot[]
+  teamupMatchupSnapshots AllianceTeamupMatchupSnapshot[]
+
+  @@index([createdByUserId, createdAt])
+}
+
+model AllianceTeamupSnapshot {
+  id           String   @id @default(uuid())
+  allianceId   String
+  projectionKey String  @default("all")
+  teamupId     String
+  playersJson  Json
+  gamesPlayed  Int      @default(0)
+  gamesWon     Int      @default(0)
+  pointsFor    Int      @default(0)
+  pointsAgainst Int     @default(0)
+  pointDiff    Int      @default(0)
+  avgPointDiff String   @default("0")
+  setWins      Int      @default(0)
+  nightWins    Int      @default(0)
+  winRate      String   @default("0%")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  alliance     Alliance @relation(fields: [allianceId], references: [id], onDelete: Cascade)
+
+  @@unique([allianceId, projectionKey, teamupId])
+  @@index([allianceId, projectionKey, gamesPlayed, gamesWon])
+}
+
+model AllianceTeamupMatchupSnapshot {
+  id           String   @id @default(uuid())
+  allianceId   String
+  projectionKey String  @default("all")
+  matchupId    String
+  gamesPlayed  Int      @default(0)
+  membersJson  Json
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  alliance     Alliance @relation(fields: [allianceId], references: [id], onDelete: Cascade)
+
+  @@unique([allianceId, projectionKey, matchupId])
+  @@index([allianceId, projectionKey, gamesPlayed])
+}
+
+model AllianceMembership {
+  id         String                   @id @default(uuid())
+  allianceId String
+  userId     String
+  role       AllianceMembershipRole   @default(member)
+  status     AllianceMembershipStatus @default(active)
+  joinedAt   DateTime?
+  createdAt  DateTime                 @default(now())
+  updatedAt  DateTime                 @updatedAt
+  alliance   Alliance                 @relation(fields: [allianceId], references: [id], onDelete: Cascade)
+  user       User                     @relation("AllianceMembershipUser", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([allianceId, userId])
+  @@index([userId, status])
+  @@index([allianceId, role, status])
+}
+
+model AlliancePlayer {
+  id              String                    @id @default(uuid())
+  allianceId      String
+  displayName     String
+  avatar          String?
+  claimState      AlliancePlayerClaimState  @default(unclaimed)
+  createdByUserId String?
+  sourcePlayerId  String?
+  createdAt       DateTime                  @default(now())
+  updatedAt       DateTime                  @updatedAt
+  alliance        Alliance                  @relation(fields: [allianceId], references: [id], onDelete: Cascade)
+  createdBy       User?                     @relation("AlliancePlayerCreatedBy", fields: [createdByUserId], references: [id], onDelete: SetNull)
+  sourcePlayer    Player?                   @relation(fields: [sourcePlayerId], references: [id], onDelete: SetNull)
+  links           AlliancePlayerLink[]
+  participations  AllianceGameParticipant[]
+  claims          AllianceClaim[]
+  householdMemberships AllianceHouseholdPlayer[]
+
+  @@unique([allianceId, sourcePlayerId])
+  @@index([allianceId, displayName])
+  @@index([allianceId, claimState])
+}
+
+model AllianceHousehold {
+  id              String                  @id @default(uuid())
+  allianceId      String
+  name            String
+  slug            String
+  description     String?
+  isActive        Boolean                 @default(true)
+  createdByUserId String?
+  createdAt       DateTime                @default(now())
+  updatedAt       DateTime                @updatedAt
+  alliance        Alliance                @relation(fields: [allianceId], references: [id], onDelete: Cascade)
+  createdBy       User?                   @relation("AllianceHouseholdCreatedBy", fields: [createdByUserId], references: [id], onDelete: SetNull)
+  users           AllianceHouseholdUser[]
+  players         AllianceHouseholdPlayer[]
+  invites         AllianceInvite[]
+
+  @@unique([allianceId, slug])
+  @@index([allianceId, isActive, createdAt])
+}
+
+model AllianceHouseholdUser {
+  id          String                 @id @default(uuid())
+  householdId String
+  userId      String
+  role        AllianceMembershipRole @default(member)
+  isPrimary   Boolean                @default(false)
+  createdAt   DateTime               @default(now())
+  updatedAt   DateTime               @updatedAt
+  household   AllianceHousehold      @relation(fields: [householdId], references: [id], onDelete: Cascade)
+  user        User                   @relation("AllianceHouseholdUserMember", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([householdId, userId])
+  @@index([userId, isPrimary, updatedAt])
+  @@index([householdId, role, updatedAt])
+}
+
+model AllianceHouseholdPlayer {
+  id              String            @id @default(uuid())
+  householdId     String
+  alliancePlayerId String
+  isPrimary       Boolean           @default(false)
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+  household       AllianceHousehold @relation(fields: [householdId], references: [id], onDelete: Cascade)
+  alliancePlayer  AlliancePlayer    @relation(fields: [alliancePlayerId], references: [id], onDelete: Cascade)
+
+  @@unique([householdId, alliancePlayerId])
+  @@index([alliancePlayerId, isPrimary, updatedAt])
+  @@index([householdId, updatedAt])
+}
+
+model AlliancePlayerLink {
+  id               String         @id @default(uuid())
+  alliancePlayerId String
+  userId           String
+  linkedByUserId   String?
+  linkedAt         DateTime       @default(now())
+  alliancePlayer   AlliancePlayer @relation(fields: [alliancePlayerId], references: [id], onDelete: Cascade)
+  user             User           @relation("AlliancePlayerLinkUser", fields: [userId], references: [id], onDelete: Cascade)
+  linkedBy         User?          @relation("AlliancePlayerLinkByUser", fields: [linkedByUserId], references: [id], onDelete: SetNull)
+
+  @@unique([alliancePlayerId, userId])
+  @@index([userId, linkedAt])
+}
+
+model AllianceInvite {
+  id               String                 @id @default(uuid())
+  allianceId       String
+  householdId      String?
+  tokenHash        String                 @unique
+  invitedByUserId  String?
+  inviteeEmail     String?
+  inviteeUsername  String?
+  role             AllianceMembershipRole @default(member)
+  status           AllianceInviteStatus   @default(active)
+  expiresAt        DateTime
+  acceptedByUserId String?
+  acceptedAt       DateTime?
+  revokedAt        DateTime?
+  createdAt        DateTime               @default(now())
+  alliance         Alliance               @relation(fields: [allianceId], references: [id], onDelete: Cascade)
+  household        AllianceHousehold?     @relation(fields: [householdId], references: [id], onDelete: SetNull)
+  invitedBy        User?                  @relation("AllianceInviteInvitedBy", fields: [invitedByUserId], references: [id], onDelete: SetNull)
+  acceptedBy       User?                  @relation("AllianceInviteAcceptedBy", fields: [acceptedByUserId], references: [id], onDelete: SetNull)
+
+  @@index([allianceId, status, expiresAt])
+  @@index([householdId, status, expiresAt])
+  @@index([inviteeEmail])
+  @@index([inviteeUsername])
+}
+
+model AllianceClaim {
+  id                String              @id @default(uuid())
+  allianceId        String
+  alliancePlayerId  String
+  requestedByUserId String?
+  reviewedByUserId  String?
+  status            AllianceClaimStatus @default(pending)
+  note              String?
+  createdAt         DateTime            @default(now())
+  reviewedAt        DateTime?
+  alliance          Alliance            @relation(fields: [allianceId], references: [id], onDelete: Cascade)
+  alliancePlayer    AlliancePlayer      @relation(fields: [alliancePlayerId], references: [id], onDelete: Cascade)
+  requestedBy       User?               @relation("AllianceClaimRequestedBy", fields: [requestedByUserId], references: [id], onDelete: SetNull)
+  reviewedBy        User?               @relation("AllianceClaimReviewedBy", fields: [reviewedByUserId], references: [id], onDelete: SetNull)
+
+  @@index([allianceId, status, createdAt])
+  @@index([alliancePlayerId, status])
+}
+
+model AllianceGameNight {
+  id                String                    @id @default(uuid())
+  allianceId        String
+  legacyGameNightId String?                   @unique
+  createdByUserId   String?
+  scope             MatchScope                @default(local_standard)
+  visibility        AllianceVisibility        @default(alliance)
+  eligibilityFlags  Json?
+  data              Json
+  version           Int                       @default(1)
+  createdAt         DateTime                  @default(now())
+  updatedAt         DateTime                  @updatedAt
+  alliance          Alliance                  @relation(fields: [allianceId], references: [id], onDelete: Cascade)
+  legacyGameNight   GameNight?                @relation("LegacyGameNightMirror", fields: [legacyGameNightId], references: [id], onDelete: SetNull)
+  createdBy         User?                     @relation("AllianceGameNightCreatedBy", fields: [createdByUserId], references: [id], onDelete: SetNull)
+  participants      AllianceGameParticipant[]
+
+  @@index([allianceId, createdAt])
+  @@index([allianceId, scope, createdAt])
+}
+
+model AllianceGameParticipant {
+  id                  String                  @id @default(uuid())
+  gameNightId         String
+  alliancePlayerId    String
+  teamSlot            Int
+  roleSnapshot        AllianceMembershipRole?
+  displayNameSnapshot String
+  avatarSnapshot      String?
+  createdAt           DateTime                @default(now())
+  gameNight           AllianceGameNight       @relation(fields: [gameNightId], references: [id], onDelete: Cascade)
+  alliancePlayer      AlliancePlayer          @relation(fields: [alliancePlayerId], references: [id], onDelete: Restrict)
+
+  @@unique([gameNightId, alliancePlayerId])
+  @@index([gameNightId, teamSlot])
+  @@index([alliancePlayerId, createdAt])
+}
+
+model AllianceLobby {
+  id             String                @id @default(uuid())
+  code           String                @unique
+  title          String?
+  scope          MatchScope            @default(local_standard)
+  status         AllianceLobbyStatus   @default(open)
+  modeType       String?
+  maxSeats       Int                   @default(4)
+  allianceId     String?
+  hostUserId     String
+  visibility     AllianceVisibility    @default(alliance)
+  currentVersion Int                   @default(1)
+  metadata       Json?
+  createdAt      DateTime              @default(now())
+  updatedAt      DateTime              @updatedAt
+  startedAt      DateTime?
+  endedAt        DateTime?
+  lastActivityAt DateTime              @default(now())
+  alliance       Alliance?             @relation(fields: [allianceId], references: [id], onDelete: SetNull)
+  host           User                  @relation("AllianceLobbyHost", fields: [hostUserId], references: [id], onDelete: Cascade)
+  members        AllianceLobbyMember[]
+  events         AllianceLobbyEvent[]
+  chatRooms      AllianceChatRoom[]
+
+  @@index([allianceId, status, updatedAt])
+  @@index([hostUserId, status, updatedAt])
+  @@index([scope, visibility, status, updatedAt])
+}
+
+model AllianceLobbyMember {
+  id           String                    @id @default(uuid())
+  lobbyId      String
+  userId       String
+  status       AllianceLobbyMemberStatus @default(joined)
+  isReady      Boolean                   @default(false)
+  seatIndex    Int?
+  roleSnapshot AllianceMembershipRole?
+  displayName  String
+  joinedAt     DateTime                  @default(now())
+  leftAt       DateTime?
+  lastSeenAt   DateTime                  @default(now())
+  createdAt    DateTime                  @default(now())
+  updatedAt    DateTime                  @updatedAt
+  lobby        AllianceLobby             @relation(fields: [lobbyId], references: [id], onDelete: Cascade)
+  user         User                      @relation("AllianceLobbyMemberUser", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([lobbyId, userId])
+  @@index([lobbyId, status, isReady])
+  @@index([userId, status, updatedAt])
+}
+
+model AllianceLobbyEvent {
+  id               String        @id @default(uuid())
+  lobbyId          String
+  actorUserId      String
+  eventId          String
+  eventType        String
+  expectedVersion  Int?
+  resultingVersion Int?
+  payload          Json?
+  createdAt        DateTime      @default(now())
+  lobby            AllianceLobby @relation(fields: [lobbyId], references: [id], onDelete: Cascade)
+  actor            User          @relation("AllianceLobbyEventActor", fields: [actorUserId], references: [id], onDelete: Cascade)
+
+  @@unique([lobbyId, eventId])
+  @@index([lobbyId, createdAt])
+  @@index([actorUserId, createdAt])
+}
+
+model AllianceChatRoom {
+  id                String                         @id @default(uuid())
+  type              AllianceChatRoomType
+  allianceId        String?
+  lobbyId           String?
+  directKey         String?                        @unique
+  title             String?
+  createdByUserId   String?
+  archivedAt        DateTime?
+  createdAt         DateTime                       @default(now())
+  updatedAt         DateTime                       @updatedAt
+  alliance          Alliance?                      @relation(fields: [allianceId], references: [id], onDelete: SetNull)
+  lobby             AllianceLobby?                 @relation(fields: [lobbyId], references: [id], onDelete: SetNull)
+  createdBy         User?                          @relation("AllianceChatRoomCreatedBy", fields: [createdByUserId], references: [id], onDelete: SetNull)
+  members           AllianceChatRoomMember[]
+  messages          AllianceChatMessage[]
+  reports           AllianceChatReport[]
+  moderationActions AllianceChatModerationAction[]
+
+  @@unique([type, allianceId])
+  @@unique([type, lobbyId])
+  @@index([allianceId, type, updatedAt])
+  @@index([lobbyId, type, updatedAt])
+}
+
+model AllianceChatRoomMember {
+  id         String                 @id @default(uuid())
+  roomId     String
+  userId     String
+  role       AllianceMembershipRole @default(member)
+  isMuted    Boolean                @default(false)
+  mutedUntil DateTime?
+  isBlocked  Boolean                @default(false)
+  joinedAt   DateTime               @default(now())
+  createdAt  DateTime               @default(now())
+  updatedAt  DateTime               @updatedAt
+  room       AllianceChatRoom       @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  user       User                   @relation("AllianceChatRoomMemberUser", fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([roomId, userId])
+  @@index([roomId, role, isMuted, isBlocked])
+  @@index([userId, updatedAt])
+}
+
+model AllianceChatMessage {
+  id                String                         @id @default(uuid())
+  roomId            String
+  senderUserId      String
+  clientMessageId   String?
+  text              String
+  status            AllianceChatMessageStatus      @default(active)
+  moderatedByUserId String?
+  deletedAt         DateTime?
+  createdAt         DateTime                       @default(now())
+  updatedAt         DateTime                       @updatedAt
+  room              AllianceChatRoom               @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  sender            User                           @relation("AllianceChatMessageSender", fields: [senderUserId], references: [id], onDelete: Cascade)
+  moderatedBy       User?                          @relation("AllianceChatMessageModeratedBy", fields: [moderatedByUserId], references: [id], onDelete: SetNull)
+  reports           AllianceChatReport[]
+  moderationActions AllianceChatModerationAction[]
+
+  @@unique([roomId, clientMessageId])
+  @@index([roomId, createdAt])
+  @@index([senderUserId, createdAt])
+}
+
+model AllianceChatReport {
+  id               String                   @id @default(uuid())
+  roomId           String
+  messageId        String
+  reporterUserId   String
+  reasonCode       String
+  note             String?
+  status           AllianceChatReportStatus @default(open)
+  reviewedByUserId String?
+  reviewedAt       DateTime?
+  actionTaken      String?
+  createdAt        DateTime                 @default(now())
+  updatedAt        DateTime                 @updatedAt
+  room             AllianceChatRoom         @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  message          AllianceChatMessage      @relation(fields: [messageId], references: [id], onDelete: Cascade)
+  reporter         User                     @relation("AllianceChatReportReporter", fields: [reporterUserId], references: [id], onDelete: Cascade)
+  reviewedBy       User?                    @relation("AllianceChatReportReviewedBy", fields: [reviewedByUserId], references: [id], onDelete: SetNull)
+
+  @@index([roomId, status, createdAt])
+  @@index([messageId, status])
+}
+
+model AllianceChatModerationAction {
+  id              String               @id @default(uuid())
+  roomId          String
+  actorUserId     String
+  targetUserId    String?
+  targetMessageId String?
+  actionType      String
+  reason          String?
+  details         Json?
+  createdAt       DateTime             @default(now())
+  room            AllianceChatRoom     @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  actor           User                 @relation("AllianceChatModerationActionActor", fields: [actorUserId], references: [id], onDelete: Cascade)
+  targetUser      User?                @relation("AllianceChatModerationActionTargetUser", fields: [targetUserId], references: [id], onDelete: SetNull)
+  targetMessage   AllianceChatMessage? @relation(fields: [targetMessageId], references: [id], onDelete: SetNull)
+
+  @@index([roomId, createdAt])
+  @@index([actorUserId, createdAt])
+  @@index([targetUserId, createdAt])
+}
