@@ -103,12 +103,12 @@ export const AccessPage: React.FC = () => {
          <h2 className="text-lg sm:text-xl font-bold text-text-primary-light dark:text-text-primary-dark">دانلود مستقیم APK</h2>
          {directDownloadUrl ? (
            <div className="space-y-2">
-             <div className="flex flex-wrap gap-2">
-               <a href={directDownloadUrl} target="_blank" rel="noreferrer" className="btn-primary text-center">دانلود APK ({releaseSizeLabel || 'نسخه تست'})</a>
-               {directDownloadShaUrl && (
-                 <a href={directDownloadShaUrl} target="_blank" rel="noreferrer" className="btn-secondary text-center">فایل تأیید SHA-256</a>
-               )}
-             </div>
+<div className="flex flex-wrap gap-2">
+                <a href={directDownloadUrl} target="_blank" rel="noreferrer" className="btn-primary text-center">دانلود APK{releaseSizeLabel && ` (${releaseSizeLabel})`}</a>
+                {directDownloadShaUrl && (
+                  <a href={directDownloadShaUrl} target="_blank" rel="noreferrer" className="btn-secondary text-center">فایل تأیید SHA-256</a>
+                )}
+              </div>
              <div className="rounded-2xl bg-slate-100 dark:bg-slate-800 p-3 text-xs space-y-1">
                {!!androidReleaseVersion && <p className="text-text-primary-light dark:text-text-primary-dark">نسخه: <span className="font-semibold">{androidReleaseVersion}</span></p>}
                {!!androidReleaseDate && <p className="text-text-primary-light dark:text-text-primary-dark">تاریخ: <span className="font-semibold">{androidReleaseDate}</span></p>}
@@ -119,11 +119,11 @@ export const AccessPage: React.FC = () => {
                  </p>
                )}
              </div>
-             <div className="rounded-2xl bg-blue-500/10 border border-blue-600/30 dark:bg-blue-400/10 dark:border-blue-400/30 p-3 text-xs text-blue-800 dark:text-blue-200 space-y-1">
-               <p className="font-semibold">اطلاعات دانلود</p>
-               <p>این مسیر برای دانلود نسخه‌های تست و توسعه است. برای انتشار عمومی، مایکت مرجع نصب است.</p>
-               <p className="break-all">قبل از نصب، SHA-256 را با این مقدار تطبیق دهید: {androidReleaseSha256}</p>
-             </div>
+<div className="rounded-2xl bg-blue-500/10 border border-blue-600/30 dark:bg-blue-400/10 dark:border-blue-400/30 p-3 text-xs text-blue-800 dark:text-blue-200 space-y-1">
+                <p className="font-semibold">اطلاعات دانلود</p>
+                <p>دانلود مستقیم برای کاربرانی که به مایکت دسترسی ندارند. برای کاربران داخل ایران، مایکت توصیه شده است.</p>
+                <p className="break-all">SHA-256: {androidReleaseSha256}</p>
+              </div>
            </div>
          ) : (
            <p className="text-xs text-text-secondary-light dark:text-text-secondary-dark">
